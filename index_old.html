@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakibul Islam - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+       /* Dark Mode Styles */
+.dark-mode {
+    background-color: #1a202c;
+    color: #e2e8f0;
+}
+
+.dark-mode a {
+    color: #63b3ed;
+}
+
+.dark-mode a:hover {
+    color: #90cdf4;
+}
+
+.dark-mode .bg-gradient-to-r {
+    background: linear-gradient(90deg, #2a4365, #2d3748, #1a202c);
+}
+
+.dark-mode .hero-bg {
+    background: linear-gradient(-45deg, #1a202c, #2d3748, #2a4365, #1a202c);
+}
+
+.dark-mode .bg-card {
+    background-color: #2d3748;
+}
+
+.dark-mode .section-title::after {
+    background-color: #4fd1c5;
+}
+
+.dark-mode .bg-gray-900 {
+    background-color: #2d3748;
+    color: #e2e8f0;
+}
+
+.dark-mode .bg-gray-100 {
+    background-color: #2d3748;
+    color: #e2e8f0;
+}
+
+.dark-mode .text-gray-900 {
+    color: #e2e8f0;
+}
+
+
+        /* Stylish section headers */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 50%;
+            height: 4px;
+            background-color: #63b3ed;
+            border-radius: 4px;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+
+        .section-title:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        /* Hero section animation */
+        .hero-bg {
+            background: linear-gradient(-45deg, #2b5876, #103e50, #3a2848, #1698e9);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* General section styles */
+        .bg-card {
+            background-color: #2d3748; /* Adjusted from white */
+            color: #e2e8f0; /* Dark mode color */
+        }
+
+    </style>
+</head>
+<body id="body" class="bg-gray-100 text-gray-900 transition duration-500">
+
+    <!-- Navigation -->
+    <nav id="navbar" style="
+    background: linear-gradient(to right, #326588, #3b6781); 
+    color: white;
+    padding: 1rem; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    position: sticky;
+    top: 0;
+    z-index: 50;
+">
+    <div class="container mx-auto flex justify-between items-center">
+        <!-- Left Side - Logo/Name -->
+        <div class="flex items-center">
+            <a href="#" class="text-3xl font-bold tracking-wider hover:text-gray-300 transition duration-300">
+                RAKIBUL ISLAM
+            </a>
+        </div>
+
+        <!-- Hamburger Menu Icon -->
+        <div class="block lg:hidden">
+            <button id="navToggle" class="focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i> <!-- Font Awesome icon for the hamburger menu -->
+            </button>
+        </div>
+
+        <!-- Right Side - Menu Items -->
+        <ul id="navMenu" class="hidden lg:flex space-x-6 items-center">
+            <li><a href="#home" class="text-lg hover:text-gray-300 transition duration-300 hover:scale-105">Home</a></li>
+            <li><a href="#project" class="text-lg hover:text-gray-300 transition duration-300 hover:scale-105">Project</a></li>
+            <li><a href="#certificate" class="text-lg hover:text-gray-300 transition duration-300 hover:scale-105">Certificate</a></li>
+            <li><a href="#publications" class="text-lg hover:text-gray-300 transition duration-300 hover:scale-105">Publications</a></li>
+            <li><a href="#skills" class="text-lg hover:text-gray-300 transition duration-300 hover:scale-105">Skills</a></li>
+            <li><a href="#research" class="text-lg hover:text-gray-300 transition duration-300 hover:scale-105">Research</a></li>
+            <li><a href="#education" class="text-lg hover:text-gray-300 transition duration-300 hover:scale-105">Education</a></li>
+            <li><a href="#cv" class="text-lg hover:text-gray-300 transition duration-300 hover:scale-105">CV</a></li>
+            <li><a href="#contact" class="text-lg hover:text-gray-300 transition duration-300 hover:scale-105">Contact</a></li>
+            <li>
+                <button id="darkModeToggle" class="bg-gray-700 text-white px-3 py-1 rounded-full hover:bg-gray-600 transition duration-300">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+
+<style>
+    .transparent-nav {
+        background: rgba(0, 0, 0, 0.5); 
+        box-shadow: none; 
+    }
+
+    @media (max-width: 1024px) {
+        #navMenu {
+            position: absolute;
+            top: 4rem; /* Adjust based on navbar height */
+            right: 1rem;
+            background: rgba(43, 88, 118, 0.9); /* Similar to original background */
+            padding: 1rem;
+            border-radius: 0.5rem;
+            flex-direction: column;
+            width: 200px;
+        }
+
+        #navMenu.show {
+            display: flex;
+        }
+    }
+</style>
+
+<script>
+    window.onscroll = function() {
+        const navbar = document.getElementById("navbar");
+        if (window.pageYOffset > 50) {
+            navbar.classList.add("transparent-nav");
+        } else {
+            navbar.classList.remove("transparent-nav");
+        }
+    };
+
+    // Toggle the visibility of the nav menu on smaller screens
+    document.getElementById('navToggle').onclick = function() {
+        const navMenu = document.getElementById('navMenu');
+        navMenu.classList.toggle('show');
+    };
+</script>
+</nav>
+<!-- Dark Mode Script -->
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.getElementById('body');
+
+    // Function to apply dark mode
+    function applyDarkMode() {
+        body.classList.add('dark-mode');
+        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+
+    // Function to remove dark mode
+    function removeDarkMode() {
+        body.classList.remove('dark-mode');
+        darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    }
+
+    // Check the user's dark mode preference
+    function checkDarkMode() {
+        const isDarkMode = localStorage.getItem('dark-mode') === 'enabled';
+        if (isDarkMode) {
+            applyDarkMode();
+        } else {
+            removeDarkMode();
+        }
+    }
+
+    // Toggle dark mode on button click
+    darkModeToggle.addEventListener('click', () => {
+        if (body.classList.contains('dark-mode')) {
+            removeDarkMode();
+            localStorage.setItem('dark-mode', 'disabled');
+        } else {
+            applyDarkMode();
+            localStorage.setItem('dark-mode', 'enabled');
+        }
+    });
+
+    // Check dark mode preference on page load
+    document.addEventListener('DOMContentLoaded', checkDarkMode);
+</script>
+
+
+<!-- Hero Section -->
+<section id="home" class="home-section hero-bg text-white py-48">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-6">
+        <!-- Left Side: Photo and Quotes -->
+        <div class="w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+            <div class="animate__animated animate__fadeInLeft">
+                <div class="relative w-64 h-96 mx-auto md:mx-0 overflow-hidden rounded-lg shadow-lg transform hover:scale-105 transition duration-500">
+                    <img src="asset/rakib.jpg" alt="Rakibul Islam" class="w-full h-full object-cover">
+                </div>
+                
+                <p class="text-xl font-semibold mt-6">"The only way to do great work is to love what you do." - Steve Jobs</p>
+                <p class="text-lg mt-4">"Learning never exhausts the mind." - Leonardo da Vinci</p>
+            </div>
+        </div>
+
+        <!-- Right Side: About Me -->
+        <div class="w-full md:w-1/2 text-center md:text-left">
+            <div class="animate__animated animate__fadeInRight">
+                <div class="bg-gray-700 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+
+                <h1 class="text-5xl font-bold mb-4">Hi, I am Rakibul Islam</h1>
+                <p class="text-lg mb-4">I completed a Bachelor of Science in Computer Science and Engineering from Southeast University, Dhaka. I am currently working as an IT Officer and also serve remotely as a Software Engineer at Nonagon Infolytic. My background includes experience as a Support Engineer and expertise in software validation, development, and testing. I’m passionate about exploring machine learning, deep learning, and IoT. </p>
+                <p class="text-lg mb-4">I am passionate about technology, programming, and continuous learning. Explore my projects, certificates, publications, and research to know more about my journey.</p>
+                <p class="text-lg mb-8">Feel free to contact me for more information.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Project Section -->
+    <section id="project" class="home-section hero-bg text-white py-48">
+        <div class="container mx-auto px-6">
+        <center> <h2 class="section-title text-center animate__animated animate__fadeIn">
+                <i class="fas fa-project-diagram"></i> Projects
+            </h2></center>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+               
+                
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                        <i class="fas fa-laptop-code"></i> Petrol Pump Management System
+                    </h3>
+                    <img src="asset/pms.jpg" alt="Project Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">Petrol Pump Management System.  </p>
+                    <a href="https://github.com/rishuvro/PETROL_PUMP_MANAGEMENT_SYSTEM" target="_blank">
+                        <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                            View on GitHub
+                        </button>
+                    </a>
+                </div>
+               
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                        <i class="fas fa-laptop-code"></i> Computer Graphics Project
+                    </h3>
+                    <img src="asset/gold.jpg" alt="Project Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">Building City of Gold using OPENGL glut.</p>
+                    <a href="https://github.com/rishuvro/Computer_Graphics_Project_Building_City_of_Gold_using_OPENGL_glut" target="_blank">
+                        <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                            View on GitHub
+                        </button>
+                    </a>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                        <i class="fas fa-water"></i> Automatic Water Dispenser System
+                    </h3>
+                    <img src="asset/water.jpg" alt="Project Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">Using Arduino for automated water dispensing.</p>
+                    <a href="https://github.com/rishuvro/Automatic_Water_Dispenser_System_Using_Arduino" target="_blank">
+                        <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                            View on GitHub
+                        </button>
+                    </a>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                        <i class="fa fa-desktop"></i>  System Monitor Application
+                    </h3>
+                    <img src="asset/monitor.jpg" alt="Project Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">CPU and memory monitoring using Python.</p>
+                    <a href="https://github.com/rishuvro/system_monitor_application_cpu-memory_using_python" target="_blank">
+                        <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                            View on GitHub
+                        </button>
+                    </a>
+                </div>
+            
+                
+
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                        <i class="fa fa-university"></i> College website using only html
+                    </h3>
+                    <img src="asset/cms.jpg" alt="Project Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">College website using only html.</p>
+                    <a href="https://github.com/rishuvro/College-website-using-html" target="_blank">
+                        <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                            View on GitHub
+                        </button>
+                    </a>
+                </div>
+            
+
+
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                        <i class="fa fa-heartbeat"></i> Heart Disease Prediction using AI
+                    </h3>
+                    <img src="asset/heart.jpg" alt="Project Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">Heart Disease Prediction using AI.</p>
+                    <a href="https://github.com/rishuvro/Heart_disease_prediction_using_AI" target="_blank">
+                        <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                            View on GitHub
+                        </button>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Section -->
+    <section id="certificate" class="home-section hero-bg text-white py-48">
+        <div class="container mx-auto px-6">
+        <center> <h2 class="section-title text-center animate__animated animate__fadeIn">
+                <i class="fas fa-certificate"></i> Certificates
+            </h2></center>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                    <p><i class="fas fa-check"></i> ICECET 2024</p>
+                    </h3>
+                    <img src="asset/857 (1)_1.jpg" alt="Certificate Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">ICECET Participation Certificate for an oral presentation in the conference in SYDNEY, AUSTRALIA  .</p>
+                    <div class="flex space-x-4">
+                        <a href="asset/857 (1).pdf" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                View Certificate
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                    <p><i class="fas fa-check"></i> Programming for Everybody</p>
+                    </h3>
+                    <img src="asset/Coursera 6ZE6KM3TNCFE.jpg" alt="Certificate Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">Completion Certificate for Programming for Everybody from University of Michigan on Coursera.</p>
+                    <div class="flex space-x-4">
+                        <a href="asset/Coursera 6ZE6KM3TNCFE.pdf" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                View Certificate
+                            </button>
+                        </a>
+                        <a href="https://coursera.org/verify/6ZE6KM3TNCFE" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                Verify
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                    <p><i class="fas fa-check"></i> Learn English: Beginning Grammar</p>
+                    </h3>
+                    <img src="asset/Coursera 031M4SPA28S8.jpg" alt="Certificate Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">In this specialization, learners studied English grammar at the
+                        beginning level. They learned the fundamental features of English
+                        grammar, including word forms, verb tenses, and question and
+                        answer formation.
+                        </p>
+                    <div class="flex space-x-4">
+                        <a href="asset/Coursera 031M4SPA28S8.pdf" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                View Certificate
+                            </button>
+                        </a>
+                        <a href="https://coursera.org/verify/specialization/031M4SPA28S8" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                Verify
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                    <p><i class="fas fa-check"></i> Python Data Structures</p>
+                    </h3>
+                    <img src="asset/Coursera EQVJF5MGHCC9_page.jpg" alt="Certificate Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">Completion Certificate for Python Data Structures from University of Michigan on Coursera.</p>
+                    <div class="flex space-x-4">
+                        <a href="asset/Coursera EQVJF5MGHCC9.pdf.pdf" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                View Certificate
+                            </button>
+                        </a>
+                        <a href="https://coursera.org/verify/EQVJF5MGHCC9" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                Verify
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                    <p><i class="fas fa-check"></i> Foundations of Software Testing and Validation</p>
+                    </h3>
+                    <img src="asset/Coursera BKHJF4M7M4KE.jpg" alt="Certificate Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">Completion Certificate for Foundations of Software Testing and Validation from University of Leeds on Coursera.</p>
+                    <div class="flex space-x-4">
+                        <a href="asset/Coursera BKHJF4M7M4KE.pdf" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                View Certificate
+                            </button>
+                        </a>
+                        <a href="https://coursera.org/verify/BKHJF4M7M4KE" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                Verify
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                    <p><i class="fas fa-check"></i> Foundations: Data, Data, Everywhere</p>
+                    </h3>
+                    <img src="asset/Coursera 97Z3RZMWD5TV.jpg" alt="Certificate Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">Completion Certificate for  Foundations: Data, Data, Everywhere from Google on Coursera.</p>
+                    <div class="flex space-x-4">
+                        <a href="asset/Coursera 97Z3RZMWD5TV.pdf" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                View Certificate
+                            </button>
+                        </a>
+                        <a href="https://coursera.org/verify/97Z3RZMWD5TV" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                Verify
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                    <p><i class="fas fa-check"></i> Technical Support Fundamentals</p>
+                    </h3>
+                    <img src="asset/Coursera CS6P8GMK65PR.jpg" alt="Certificate Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">Completion Certificate for Technical Support Fundamentals from Google on Coursera.</p>
+                    <div class="flex space-x-4">
+                        <a href="asset/Coursera CS6P8GMK65PR.pdf" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                View Certificate
+                            </button>
+                        </a>
+                        <a href="https://coursera.org/verify/CS6P8GMK65PR" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                Verify
+                            </button>
+                        </a>
+                    </div>
+                </div>
+               
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="home-section hero-bg text-white py-48">
+        <div class="container mx-auto px-6">
+        <center> <h2 class="section-title text-center animate__animated animate__fadeIn">
+                <i class="fas fa-book"></i> Publications
+            </h2></center>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                    <p><i class="fa fa-pencil"></i> Dhaka Stock Exchange Historical Data</p>
+                    </h3>
+                    <p class="text-lg mb-6">Dhaka Stock Exchange Historical Data, Published: 8 March 2024 | Version 3 | DOI:10.17632/23553sm4tn.3</p>
+                    <div class="flex space-x-4">
+                        <a href="https://data.mendeley.com/datasets/23553sm4tn/3" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                View 
+                            </button>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                        <h3 class="text-2xl font-semibold mb-4">
+                        <p><i class="fa fa-pencil"></i> Hybrid Recommendation Systems using Adaptive Clustering to address Cold start problems</p>
+                        </h3>
+                        <p class="text-lg mb-6">Published in: 2024 International Conference on Electrical, Computer and Energy Technologies (ICECET
+                            Date of Conference: 25-27 July 2024<br>
+                            Date Added to IEEE Xplore: 08 October 2024<br>
+                            ISBN Information:<br>
+                            Electronic ISBN:979-8-3503-9591-4<br>
+                            Print on Demand(PoD) ISBN:979-8-3503-9592-1<br>
+                            DOI: 10.1109/ICECET61485.2024.10698666<br>
+                            Publisher: IEEE<br>
+                            Conference Location: Sydney, Australia</p>
+                        <div class="flex space-x-4">
+                            <a href="http://dx.doi.org/10.1109/ICECET61485.2024.10698666" target="_blank">
+                                <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                    View 
+                                </button>
+                            </a>
+                            
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="home-section hero-bg text-white py-48">
+        <div class="container mx-auto px-6">
+        <center> <h2 class="section-title text-center animate__animated animate__fadeIn">
+                <i class="fas fa-tools"></i> Skills
+            </h2></center>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">Programming Languages</h3>
+                    <ul class="list-disc pl-5 text-lg mt-4">
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>C++</li>
+                        <li>Java</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">Web Technologies</h3>
+                    <ul class="list-disc pl-5 text-lg mt-4">
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>React, Angular</li>
+                        <li>Node.js, Express.js</li>
+                        <li>RESTful APIs</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">Database Management</h3>
+                    <ul class="list-disc pl-5 text-lg mt-4">
+                        <li>MySQL</li>
+                        <li>MongoDB</li>
+                        <li>SQLite</li>
+                        <li>Firebase</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">Tools and Platforms</h3>
+                    <ul class="list-disc pl-5 text-lg mt-4">
+                        <li>Git, GitHub</li>
+                        <li>Docker</li>
+                        <li>VS Code</li>
+                        <li>Heroku</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="home-section hero-bg text-white py-48">
+        <div class="container mx-auto px-6">
+        <center><h2 class="section-title text-center animate__animated animate__fadeIn">
+                <i class="fas fa-flask"></i> Research
+            </h2></center>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">Product Recommendation Systems</h3>
+                    <p class="text-lg">Conducting research on Recommendation Systems for Solving Cold Problem in  Book Recommendation Systems.</p>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">Brain Cancer Detection Using Deep Learning</h3>
+                    <p class="text-lg">Conducting research on leveraging AI for early disease detection and diagnosis.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+<center>
+    <!-- Education Section -->
+    <section id="education" class="home-section hero-bg text-white py-48">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center animate__animated animate__fadeIn">
+                <i class="fas fa-graduation-cap"></i> Education
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">BSc in Computer Science and Engineering</h3>
+                    <p class="text-lg">Southeast University, Dhaka, 2019-2023</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">HSC in Science</h3>
+                    <p class="text-lg">Cantonment College Jashore, Jashore, 2017-2019</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">SSC in Science</h3>
+                    <p class="text-lg">Yakub Ali Chowdhury Biddyapith, Dhaka, 2012-2017</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">PSC</h3>
+                    <p class="text-lg">Jashai Primary School, Dhaka, 2008-2011</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">PSC</h3>
+                    <p class="text-lg">Goshaidangi Primary School, Jashore, 2007-2008</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">Kindergarten</h3>
+                    <p class="text-lg">Ideal Kindergarten, Dhaka, 2005-2007</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Section -->
+     
+    <section id="cv" class="home-section hero-bg text-white py-48">
+        <div class="container mx-auto px-6">
+        <h2 class="section-title text-center animate__animated animate__fadeIn mb-8">
+                <i class="fas fa-file-alt"></i> CV
+            </h2>
+            <div class="w-full md:w-1/2 mb-8 md:mb-0">
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    
+
+
+
+                    <h3 class="text-center text-2xl font-semibold mb-4">
+                        <i class="fa fa-pencil"></i> Download My CV
+                    </h3>
+                    <p class="text-lg text-center mb-6">Click the button below to download my latest CV.</p>
+                    
+                    <div class="flex justify-center">
+                        <a href="asset/cv.pdf" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                Download CV
+                            </button>
+                        </a>
+                    </div>
+                    
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+</center>
+<!-- Contact Section -->
+<section id="contact" class="home-section hero-bg text-white py-48">
+    <div class="container mx-auto px-6">
+        <center>
+        <h2 class="section-title text-center animate__animated animate__fadeIn mb-8">
+            <i class="fas fa-envelope"></i> Contact
+        </h2></center>
+        <div class="flex flex-col md:flex-row justify-between items-start gap-12">
+            <!-- Contact Details -->
+            <div class="w-full md:w-1/2 mb-8 md:mb-0">
+            <center>  <h3 class="text-2xl font-semibold mb-6">Contact Me:</h3></center>
+                <div class="bg-gray-900 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <p class="text-lg mb-4"><strong>Address:</strong> Dhaka, Bangladesh</p>
+                    <p class="text-lg mb-4"><strong>Email:</strong> <a href="mailto:rakibulislamshuvro@gmail.com" class="text-blue-400 hover:text-blue-300">rakibulislamshuvro@gmail.com</a></p>
+                    <p class="text-lg mb-6"><strong>Mobile:</strong> <a href="tel:+8801727688491" class="text-blue-400 hover:text-blue-300">+8801727688491</a></p>
+
+                    <h3 class="text-2xl font-semibold mb-4">Social Media:</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center"><i class="fab fa-linkedin-in mr-3 text-blue-400"></i> <a href="https://linkedin.com/in/rishuvro" class="text-blue-400 hover:text-blue-300">LinkedIn: Rakibul Islam</a></li>
+                        <li class="flex items-center"><i class="fab fa-researchgate mr-3 text-blue-400"></i> <a href="https://www.researchgate.net/profile/Rakibul_Islam" class="text-blue-400 hover:text-blue-300">ResearchGate: Rakibul Islam</a></li>
+                        <li class="flex items-center"><i class="fab fa-facebook-f mr-3 text-blue-400"></i> <a href="https://facebook.com/rishuvro" class="text-blue-400 hover:text-blue-300">Facebook: Rakibul Islam</a></li>
+                        <li class="flex items-center"><i class="fab fa-twitter mr-3 text-blue-400"></i> <a href="https://twitter.com/rishuvro" class="text-blue-400 hover:text-blue-300">Twitter: @rishuvro</a></li>
+                        <li class="flex items-center"><i class="fab fa-kaggle mr-3 text-blue-400"></i> <a href="https://www.kaggle.com/rishuvro" class="text-blue-400 hover:text-blue-300">Kaggle: Rakibul Islam</a></li>
+                    </ul>
+
+                    <h3 class="text-2xl font-semibold mt-6 mb-4">Google Sites:</h3>
+                    <p><a href="https://sites.google.com/view/rishuvro" class="text-blue-400 hover:text-blue-300">Rakibul Islam's Google Site</a></p>
+                </div>
+            </div>
+
+            <!-- Message Form -->
+            <div class="w-full md:w-1/2">
+            <center>
+                <h3 class="text-2xl font-semibold mb-6">Send me a message</h3></center>
+                <form action="https://example.com/contact" method="POST" class="bg-gray-900 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <div class="mb-6">
+                        <label for="name" class="block text-lg font-semibold mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="w-full p-3 rounded-lg bg-gray-800 text-white" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-lg font-semibold mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full p-3 rounded-lg bg-gray-800 text-white" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-lg font-semibold mb-2">Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full p-3 rounded-lg bg-gray-800 text-white" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-blue-500 px-6 py-3 rounded-lg hover:bg-blue-400">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <script>
+        const toggleButton = document.getElementById('darkModeToggle');
+        const body = document.getElementById('body');
+
+        toggleButton.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+        });
+    </script>
+
+<script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    document.onkeydown = function(e) {
+        if (e.keyCode == 123) {
+            return false;
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+            return false;
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+            return false;
+        }
+        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+            return false;
+        }
+    }
+</script>
+
+</body>
+</html>
+
+<footer class="bg-gray-600 text-white py-4 text-center">
+    <p>&copy; 2024 Rakibul Islam. All rights reserved.</p>
+</footer>
