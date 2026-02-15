@@ -3,16 +3,39 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rakibul Islam — Portfolio</title>
-  <meta name="description" content="Rakibul Islam — IT Officer and Software Engineer (Laravel/PHP). IT support, troubleshooting, SOPs, and web application development with PHP/Laravel, MySQL, and JavaScript." />
+
+  <title>Rakibul Islam — IT Officer & Software Engineer</title>
+  <meta name="description" content="Rakibul Islam — IT Officer & Software Engineer (Laravel/PHP). IT support, troubleshooting, SOPs, and production web apps (PHP/Laravel, MySQL, JavaScript)." />
   <meta name="theme-color" content="#0b1220" />
+  <meta name="color-scheme" content="light dark" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://rishuvro.github.io/" />
+
+  <!-- Favicons (optional: add these files) -->
+  <link rel="icon" href="asset/favicon.ico" />
+  <link rel="apple-touch-icon" href="asset/apple-touch-icon.png" />
+
+  <!-- Robots -->
+  <meta name="robots" content="index,follow" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Rakibul Islam — Portfolio" />
-  <meta property="og:description" content="IT Officer & Software Engineer (Laravel/PHP). Projects, certificates, publications, and contact." />
+  <meta property="og:title" content="Rakibul Islam — IT Officer & Software Engineer" />
+  <meta property="og:description" content="Projects, experience, skills, certificates, publications, and contact." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rishuvro.github.io/" />
   <meta property="og:image" content="asset/rakib.jpg" />
+  <meta property="og:image:alt" content="Rakibul Islam — Profile photo" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rakibul Islam — IT Officer & Software Engineer" />
+  <meta name="twitter:description" content="Laravel/PHP • IT Support • Clinic Management System (EvolvedCMS) • Projects & Contact" />
+  <meta name="twitter:image" content="asset/rakib.jpg" />
+
+  <!-- Preconnects -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
 
   <!-- Tailwind (Play CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -26,14 +49,19 @@
           },
           boxShadow: {
             soft: '0 10px 30px rgba(2, 6, 23, 0.12)',
+            glow: '0 0 0 1px rgba(56,189,248,.12), 0 10px 30px rgba(2,6,23,.14)',
           },
           keyframes: {
-            float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-6px)' } },
+            float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-8px)' } },
             shimmer: { '0%': { backgroundPosition: '0% 50%' }, '50%': { backgroundPosition: '100% 50%' }, '100%': { backgroundPosition: '0% 50%' } },
+            glowPulse: { '0%,100%': { opacity: .55 }, '50%': { opacity: 1 } },
+            reveal: { '0%': { opacity: 0, transform: 'translateY(10px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
           },
           animation: {
-            float: 'float 6s ease-in-out infinite',
+            float: 'float 7s ease-in-out infinite',
             shimmer: 'shimmer 12s ease infinite',
+            glowPulse: 'glowPulse 3.5s ease-in-out infinite',
+            reveal: 'reveal .7s ease-out both',
           }
         }
       }
@@ -44,9 +72,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
-    /* small, accessible focus ring */
     :focus-visible { outline: 3px solid rgba(56, 189, 248, .65); outline-offset: 2px; border-radius: 10px; }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+    }
   </style>
+
+  <!-- Theme init (prevents flash) -->
+  <script>
+    (function () {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) document.documentElement.classList.add('dark');
+    })();
+  </script>
 
   <!-- JSON-LD (SEO) -->
   <script type="application/ld+json">
@@ -54,38 +93,42 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Rakibul Islam",
-    "jobTitle": "IT Officer, Software Engineer",
+    "jobTitle": ["IT Officer","Software Engineer"],
     "url": "https://rishuvro.github.io/",
+    "image": "https://rishuvro.github.io/asset/rakib.jpg",
     "sameAs": [
       "https://www.linkedin.com/in/rishuvro",
       "https://github.com/rishuvro",
       "https://www.kaggle.com/rishuvro",
       "https://x.com/rishuvro"
     ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Dhaka",
-      "addressCountry": "BD"
-    }
+    "address": { "@type": "PostalAddress", "addressLocality": "Dhaka", "addressCountry": "BD" }
   }
   </script>
 </head>
 
 <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+  <!-- Skip link -->
+  <a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-xl focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:shadow-soft dark:focus:bg-slate-950">
+    Skip to content
+  </a>
 
   <!-- Top gradient glow -->
   <div aria-hidden="true" class="pointer-events-none fixed inset-x-0 -top-40 z-0 h-[520px] opacity-70 blur-3xl">
-    <div class="mx-auto h-full w-[900px] bg-gradient-to-r from-sky-400/30 via-indigo-400/20 to-fuchsia-400/30 animate-shimmer" style="background-size: 200% 200%"></div>
+    <div class="mx-auto h-full w-[980px] bg-gradient-to-r from-sky-400/30 via-indigo-400/20 to-fuchsia-400/30 animate-shimmer"
+         style="background-size: 200% 200%"></div>
   </div>
 
-  <!-- NAV -->
+  <!-- NAV (Upgraded: hover lift + aria + Hire Me) -->
   <header class="sticky top-0 z-50">
     <nav class="backdrop-blur bg-white/70 dark:bg-slate-950/60 border-b border-slate-200/70 dark:border-slate-800/70">
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
         <div class="flex h-16 items-center justify-between">
-          <a href="#top" class="flex items-center gap-2 font-semibold tracking-tight">
-            <span class="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-soft">R</span>
-            <span>Rakibul Islam</span>
+          <a href="#top" class="group flex items-center gap-2 font-semibold tracking-tight">
+            <span class="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-soft transition group-hover:-translate-y-0.5">
+              R
+            </span>
+            <span class="transition group-hover:text-sky-700 dark:group-hover:text-sky-400">Rakibul Islam</span>
           </a>
 
           <div class="hidden md:flex items-center gap-6 text-sm">
@@ -98,11 +141,21 @@
           </div>
 
           <div class="flex items-center gap-2">
-            <button id="themeBtn" class="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-900" type="button" aria-label="Toggle dark mode">
-              <i class="fa-solid fa-moon"></i>
+            <a href="#contact"
+               class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-slate-900 px-3 py-2 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:opacity-95 dark:bg-white dark:text-slate-900">
+              <i class="fa-solid fa-paper-plane"></i> Hire Me
+            </a>
+
+            <button id="themeBtn"
+              class="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 px-3 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-slate-100 dark:hover:bg-slate-900"
+              type="button" aria-label="Toggle dark mode">
+              <i id="themeIcon" class="fa-solid fa-moon"></i>
               <span class="hidden sm:inline">Theme</span>
             </button>
-            <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-900" type="button" aria-label="Open menu">
+
+            <button id="menuBtn"
+              class="md:hidden inline-flex items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 px-3 py-2 transition hover:-translate-y-0.5 hover:bg-slate-100 dark:hover:bg-slate-900"
+              type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
               <i class="fa-solid fa-bars"></i>
             </button>
           </div>
