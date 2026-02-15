@@ -1187,6 +1187,15 @@
           </a>
           -->
         </div>
+        <!-- Example: IEEE paper card (put inside the card button row) -->
+<button
+  type="button"
+  data-copy="10.1109/ICECET61485.2024.10698666"
+  data-label="Copy DOI"
+  class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold text-slate-700 shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-900"
+>
+  <i class="fa-regular fa-copy"></i> Copy DOI
+</button>
       </article>
 
       <!-- DATASET: MENDELEY -->
@@ -1223,6 +1232,15 @@
              class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:opacity-90 dark:bg-white dark:text-slate-900">
             <i class="fa-solid fa-database"></i> View Dataset
           </a>
+          <!-- Example: Mendeley dataset card (put inside the card button row) -->
+<button
+  type="button"
+  data-copy="10.17632/23553sm4tn.3"
+  data-label="Copy DOI"
+  class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold text-slate-700 shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-900"
+>
+  <i class="fa-regular fa-copy"></i> Copy DOI
+</button>
 
           <!-- optional: add a direct citation file later -->
           <!--
@@ -1235,6 +1253,58 @@
       </article>
     </div>
   </div>
+
+  <!-- PUBLICATIONS & DATA (Add: Copy DOI buttons) -->
+<script>
+  (function () {
+    function setBtn(btn, state, text) {
+      btn.dataset.state = state;
+      btn.innerHTML = text;
+    }
+
+    async function copyText(text) {
+      // best effort: modern clipboard, fallback to execCommand
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+    }
+
+    document.addEventListener("click", async (e) => {
+      const btn = e.target.closest("[data-copy]");
+      if (!btn) return;
+
+      const value = btn.getAttribute("data-copy");
+      const original = btn.getAttribute("data-label") || "Copy DOI";
+
+      try {
+        await copyText(value);
+        setBtn(btn, "ok", `<i class="fa-solid fa-check"></i> Copied`);
+      } catch (err) {
+        setBtn(btn, "err", `<i class="fa-solid fa-triangle-exclamation"></i> Failed`);
+      }
+
+      window.setTimeout(() => {
+        setBtn(btn, "idle", `<i class="fa-regular fa-copy"></i> ${original}`);
+      }, 1400);
+    });
+  })();
+</script>
+
+
+
+
+
+
 </section>
 
 
