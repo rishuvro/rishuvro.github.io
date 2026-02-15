@@ -1,590 +1,893 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rakibul Islam — IT Officer & Software Engineer</title>
-  <meta name="description" content="Rakibul Islam — IT Officer and Software Engineer (Laravel/PHP). IT support, troubleshooting, SOPs, and web application development with PHP/Laravel, MySQL, and JavaScript." />
-  <meta name="theme-color" content="#0b1220" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakibul Islam - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+       /* Dark Mode Styles */
+.dark-mode {
+    background-color: #1a202c;
+    color: #e2e8f0;
+}
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Rakibul Islam — Portfolio" />
-  <meta property="og:description" content="IT Officer & Software Engineer (Laravel/PHP). Projects, certificates, publications, and contact." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://rishuvro.github.io/" />
-  <meta property="og:image" content="asset/rakib.jpg" />
+.dark-mode a {
+    color: #63b3ed;
+}
 
-  <!-- Tailwind (Play CDN) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['ui-sans-serif', 'system-ui', 'Inter', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'],
-          },
-          boxShadow: {
-            soft: '0 10px 30px rgba(2, 6, 23, 0.12)',
-          },
-          keyframes: {
-            float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-6px)' } },
-            shimmer: { '0%': { backgroundPosition: '0% 50%' }, '50%': { backgroundPosition: '100% 50%' }, '100%': { backgroundPosition: '0% 50%' } },
-          },
-          animation: {
-            float: 'float 6s ease-in-out infinite',
-            shimmer: 'shimmer 12s ease infinite',
-          }
+.dark-mode a:hover {
+    color: #90cdf4;
+}
+
+.dark-mode .bg-gradient-to-r {
+    background: linear-gradient(90deg, #2a4365, #2d3748, #1a202c);
+}
+
+.dark-mode .hero-bg {
+    background: linear-gradient(-45deg, #1a202c, #2d3748, #2a4365, #1a202c);
+}
+
+.dark-mode .bg-card {
+    background-color: #2d3748;
+}
+
+.dark-mode .section-title::after {
+    background-color: #4fd1c5;
+}
+
+.dark-mode .bg-gray-900 {
+    background-color: #2d3748;
+    color: #e2e8f0;
+}
+
+.dark-mode .bg-gray-100 {
+    background-color: #2d3748;
+    color: #e2e8f0;
+}
+
+.dark-mode .text-gray-900 {
+    color: #e2e8f0;
+}
+
+
+        /* Stylish section headers */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            text-align: center;
+            margin: 0 auto;
         }
-      }
-    }
-  </script>
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 50%;
+            height: 4px;
+            background-color: #63b3ed;
+            border-radius: 4px;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
 
-  <style>
-    /* small, accessible focus ring */
-    :focus-visible { outline: 3px solid rgba(56, 189, 248, .65); outline-offset: 2px; border-radius: 10px; }
-  </style>
+        .section-title:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
 
-  <!-- JSON-LD (SEO) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Rakibul Islam",
-    "jobTitle": "IT Officer, Software Engineer",
-    "url": "https://rishuvro.github.io/",
-    "sameAs": [
-      "https://www.linkedin.com/in/rishuvro",
-      "https://github.com/rishuvro",
-      "https://www.kaggle.com/rishuvro",
-      "https://x.com/rishuvro"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Dhaka",
-      "addressCountry": "BD"
-    }
-  }
-  </script>
+        /* Hero section animation */
+        .hero-bg {
+            background: linear-gradient(-45deg, #2b5876, #103e50, #3a2848, #1698e9);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* General section styles */
+        .bg-card {
+            background-color: #2d3748; /* Adjusted from white */
+            color: #e2e8f0; /* Dark mode color */
+        }
+
+    
+/* --- Motion / Delight --- */
+.hero-bg {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(-45deg, #0ea5e9, #2563eb, #7c3aed, #06b6d4);
+  background-size: 400% 400%;
+  animation: gradientShift 14s ease infinite;
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.18), transparent 45%),
+              radial-gradient(circle at 70% 60%, rgba(255,255,255,0.12), transparent 50%);
+  filter: blur(20px);
+  transform: rotate(10deg);
+  pointer-events: none;
+}
+.floaty {
+  position: absolute;
+  opacity: 0.22;
+  filter: drop-shadow(0 10px 25px rgba(0,0,0,0.25));
+  animation: float 6s ease-in-out infinite;
+}
+.floaty.slow { animation-duration: 9s; }
+.floaty.fast { animation-duration: 4.5s; }
+@keyframes float {
+  0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+  50% { transform: translateY(-18px) translateX(10px) rotate(6deg); }
+}
+.icon-spin { animation: spin 8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.card-glow {
+  position: relative;
+}
+.card-glow::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 0.75rem;
+  background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 50%), rgba(59,130,246,0.18), transparent 40%);
+  opacity: 0;
+  transition: opacity 250ms ease;
+  pointer-events: none;
+}
+.card-glow:hover::after { opacity: 1; }
+
+</style>
 </head>
+<body id="body" class="bg-gray-100 text-gray-900 transition duration-500">
 
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+    <!-- Navigation -->
+    <nav id="navbar" style="
+    background: linear-gradient(to right, #326588, #3b6781); 
+    color: white;
+    padding: 1rem; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    position: sticky;
+    top: 0;
+    z-index: 50;
+">
+    <div class="container mx-auto flex justify-between items-center">
+        <!-- Left Side - Logo/Name -->
+        <div class="flex items-center">
+            <a href="#" class="text-3xl font-bold tracking-wider hover:text-gray-300 transition duration-300">
+                RAKIBUL ISLAM
+            </a>
+        </div>
 
-  <!-- Top gradient glow -->
-  <div aria-hidden="true" class="pointer-events-none fixed inset-x-0 -top-40 z-0 h-[520px] opacity-70 blur-3xl">
-    <div class="mx-auto h-full w-[900px] bg-gradient-to-r from-sky-400/30 via-indigo-400/20 to-fuchsia-400/30 animate-shimmer" style="background-size: 200% 200%"></div>
-  </div>
-
-  <!-- NAV -->
-  <header class="sticky top-0 z-50">
-    <nav class="backdrop-blur bg-white/70 dark:bg-slate-950/60 border-b border-slate-200/70 dark:border-slate-800/70">
-      <div class="mx-auto max-w-6xl px-4 sm:px-6">
-        <div class="flex h-16 items-center justify-between">
-          <a href="#top" class="flex items-center gap-2 font-semibold tracking-tight">
-            <span class="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-soft">R</span>
-            <span>Rakibul Islam</span>
-          </a>
-
-          <div class="hidden md:flex items-center gap-6 text-sm">
-            <a class="hover:text-sky-600 dark:hover:text-sky-400" href="#projects">Projects</a>
-            <a class="hover:text-sky-600 dark:hover:text-sky-400" href="#experience">Experience</a>
-            <a class="hover:text-sky-600 dark:hover:text-sky-400" href="#skills">Skills</a>
-            <a class="hover:text-sky-600 dark:hover:text-sky-400" href="#certificates">Certificates</a>
-            <a class="hover:text-sky-600 dark:hover:text-sky-400" href="#publications">Publications</a>
-            <a class="hover:text-sky-600 dark:hover:text-sky-400" href="#contact">Contact</a>
-          </div>
-
-          <div class="flex items-center gap-2">
-            <button id="themeBtn" class="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-900" type="button" aria-label="Toggle dark mode">
-              <i class="fa-solid fa-moon"></i>
-              <span class="hidden sm:inline">Theme</span>
+        <!-- Hamburger Menu Icon -->
+        <div class="block lg:hidden">
+            <button id="navToggle" class="focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i> <!-- Font Awesome icon for the hamburger menu -->
             </button>
-            <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-900" type="button" aria-label="Open menu">
-              <i class="fa-solid fa-bars"></i>
-            </button>
-          </div>
         </div>
 
-        <!-- mobile menu -->
-        <div id="mobileMenu" class="md:hidden hidden pb-4">
-          <div class="grid gap-2 text-sm">
-            <a class="rounded-xl px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-900" href="#projects">Projects</a>
-            <a class="rounded-xl px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-900" href="#experience">Experience</a>
-            <a class="rounded-xl px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-900" href="#skills">Skills</a>
-            <a class="rounded-xl px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-900" href="#certificates">Certificates</a>
-            <a class="rounded-xl px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-900" href="#publications">Publications</a>
-            <a class="rounded-xl px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-900" href="#contact">Contact</a>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </header>
+        <!-- Right Side - Menu Items -->
+        <ul id="navMenu" class="hidden lg:flex space-x-6 items-center">
+            <li><a href="#home" class="text-lg hover:text-gray-300 transition duration-300 hover:scale-105">Home</a></li>
+            <li><a href="#project" class="text-lg hover:text-gray-300 transition duration-300 hover:scale-105">Project</a></li>
+            <li><a href="#certificate" class="text-lg hover:text-gray-300 transition duration-300 hover:scale-105">Certificate</a></li>
+            <li><a href="#publications" class="text-lg hover:text-gray-300 transition duration-300 hover:scale-105">Publications</a></li>
+            <li><a href="#skills" class="text-lg hover:text-gray-300 transition duration-300 hover:scale-105">Skills</a></li>
+            <li><a href="#research" class="text-lg hover:text-gray-300 transition duration-300 hover:scale-105">Research</a></li>
+            <li><a href="#education" class="text-lg hover:text-gray-300 transition duration-300 hover:scale-105">Education</a></li>
+            <li><a href="#cv" class="text-lg hover:text-gray-300 transition duration-300 hover:scale-105">CV</a></li>
+            <li><a href="#contact" class="text-lg hover:text-gray-300 transition duration-300 hover:scale-105">Contact</a></li>
+            <li>
+                <button id="darkModeToggle" class="bg-gray-700 text-white px-3 py-1 rounded-full hover:bg-gray-600 transition duration-300">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </li>
+        </ul>
+    </div>
 
-  <main id="top" class="relative z-10">
 
-    <!-- HERO -->
-    <section class="pt-10 sm:pt-14">
-      <div class="mx-auto max-w-6xl px-4 sm:px-6">
-        <div class="grid items-center gap-10 md:grid-cols-[1.2fr_.8fr]">
-
-          <div>
-            <div class="inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-white/60 px-4 py-2 text-xs text-slate-600 shadow-soft dark:border-slate-800/70 dark:bg-slate-950/50 dark:text-slate-300">
-              <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-              Open to: IT Officer / IT Support • Laravel/PHP Roles
-            </div>
-
-            <h1 class="mt-5 text-4xl font-bold tracking-tight sm:text-5xl">
-              IT Officer & Software Engineer
-              <span class="block bg-gradient-to-r from-sky-600 via-indigo-600 to-fuchsia-600 bg-clip-text text-transparent">Rakibul Islam</span>
-            </h1>
-
-            <p class="mt-4 text-base leading-relaxed text-slate-700 dark:text-slate-300">
-              I support teams with reliable IT operations (help desk, troubleshooting, SOPs, asset tracking) and build production web applications using
-              <span class="font-semibold">PHP/Laravel</span>, <span class="font-semibold">MySQL</span>, and <span class="font-semibold">JavaScript</span>.
-              I also work with ML tools (PyTorch/TensorFlow) and presented at ICECET 2024.
-            </p>
-
-            <div class="mt-6 flex flex-wrap gap-3">
-              <a href="#projects" class="inline-flex items-center gap-2 rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-soft hover:opacity-95 dark:bg-white dark:text-slate-900">
-                <i class="fa-solid fa-diagram-project"></i> View Projects
-              </a>
-              <a href="asset/cv.pdf" target="_blank" class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-soft hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100 dark:hover:bg-slate-900">
-                <i class="fa-solid fa-file-arrow-down"></i> Download CV
-              </a>
-              <a href="#contact" class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-soft hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100 dark:hover:bg-slate-900">
-                <i class="fa-solid fa-paper-plane"></i> Contact
-              </a>
-            </div>
-
-            <div class="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-slate-700 dark:text-slate-300">
-              <span class="inline-flex items-center gap-2"><i class="fa-solid fa-location-dot text-sky-600 dark:text-sky-400"></i> Dhaka, Bangladesh</span>
-              <a class="inline-flex items-center gap-2 hover:text-sky-600 dark:hover:text-sky-400" href="mailto:rakibulislamshuvro@gmail.com"><i class="fa-solid fa-envelope"></i> rakibulislamshuvro@gmail.com</a>
-              <a class="inline-flex items-center gap-2 hover:text-sky-600 dark:hover:text-sky-400" href="tel:+8801727688491"><i class="fa-solid fa-phone"></i> +880 1727 688 491</a>
-            </div>
-
-            <div class="mt-6 flex flex-wrap gap-2">
-              <a class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-900" target="_blank" href="https://www.linkedin.com/in/rishuvro"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-              <a class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-900" target="_blank" href="https://github.com/rishuvro"><i class="fa-brands fa-github"></i> GitHub</a>
-              <a class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-900" target="_blank" href="https://www.kaggle.com/rishuvro"><i class="fa-brands fa-kaggle"></i> Kaggle</a>
-              <a class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-900" target="_blank" href="https://x.com/rishuvro"><i class="fa-brands fa-x-twitter"></i> X</a>
-              <a class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-900" target="_blank" href="https://rishuvro.github.io/"><i class="fa-solid fa-globe"></i> Portfolio</a>
-            </div>
-          </div>
-
-          <div class="relative">
-            <div class="absolute -inset-2 rounded-[2rem] bg-gradient-to-br from-sky-500/20 via-indigo-500/10 to-fuchsia-500/20 blur-2xl"></div>
-            <div class="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-soft dark:border-slate-800 dark:bg-slate-950">
-              <img src="asset/rakib.jpg" alt="Rakibul Islam" class="h-[420px] w-full object-cover" />
-            </div>
-            <div class="mt-4 grid grid-cols-3 gap-3 text-center">
-              <div class="rounded-2xl border border-slate-200 bg-white p-3 text-xs shadow-soft dark:border-slate-800 dark:bg-slate-950">
-                <div class="text-xl font-bold">IT</div>
-                <div class="text-slate-600 dark:text-slate-400">Operations</div>
-              </div>
-              <div class="rounded-2xl border border-slate-200 bg-white p-3 text-xs shadow-soft dark:border-slate-800 dark:bg-slate-950">
-                <div class="text-xl font-bold">Laravel</div>
-                <div class="text-slate-600 dark:text-slate-400">Backend</div>
-              </div>
-              <div class="rounded-2xl border border-slate-200 bg-white p-3 text-xs shadow-soft dark:border-slate-800 dark:bg-slate-950">
-                <div class="text-xl font-bold">ML</div>
-                <div class="text-slate-600 dark:text-slate-400">Research</div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURED PROJECTS -->
-    <section id="projects" class="pt-16 sm:pt-20">
-      <div class="mx-auto max-w-6xl px-4 sm:px-6">
-        <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Featured Projects</h2>
-            <p class="mt-2 text-slate-700 dark:text-slate-300">A selection of projects that best represent my work (POS, inventory, e-commerce, web apps, ML, and IoT).</p>
-          </div>
-          <a href="https://github.com/rishuvro" target="_blank" class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold shadow-soft hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-900">
-            <i class="fa-brands fa-github"></i> All Repositories
-          </a>
-        </div>
-
-        <div class="mt-8 grid gap-6 md:grid-cols-2">
-
-          <!-- Maitri Tally -->
-          <article class="group rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 dark:border-slate-800 dark:bg-slate-950">
-            <div class="flex items-start justify-between gap-4">
-              <h3 class="text-lg font-bold">Maitri Tally — POS & Inventory</h3>
-              <a class="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-800 dark:text-sky-400" href="https://github.com/rishuvro/maitri_tally" target="_blank">
-                <i class="fa-brands fa-github"></i> Repo
-              </a>
-            </div>
-            <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">POS billing + inventory tracking for showroom operations, with product, sales and reporting workflows.</p>
-            <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Billing workflow, sales records, and stock updates tied to sales events.</li>
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Product management and daily operational summaries/reports.</li>
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Built with PHP/Laravel, MySQL, JavaScript.</li>
-            </ul>
-            <div class="mt-5 flex flex-wrap gap-2">
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">Laravel</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">MySQL</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">JavaScript</span>
-            </div>
-          </article>
-
-          <!-- Krishica -->
-          <article class="group rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 dark:border-slate-800 dark:bg-slate-950">
-            <div class="flex items-start justify-between gap-4">
-              <h3 class="text-lg font-bold">Krishica.com — E-commerce Platform</h3>
-              <a class="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-800 dark:text-sky-400" href="https://github.com/rishuvro/krishica.com" target="_blank">
-                <i class="fa-brands fa-github"></i> Repo
-              </a>
-            </div>
-            <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">Scalable e-commerce platform for organic/farm products with admin controls and structured catalog design.</p>
-            <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Product/catalog structure with maintainable admin operations.</li>
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Designed for future growth (orders/payments/integrations).</li>
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Built with Laravel/PHP, MySQL, JavaScript.</li>
-            </ul>
-            <div class="mt-5 flex flex-wrap gap-2">
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">E-commerce</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">Laravel</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">MySQL</span>
-            </div>
-          </article>
-
-          <!-- Store Management -->
-          <article class="group rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 dark:border-slate-800 dark:bg-slate-950">
-            <div class="flex items-start justify-between gap-4">
-              <h3 class="text-lg font-bold">Store Management System</h3>
-              <a class="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-800 dark:text-sky-400" href="https://github.com/rishuvro/store" target="_blank">
-                <i class="fa-brands fa-github"></i> Repo
-              </a>
-            </div>
-            <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">Store workflow system for product tracking, sales management and customer records.</p>
-            <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Centralized inventory, sales tracking, and customer records.</li>
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Maintainable admin workflows for day-to-day operations.</li>
-            </ul>
-            <div class="mt-5 flex flex-wrap gap-2">
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">PHP</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">MySQL</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">CRUD</span>
-            </div>
-          </article>
-
-          <!-- Other projects (quick list) -->
-          <article class="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-            <h3 class="text-lg font-bold">More Projects</h3>
-            <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">A few more public projects from GitHub (ML, IoT, dashboards, utilities).</p>
-            <div class="mt-4 grid gap-3">
-              <a class="group flex items-center justify-between rounded-2xl border border-slate-200 px-4 py-3 text-sm hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900" target="_blank" href="https://github.com/rishuvro/Heart_disease_prediction_using_AI">
-                <span class="font-semibold">Heart Disease Prediction (ML)</span>
-                <span class="text-slate-500 group-hover:text-slate-700 dark:text-slate-400">View →</span>
-              </a>
-              <a class="group flex items-center justify-between rounded-2xl border border-slate-200 px-4 py-3 text-sm hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900" target="_blank" href="https://github.com/rishuvro/Automatic_Water_Dispenser_System_Using_Arduino">
-                <span class="font-semibold">Automatic Water Dispenser (Arduino)</span>
-                <span class="text-slate-500 group-hover:text-slate-700 dark:text-slate-400">View →</span>
-              </a>
-              <a class="group flex items-center justify-between rounded-2xl border border-slate-200 px-4 py-3 text-sm hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900" target="_blank" href="https://github.com/rishuvro/PETROL_PUMP_MANAGEMENT_SYSTEM">
-                <span class="font-semibold">Petrol Pump Management System</span>
-                <span class="text-slate-500 group-hover:text-slate-700 dark:text-slate-400">View →</span>
-              </a>
-              <a class="group flex items-center justify-between rounded-2xl border border-slate-200 px-4 py-3 text-sm hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900" target="_blank" href="https://github.com/rishuvro/system_monitor_application_cpu-memory_using_python">
-                <span class="font-semibold">System Monitoring App (Python)</span>
-                <span class="text-slate-500 group-hover:text-slate-700 dark:text-slate-400">View →</span>
-              </a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="pt-16 sm:pt-20">
-      <div class="mx-auto max-w-6xl px-4 sm:px-6">
-        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Experience</h2>
-        <p class="mt-2 text-slate-700 dark:text-slate-300">Recent roles across IT operations, enterprise support, and web development.</p>
-
-        <div class="mt-8 grid gap-6">
-          <div class="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-            <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <div class="text-sm text-slate-600 dark:text-slate-400">Jan 2026 — Present • Dhaka, Bangladesh</div>
-                <h3 class="text-lg font-bold">IT Officer — Evolved</h3>
-              </div>
-            </div>
-            <ul class="mt-4 grid gap-2 text-sm text-slate-700 dark:text-slate-300">
-              <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> Help desk support, device setup, access provisioning, and incident resolution documentation.</li>
-              <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> LAN/Wi‑Fi troubleshooting (IP/DNS), escalation of complex issues, vendor coordination.</li>
-              <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> SOPs/checklists and inventory/asset tracking for consistent support operations.</li>
-            </ul>
-          </div>
-
-          <div class="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-            <div class="text-sm text-slate-600 dark:text-slate-400">Apr 2024 — Dec 2025 • Dhaka, Bangladesh</div>
-            <h3 class="text-lg font-bold">IT Officer — SPST, Ministry of Social Welfare</h3>
-            <ul class="mt-4 grid gap-2 text-sm text-slate-700 dark:text-slate-300">
-              <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> Managed IT operations and end-user support; supported access and basic security practices.</li>
-              <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> Automated documentation/report workflows to reduce manual effort and improve turnaround.</li>
-              <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> Supported digital communications and tool adoption for internal digital transformation.</li>
-            </ul>
-          </div>
-
-          <div class="grid gap-6 md:grid-cols-2">
-            <div class="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-              <div class="text-sm text-slate-600 dark:text-slate-400">Jan 2024 — May 2024 • Remote</div>
-              <h3 class="text-lg font-bold">Software Engineer (Remote) — Nonagon Infolytic</h3>
-              <ul class="mt-4 grid gap-2 text-sm text-slate-700 dark:text-slate-300">
-                <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> Laravel/PHP features, MySQL relationships, validation, and CRUD workflows.</li>
-                <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> REST API integration, debugging, and Git-based collaboration.</li>
-              </ul>
-            </div>
-
-            <div class="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-              <div class="text-sm text-slate-600 dark:text-slate-400">Oct 2023 — Apr 2024 • Dhaka, Bangladesh</div>
-              <h3 class="text-lg font-bold">Support Engineer — Icebreakers Ltd. (Enterprise Support)</h3>
-              <ul class="mt-4 grid gap-2 text-sm text-slate-700 dark:text-slate-300">
-                <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> Enterprise troubleshooting, setup/configuration support, and knowledge documentation.</li>
-                <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> Improved consistency by documenting recurring issues and solutions.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="pt-16 sm:pt-20">
-      <div class="mx-auto max-w-6xl px-4 sm:px-6">
-        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Skills</h2>
-        <p class="mt-2 text-slate-700 dark:text-slate-300">Focused skill groups so recruiters can scan quickly.</p>
-
-        <div class="mt-8 grid gap-6 md:grid-cols-2">
-          <div class="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-            <h3 class="font-bold">IT Support & Operations</h3>
-            <div class="mt-3 flex flex-wrap gap-2 text-xs">
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Help Desk</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Troubleshooting</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Incident Handling</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">SOPs/Documentation</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Asset Tracking</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Access Provisioning</span>
-            </div>
-          </div>
-
-          <div class="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-            <h3 class="font-bold">Networking & Systems</h3>
-            <div class="mt-3 flex flex-wrap gap-2 text-xs">
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">LAN/WAN</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Wi‑Fi</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">IP/DNS</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Linux</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Windows</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Cisco Packet Tracer</span>
-            </div>
-          </div>
-
-          <div class="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-            <h3 class="font-bold">Web Development</h3>
-            <div class="mt-3 flex flex-wrap gap-2 text-xs">
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">PHP</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Laravel</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">REST APIs</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">MySQL</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">JavaScript</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">HTML/CSS</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Git</span>
-            </div>
-          </div>
-
-          <div class="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-            <h3 class="font-bold">Data & ML (Research)</h3>
-            <div class="mt-3 flex flex-wrap gap-2 text-xs">
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Python</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">pandas</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">NumPy</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">scikit-learn</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">TensorFlow</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">PyTorch</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CERTIFICATES -->
-    <section id="certificates" class="pt-16 sm:pt-20">
-      <div class="mx-auto max-w-6xl px-4 sm:px-6">
-        <div class="flex items-end justify-between gap-4">
-          <div>
-            <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Certificates</h2>
-            <p class="mt-2 text-slate-700 dark:text-slate-300">Selected certifications (click to view PDF).</p>
-          </div>
-        </div>
-
-        <div class="mt-8 grid gap-6 md:grid-cols-3">
-          <a class="group rounded-[1.75rem] border border-slate-200 bg-white p-4 shadow-soft hover:-translate-y-1 transition dark:border-slate-800 dark:bg-slate-950" href="asset/857 (1).pdf" target="_blank">
-            <img class="h-44 w-full rounded-2xl object-cover" src="asset/857 (1)_1.jpg" alt="ICECET 2024 Certificate" />
-            <div class="mt-3">
-              <div class="text-sm font-bold">ICECET 2024 — Oral Presentation</div>
-              <div class="text-xs text-slate-600 dark:text-slate-400">Conference certificate (PDF)</div>
-            </div>
-          </a>
-
-          <a class="group rounded-[1.75rem] border border-slate-200 bg-white p-4 shadow-soft hover:-translate-y-1 transition dark:border-slate-800 dark:bg-slate-950" href="asset/Coursera 6ZE6KM3TNCFE.pdf" target="_blank">
-            <img class="h-44 w-full rounded-2xl object-cover" src="asset/Coursera 6ZE6KM3TNCFE.jpg" alt="Programming for Everybody" />
-            <div class="mt-3">
-              <div class="text-sm font-bold">Programming for Everybody</div>
-              <div class="text-xs text-slate-600 dark:text-slate-400">University of Michigan (Coursera)</div>
-            </div>
-          </a>
-
-          <a class="group rounded-[1.75rem] border border-slate-200 bg-white p-4 shadow-soft hover:-translate-y-1 transition dark:border-slate-800 dark:bg-slate-950" href="asset/Coursera BKHJF4M7M4KE.pdf" target="_blank">
-            <img class="h-44 w-full rounded-2xl object-cover" src="asset/Coursera BKHJF4M7M4KE.jpg" alt="Python Data Structures" />
-            <div class="mt-3">
-              <div class="text-sm font-bold">Python Data Structures</div>
-              <div class="text-xs text-slate-600 dark:text-slate-400">University of Michigan (Coursera)</div>
-            </div>
-          </a>
-        </div>
-
-        <div class="mt-6 text-sm text-slate-700 dark:text-slate-300">
-          More in the <span class="font-semibold">/asset</span> folder (PDF + images).
-        </div>
-      </div>
-    </section>
-
-    <!-- PUBLICATIONS -->
-    <section id="publications" class="pt-16 sm:pt-20">
-      <div class="mx-auto max-w-6xl px-4 sm:px-6">
-        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Publications & Data</h2>
-        <div class="mt-8 grid gap-6 md:grid-cols-2">
-          <div class="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-            <div class="text-sm text-slate-600 dark:text-slate-400">ICECET 2024</div>
-            <h3 class="mt-1 text-lg font-bold">Hybrid Recommendation Systems</h3>
-            <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">Oral presentation on hybrid recommendation approaches. (Add paper link when available.)</p>
-          </div>
-          <div class="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-            <div class="text-sm text-slate-600 dark:text-slate-400">Mendeley Data</div>
-            <h3 class="mt-1 text-lg font-bold">Dhaka Stock Exchange Dataset</h3>
-            <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">Dataset published for research and analysis. (Add dataset link when available.)</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="pt-16 sm:pt-20 pb-20">
-      <div class="mx-auto max-w-6xl px-4 sm:px-6">
-        <div class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-          <div class="grid gap-8 md:grid-cols-2">
-            <div>
-              <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Let’s work together</h2>
-              <p class="mt-3 text-slate-700 dark:text-slate-300">If you have an IT support role, a Laravel/PHP project, or need help building internal tools, I’m happy to talk.</p>
-
-              <div class="mt-6 grid gap-3 text-sm">
-                <a class="flex items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900" href="mailto:rakibulislamshuvro@gmail.com">
-                  <i class="fa-solid fa-envelope text-sky-600 dark:text-sky-400"></i>
-                  <div>
-                    <div class="font-semibold">Email</div>
-                    <div class="text-slate-600 dark:text-slate-400">rakibulislamshuvro@gmail.com</div>
-                  </div>
-                </a>
-                <a class="flex items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900" href="tel:+8801727688491">
-                  <i class="fa-solid fa-phone text-sky-600 dark:text-sky-400"></i>
-                  <div>
-                    <div class="font-semibold">Phone</div>
-                    <div class="text-slate-600 dark:text-slate-400">+880 1727 688 491</div>
-                  </div>
-                </a>
-                <a class="flex items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900" target="_blank" href="https://www.linkedin.com/in/rishuvro">
-                  <i class="fa-brands fa-linkedin text-sky-600 dark:text-sky-400"></i>
-                  <div>
-                    <div class="font-semibold">LinkedIn</div>
-                    <div class="text-slate-600 dark:text-slate-400">linkedin.com/in/rishuvro</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div class="rounded-3xl bg-slate-50 p-6 dark:bg-slate-900">
-              <h3 class="font-bold">Quick Links</h3>
-              <div class="mt-4 grid gap-3 text-sm">
-                <a class="flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-soft hover:opacity-95 dark:bg-slate-950" target="_blank" href="https://github.com/rishuvro">
-                  <span class="inline-flex items-center gap-2 font-semibold"><i class="fa-brands fa-github"></i> GitHub</span>
-                  <span class="text-slate-500">Open →</span>
-                </a>
-                <a class="flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-soft hover:opacity-95 dark:bg-slate-950" target="_blank" href="https://www.kaggle.com/rishuvro">
-                  <span class="inline-flex items-center gap-2 font-semibold"><i class="fa-brands fa-kaggle"></i> Kaggle</span>
-                  <span class="text-slate-500">Open →</span>
-                </a>
-                <a class="flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-soft hover:opacity-95 dark:bg-slate-950" target="_blank" href="https://x.com/rishuvro">
-                  <span class="inline-flex items-center gap-2 font-semibold"><i class="fa-brands fa-x-twitter"></i> X</span>
-                  <span class="text-slate-500">Open →</span>
-                </a>
-                <a class="flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-soft hover:opacity-95 dark:bg-slate-950" target="_blank" href="asset/cv.pdf">
-                  <span class="inline-flex items-center gap-2 font-semibold"><i class="fa-solid fa-file-pdf"></i> CV (PDF)</span>
-                  <span class="text-slate-500">Open →</span>
-                </a>
-              </div>
-
-              <div class="mt-6 text-xs text-slate-600 dark:text-slate-400">
-                © <span id="year"></span> Rakibul Islam. Built with Tailwind CSS.
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <script>
-    // Mobile menu
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (menuBtn && mobileMenu) {
-      menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
+<style>
+    .transparent-nav {
+        background: rgba(0, 0, 0, 0.5); 
+        box-shadow: none; 
     }
 
-    // Theme
-    const themeBtn = document.getElementById('themeBtn');
-    const root = document.documentElement;
-    const stored = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    @media (max-width: 1024px) {
+        #navMenu {
+            position: absolute;
+            top: 4rem; /* Adjust based on navbar height */
+            right: 1rem;
+            background: rgba(43, 88, 118, 0.9); /* Similar to original background */
+            padding: 1rem;
+            border-radius: 0.5rem;
+            flex-direction: column;
+            width: 200px;
+        }
 
-    function setTheme(mode) {
-      if (mode === 'dark') {
-        root.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        root.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-      }
+        #navMenu.show {
+            display: flex;
+        }
+    }
+</style>
+
+<script>
+    window.onscroll = function() {
+        const navbar = document.getElementById("navbar");
+        if (window.pageYOffset > 50) {
+            navbar.classList.add("transparent-nav");
+        } else {
+            navbar.classList.remove("transparent-nav");
+        }
+    };
+
+    // Toggle the visibility of the nav menu on smaller screens
+    document.getElementById('navToggle').onclick = function() {
+        const navMenu = document.getElementById('navMenu');
+        navMenu.classList.toggle('show');
+    };
+</script>
+</nav>
+<!-- Dark Mode Script -->
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.getElementById('body');
+
+    // Function to apply dark mode
+    function applyDarkMode() {
+        body.classList.add('dark-mode');
+        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
     }
 
-    setTheme(stored ? stored : (prefersDark ? 'dark' : 'light'));
+    // Function to remove dark mode
+    function removeDarkMode() {
+        body.classList.remove('dark-mode');
+        darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    }
 
-    themeBtn?.addEventListener('click', () => {
-      const isDark = root.classList.contains('dark');
-      setTheme(isDark ? 'light' : 'dark');
+    // Check the user's dark mode preference
+    function checkDarkMode() {
+        const isDarkMode = localStorage.getItem('dark-mode') === 'enabled';
+        if (isDarkMode) {
+            applyDarkMode();
+        } else {
+            removeDarkMode();
+        }
+    }
+
+    // Toggle dark mode on button click
+    darkModeToggle.addEventListener('click', () => {
+        if (body.classList.contains('dark-mode')) {
+            removeDarkMode();
+            localStorage.setItem('dark-mode', 'disabled');
+        } else {
+            applyDarkMode();
+            localStorage.setItem('dark-mode', 'enabled');
+        }
     });
 
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // Check dark mode preference on page load
+    document.addEventListener('DOMContentLoaded', checkDarkMode);
+</script>
 
-    // Close mobile menu on link click
-    document.querySelectorAll('#mobileMenu a').forEach(a => {
-      a.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+
+<!-- Hero Section -->
+<section id="home" class="home-section hero-bg text-white py-48">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-6">
+        <!-- Left Side: Photo and Quotes -->
+        <div class="w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+            <div class="animate__animated animate__fadeInLeft" data-reveal="up">
+                <div class="relative w-64 h-96 mx-auto md:mx-0 overflow-hidden rounded-lg shadow-lg transform hover:scale-105 transition duration-500">
+                    <img src="asset/rakib.jpg" alt="Rakibul Islam" class="w-full h-full object-cover">
+                </div>
+                
+                <p class="text-xl font-semibold mt-6">"The only way to do great work is to love what you do." - Steve Jobs</p>
+                <p class="text-lg mt-4">"Learning never exhausts the mind." - Leonardo da Vinci</p>
+            </div>
+        </div>
+
+        <!-- Right Side: About Me -->
+        <div class="w-full md:w-1/2 text-center md:text-left">
+            <div class="animate__animated animate__fadeInRight" data-reveal="up">
+                <div class="bg-gray-700 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+
+                <h1 class="text-5xl font-bold mb-4">Hi, I am Rakibul Islam</h1>
+                <p class="text-lg mb-4">I completed a Bachelor of Science in Computer Science and Engineering from Southeast University, Dhaka. I am currently working as an IT Officer and also serve remotely as a Software Engineer at Nonagon Infolytic. My background includes experience as a Support Engineer and expertise in software validation, development, and testing. I’m passionate about exploring machine learning, deep learning, and IoT. </p>
+                <p class="text-lg mb-4">I am passionate about technology, programming, and continuous learning. Explore my projects, certificates, publications, and research to know more about my journey.</p>
+                <p class="text-lg mb-8">Feel free to contact me for more information.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Project Section -->
+    <section id="project" class="home-section hero-bg text-white py-48">
+        <div class="container mx-auto px-6">
+        <center> <h2 class="section-title text-center animate__animated animate__fadeIn" data-reveal="up">
+                <i class="fas fa-project-diagram"></i> Projects
+            </h2></center>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+               
+                
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                        <i class="fas fa-laptop-code"></i> Petrol Pump Management System
+                    </h3>
+                    <img src="asset/pms.jpg" alt="Project Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">Petrol Pump Management System.  </p>
+                    <a href="https://github.com/rishuvro/PETROL_PUMP_MANAGEMENT_SYSTEM" target="_blank">
+                        <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                            View on GitHub
+                        </button>
+                    </a>
+                </div>
+               
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                        <i class="fas fa-laptop-code"></i> Computer Graphics Project
+                    </h3>
+                    <img src="asset/gold.jpg" alt="Project Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">Building City of Gold using OPENGL glut.</p>
+                    <a href="https://github.com/rishuvro/Computer_Graphics_Project_Building_City_of_Gold_using_OPENGL_glut" target="_blank">
+                        <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                            View on GitHub
+                        </button>
+                    </a>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                        <i class="fas fa-water"></i> Automatic Water Dispenser System
+                    </h3>
+                    <img src="asset/water.jpg" alt="Project Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">Using Arduino for automated water dispensing.</p>
+                    <a href="https://github.com/rishuvro/Automatic_Water_Dispenser_System_Using_Arduino" target="_blank">
+                        <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                            View on GitHub
+                        </button>
+                    </a>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                        <i class="fa fa-desktop"></i>  System Monitor Application
+                    </h3>
+                    <img src="asset/monitor.jpg" alt="Project Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">CPU and memory monitoring using Python.</p>
+                    <a href="https://github.com/rishuvro/system_monitor_application_cpu-memory_using_python" target="_blank">
+                        <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                            View on GitHub
+                        </button>
+                    </a>
+                </div>
+            
+                
+
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                        <i class="fa fa-university"></i> College website using only html
+                    </h3>
+                    <img src="asset/cms.jpg" alt="Project Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">College website using only html.</p>
+                    <a href="https://github.com/rishuvro/College-website-using-html" target="_blank">
+                        <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                            View on GitHub
+                        </button>
+                    </a>
+                </div>
+            
+
+
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                        <i class="fa fa-heartbeat"></i> Heart Disease Prediction using AI
+                    </h3>
+                    <img src="asset/heart.jpg" alt="Project Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">Heart Disease Prediction using AI.</p>
+                    <a href="https://github.com/rishuvro/Heart_disease_prediction_using_AI" target="_blank">
+                        <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                            View on GitHub
+                        </button>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Section -->
+    <section id="certificate" class="home-section hero-bg text-white py-48">
+        <div class="container mx-auto px-6">
+        <center> <h2 class="section-title text-center animate__animated animate__fadeIn" data-reveal="up">
+                <i class="fas fa-certificate"></i> Certificates
+            </h2></center>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                    <p><i class="fas fa-check"></i> ICECET 2024</p>
+                    </h3>
+                    <img src="asset/857 (1)_1.jpg" alt="Certificate Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">ICECET Participation Certificate for an oral presentation in the conference in SYDNEY, AUSTRALIA  .</p>
+                    <div class="flex space-x-4">
+                        <a href="asset/857 (1).pdf" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                View Certificate
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                    <p><i class="fas fa-check"></i> Programming for Everybody</p>
+                    </h3>
+                    <img src="asset/Coursera 6ZE6KM3TNCFE.jpg" alt="Certificate Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">Completion Certificate for Programming for Everybody from University of Michigan on Coursera.</p>
+                    <div class="flex space-x-4">
+                        <a href="asset/Coursera 6ZE6KM3TNCFE.pdf" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                View Certificate
+                            </button>
+                        </a>
+                        <a href="https://coursera.org/verify/6ZE6KM3TNCFE" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                Verify
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                    <p><i class="fas fa-check"></i> Learn English: Beginning Grammar</p>
+                    </h3>
+                    <img src="asset/Coursera 031M4SPA28S8.jpg" alt="Certificate Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">In this specialization, learners studied English grammar at the
+                        beginning level. They learned the fundamental features of English
+                        grammar, including word forms, verb tenses, and question and
+                        answer formation.
+                        </p>
+                    <div class="flex space-x-4">
+                        <a href="asset/Coursera 031M4SPA28S8.pdf" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                View Certificate
+                            </button>
+                        </a>
+                        <a href="https://coursera.org/verify/specialization/031M4SPA28S8" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                Verify
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                    <p><i class="fas fa-check"></i> Python Data Structures</p>
+                    </h3>
+                    <img src="asset/Coursera EQVJF5MGHCC9_page.jpg" alt="Certificate Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">Completion Certificate for Python Data Structures from University of Michigan on Coursera.</p>
+                    <div class="flex space-x-4">
+                        <a href="asset/Coursera EQVJF5MGHCC9.pdf.pdf" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                View Certificate
+                            </button>
+                        </a>
+                        <a href="https://coursera.org/verify/EQVJF5MGHCC9" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                Verify
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                    <p><i class="fas fa-check"></i> Foundations of Software Testing and Validation</p>
+                    </h3>
+                    <img src="asset/Coursera BKHJF4M7M4KE.jpg" alt="Certificate Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">Completion Certificate for Foundations of Software Testing and Validation from University of Leeds on Coursera.</p>
+                    <div class="flex space-x-4">
+                        <a href="asset/Coursera BKHJF4M7M4KE.pdf" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                View Certificate
+                            </button>
+                        </a>
+                        <a href="https://coursera.org/verify/BKHJF4M7M4KE" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                Verify
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                    <p><i class="fas fa-check"></i> Foundations: Data, Data, Everywhere</p>
+                    </h3>
+                    <img src="asset/Coursera 97Z3RZMWD5TV.jpg" alt="Certificate Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">Completion Certificate for  Foundations: Data, Data, Everywhere from Google on Coursera.</p>
+                    <div class="flex space-x-4">
+                        <a href="asset/Coursera 97Z3RZMWD5TV.pdf" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                View Certificate
+                            </button>
+                        </a>
+                        <a href="https://coursera.org/verify/97Z3RZMWD5TV" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                Verify
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                    <p><i class="fas fa-check"></i> Technical Support Fundamentals</p>
+                    </h3>
+                    <img src="asset/Coursera CS6P8GMK65PR.jpg" alt="Certificate Image" class="w-full h-96 object-cover mb-4 rounded-lg">
+                    <p class="text-lg mb-6">Completion Certificate for Technical Support Fundamentals from Google on Coursera.</p>
+                    <div class="flex space-x-4">
+                        <a href="asset/Coursera CS6P8GMK65PR.pdf" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                View Certificate
+                            </button>
+                        </a>
+                        <a href="https://coursera.org/verify/CS6P8GMK65PR" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                Verify
+                            </button>
+                        </a>
+                    </div>
+                </div>
+               
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="home-section hero-bg text-white py-48">
+        <div class="container mx-auto px-6">
+        <center> <h2 class="section-title text-center animate__animated animate__fadeIn" data-reveal="up">
+                <i class="fas fa-book"></i> Publications
+            </h2></center>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">
+                    <p><i class="fa fa-pencil"></i> Dhaka Stock Exchange Historical Data</p>
+                    </h3>
+                    <p class="text-lg mb-6">Dhaka Stock Exchange Historical Data, Published: 8 March 2024 | Version 3 | DOI:10.17632/23553sm4tn.3</p>
+                    <div class="flex space-x-4">
+                        <a href="https://data.mendeley.com/datasets/23553sm4tn/3" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                View 
+                            </button>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                        <h3 class="text-2xl font-semibold mb-4">
+                        <p><i class="fa fa-pencil"></i> Hybrid Recommendation Systems using Adaptive Clustering to address Cold start problems</p>
+                        </h3>
+                        <p class="text-lg mb-6">Published in: 2024 International Conference on Electrical, Computer and Energy Technologies (ICECET
+                            Date of Conference: 25-27 July 2024<br>
+                            Date Added to IEEE Xplore: 08 October 2024<br>
+                            ISBN Information:<br>
+                            Electronic ISBN:979-8-3503-9591-4<br>
+                            Print on Demand(PoD) ISBN:979-8-3503-9592-1<br>
+                            DOI: 10.1109/ICECET61485.2024.10698666<br>
+                            Publisher: IEEE<br>
+                            Conference Location: Sydney, Australia</p>
+                        <div class="flex space-x-4">
+                            <a href="http://dx.doi.org/10.1109/ICECET61485.2024.10698666" target="_blank">
+                                <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                    View 
+                                </button>
+                            </a>
+                            
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="home-section hero-bg text-white py-48">
+        <div class="container mx-auto px-6">
+        <center> <h2 class="section-title text-center animate__animated animate__fadeIn" data-reveal="up">
+                <i class="fas fa-tools"></i> Skills
+            </h2></center>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">Programming Languages</h3>
+                    <ul class="list-disc pl-5 text-lg mt-4">
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>C++</li>
+                        <li>Java</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">Web Technologies</h3>
+                    <ul class="list-disc pl-5 text-lg mt-4">
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>React, Angular</li>
+                        <li>Node.js, Express.js</li>
+                        <li>RESTful APIs</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">Database Management</h3>
+                    <ul class="list-disc pl-5 text-lg mt-4">
+                        <li>MySQL</li>
+                        <li>MongoDB</li>
+                        <li>SQLite</li>
+                        <li>Firebase</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">Tools and Platforms</h3>
+                    <ul class="list-disc pl-5 text-lg mt-4">
+                        <li>Git, GitHub</li>
+                        <li>Docker</li>
+                        <li>VS Code</li>
+                        <li>Heroku</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="home-section hero-bg text-white py-48">
+        <div class="container mx-auto px-6">
+        <center><h2 class="section-title text-center animate__animated animate__fadeIn" data-reveal="up">
+                <i class="fas fa-flask"></i> Research
+            </h2></center>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">Product Recommendation Systems</h3>
+                    <p class="text-lg">Conducting research on Recommendation Systems for Solving Cold Problem in  Book Recommendation Systems.</p>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">Brain Cancer Detection Using Deep Learning</h3>
+                    <p class="text-lg">Conducting research on leveraging AI for early disease detection and diagnosis.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+<center>
+    <!-- Education Section -->
+    <section id="education" class="home-section hero-bg text-white py-48">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center animate__animated animate__fadeIn" data-reveal="up">
+                <i class="fas fa-graduation-cap"></i> Education
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">BSc in Computer Science and Engineering</h3>
+                    <p class="text-lg">Southeast University, Dhaka, 2019-2023</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">HSC in Science</h3>
+                    <p class="text-lg">Cantonment College Jashore, Jashore, 2017-2019</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">SSC in Science</h3>
+                    <p class="text-lg">Yakub Ali Chowdhury Biddyapith, Dhaka, 2012-2017</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">PSC</h3>
+                    <p class="text-lg">Jashai Primary School, Dhaka, 2008-2011</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">PSC</h3>
+                    <p class="text-lg">Goshaidangi Primary School, Jashore, 2007-2008</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold">Kindergarten</h3>
+                    <p class="text-lg">Ideal Kindergarten, Dhaka, 2005-2007</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Section -->
+     
+    <section id="cv" class="home-section hero-bg text-white py-48">
+        <div class="container mx-auto px-6">
+        <h2 class="section-title text-center animate__animated animate__fadeIn mb-8">
+                <i class="fas fa-file-alt"></i> CV
+            </h2>
+            <div class="w-full md:w-1/2 mb-8 md:mb-0">
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    
+
+
+
+                    <h3 class="text-center text-2xl font-semibold mb-4">
+                        <i class="fa fa-pencil"></i> Download My CV
+                    </h3>
+                    <p class="text-lg text-center mb-6">Click the button below to download my latest CV.</p>
+                    
+                    <div class="flex justify-center">
+                        <a href="asset/cv.pdf" target="_blank">
+                            <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                                Download CV
+                            </button>
+                        </a>
+                    </div>
+                    
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+</center>
+<!-- Contact Section -->
+<section id="contact" class="home-section hero-bg text-white py-48">
+    <div class="container mx-auto px-6">
+        <center>
+        <h2 class="section-title text-center animate__animated animate__fadeIn mb-8">
+            <i class="fas fa-envelope"></i> Contact
+        </h2></center>
+        <div class="flex flex-col md:flex-row justify-between items-start gap-12">
+            <!-- Contact Details -->
+            <div class="w-full md:w-1/2 mb-8 md:mb-0">
+            <center>  <h3 class="text-2xl font-semibold mb-6">Contact Me:</h3></center>
+                <div class="bg-gray-900 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <p class="text-lg mb-4"><strong>Address:</strong> Dhaka, Bangladesh</p>
+                    <p class="text-lg mb-4"><strong>Email:</strong> <a href="mailto:rakibulislamshuvro@gmail.com" class="text-blue-400 hover:text-blue-300">rakibulislamshuvro@gmail.com</a></p>
+                    <p class="text-lg mb-6"><strong>Mobile:</strong> <a href="tel:+8801727688491" class="text-blue-400 hover:text-blue-300">+8801727688491</a></p>
+
+                    <h3 class="text-2xl font-semibold mb-4">Social Media:</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center"><i class="fab fa-linkedin-in mr-3 text-blue-400"></i> <a href="https://linkedin.com/in/rishuvro" class="text-blue-400 hover:text-blue-300">LinkedIn: Rakibul Islam</a></li>
+                        <li class="flex items-center"><i class="fab fa-researchgate mr-3 text-blue-400"></i> <a href="https://www.researchgate.net/profile/Rakibul_Islam" class="text-blue-400 hover:text-blue-300">ResearchGate: Rakibul Islam</a></li>
+                        <li class="flex items-center"><i class="fab fa-facebook-f mr-3 text-blue-400"></i> <a href="https://facebook.com/rishuvro" class="text-blue-400 hover:text-blue-300">Facebook: Rakibul Islam</a></li>
+                        <li class="flex items-center"><i class="fab fa-twitter mr-3 text-blue-400"></i> <a href="https://twitter.com/rishuvro" class="text-blue-400 hover:text-blue-300">Twitter: @rishuvro</a></li>
+                        <li class="flex items-center"><i class="fab fa-kaggle mr-3 text-blue-400"></i> <a href="https://www.kaggle.com/rishuvro" class="text-blue-400 hover:text-blue-300">Kaggle: Rakibul Islam</a></li>
+                    </ul>
+
+                    <h3 class="text-2xl font-semibold mt-6 mb-4">Google Sites:</h3>
+                    <p><a href="https://sites.google.com/view/rishuvro" class="text-blue-400 hover:text-blue-300">Rakibul Islam's Google Site</a></p>
+                </div>
+            </div>
+
+            <!-- Message Form -->
+            <div class="w-full md:w-1/2">
+            <center>
+                <h3 class="text-2xl font-semibold mb-6">Send me a message</h3></center>
+                <form action="https://example.com/contact" method="POST" class="bg-gray-900 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                    <div class="mb-6">
+                        <label for="name" class="block text-lg font-semibold mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="w-full p-3 rounded-lg bg-gray-800 text-white" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-lg font-semibold mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full p-3 rounded-lg bg-gray-800 text-white" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-lg font-semibold mb-2">Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full p-3 rounded-lg bg-gray-800 text-white" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-blue-500 px-6 py-3 rounded-lg hover:bg-blue-400">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <script>
+        const toggleButton = document.getElementById('darkModeToggle');
+        const body = document.getElementById('body');
+
+        toggleButton.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+        });
+    </script>
+
+<footer class="bg-gray-600 text-white py-4 text-center">
+    <p>&copy; 2024 Rakibul Islam. All rights reserved.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  // Scroll reveal animations
+  gsap.registerPlugin(ScrollTrigger);
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!prefersReduced) {
+    gsap.utils.toArray('[data-reveal]').forEach((el) => {
+      const dir = el.getAttribute('data-reveal');
+      const fromY = dir === 'up' ? 24 : dir === 'down' ? -24 : 0;
+      const fromX = dir === 'left' ? -24 : dir === 'right' ? 24 : 0;
+
+      gsap.fromTo(el,
+        { opacity: 0, y: fromY, x: fromX },
+        {
+          opacity: 1,
+          y: 0,
+          x: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: { trigger: el, start: "top 85%" }
+        }
+      );
     });
-  </script>
+  }
+
+
+  // Card glow cursor tracking
+  document.querySelectorAll('.card-glow').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const r = card.getBoundingClientRect();
+      const mx = ((e.clientX - r.left) / r.width) * 100;
+      const my = ((e.clientY - r.top) / r.height) * 100;
+      card.style.setProperty('--mx', mx + '%');
+      card.style.setProperty('--my', my + '%');
+    });
+  });
+
+  // Magnetic buttons (subtle)
+  document.querySelectorAll('[data-magnetic]').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width/2;
+      const y = e.clientY - rect.top - rect.height/2;
+      btn.style.transform = `translate(${x*0.08}px, ${y*0.08}px)`;
+    });
+    btn.addEventListener('mouseleave', () => btn.style.transform = 'translate(0,0)');
+  });
+</script>
+
 </body>
 </html>
