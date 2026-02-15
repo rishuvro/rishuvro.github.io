@@ -203,160 +203,269 @@
       </div>
     </section>
 
-    <!-- FEATURED PROJECTS -->
-    <section id="projects" class="pt-16 sm:pt-20">
-      <div class="mx-auto max-w-6xl px-4 sm:px-6">
-        <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+<!-- FEATURED PROJECTS (Upgraded + Cooler) -->
+<section id="projects" class="pt-16 sm:pt-20">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Featured Projects</h2>
+        <p class="mt-2 text-slate-700 dark:text-slate-300">
+          Projects that best represent my work across clinic systems, POS/inventory, e-commerce, and ML/IoT.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2">
+        <a href="https://github.com/rishuvro" target="_blank"
+           class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-900">
+          <i class="fa-brands fa-github"></i> All Repositories
+        </a>
+        <a href="#contact"
+           class="inline-flex items-center gap-2 rounded-2xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:opacity-90 dark:bg-white dark:text-slate-900">
+          <i class="fa-solid fa-paper-plane"></i> Hire Me
+        </a>
+      </div>
+    </div>
+
+    <!-- optional: quick filter chips (no JS needed) -->
+    <div class="mt-6 flex flex-wrap gap-2">
+      <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
+        Laravel/PHP
+      </span>
+      <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
+        MySQL
+      </span>
+      <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
+        Admin Panels
+      </span>
+      <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
+        ML + IoT
+      </span>
+    </div>
+
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+      <!-- FEATURED: EvolvedCMS / Clinic Management -->
+      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
+        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
+        </div>
+
+        <div class="relative flex items-start justify-between gap-4">
           <div>
-            <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Featured Projects</h2>
-            <p class="mt-2 text-slate-700 dark:text-slate-300">A selection of projects that best represent my work (POS, inventory, e-commerce, web apps, ML, and IoT).</p>
+            <div class="text-sm text-slate-600 dark:text-slate-400">Live System • Clinic Operations</div>
+            <h3 class="mt-1 text-lg font-bold">EvolvedCMS — Clinic Management Platform</h3>
           </div>
-          <a href="https://github.com/rishuvro" target="_blank" class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold shadow-soft hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-900">
-            <i class="fa-brands fa-github"></i> All Repositories
+          <a class="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-800 dark:text-sky-400"
+             href="https://myevolvedcms.com/" target="_blank">
+            <i class="fa-brands fa-chrome"></i> Live
           </a>
         </div>
 
-        <div class="mt-8 grid gap-6 md:grid-cols-2">
+        <p class="relative mt-2 text-sm text-slate-700 dark:text-slate-300">
+          Custom-built clinic system with admin dashboard and day-to-day workflows. I also provide user support and handle
+          IT operations for smooth adoption.
+        </p>
 
-          <!-- Maitri Tally -->
-          <article class="group rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 dark:border-slate-800 dark:bg-slate-950">
-            <div class="flex items-start justify-between gap-4">
-              <h3 class="text-lg font-bold">Maitri Tally — POS & Inventory</h3>
-              <a class="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-800 dark:text-sky-400" href="https://github.com/rishuvro/maitri_tally" target="_blank">
-                <i class="fa-brands fa-github"></i> Repo
-              </a>
-            </div>
-            <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">POS billing + inventory tracking for showroom operations, with product, sales and reporting workflows.</p>
-            <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Billing workflow, sales records, and stock updates tied to sales events.</li>
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Product management and daily operational summaries/reports.</li>
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Built with PHP/Laravel, MySQL, JavaScript.</li>
-            </ul>
-            <div class="mt-5 flex flex-wrap gap-2">
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">PHP</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">MySQL</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">JavaScript</span>
-            </div>
-          </article>
+        <ul class="relative mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Modules: Patients, Appointments/Calendar, Billing, Store, Reports, Expenses.</li>
+          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Admin: Users/Roles (RBAC) + Audit Logging for security and traceability.</li>
+          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Ongoing support: onboarding, troubleshooting, documentation, workflow training.</li>
+        </ul>
 
-
-          <!-- SDS Techmed -->
-          <article class="group rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 dark:border-slate-800 dark:bg-slate-950">
-            <div class="flex items-start justify-between gap-4">
-              <h3 class="text-lg font-bold">Supplier Business Website</h3>
-              <a class="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-800 dark:text-sky-400" href="https://sdstechmed.com/" target="_blank">
-                <i class="fa-brands fa-chrome"></i> Live
-              </a>
-            </div>
-            <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">Developed a B2B website to present services, strengthen credibility, and generate leads.</p>
-            <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Implemented responsive UI and structured pages for services, contact/lead capture, and branding.</li>
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Deployed and maintained the site for stable performance.</li>
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Built with PHP/Laravel, MySQL, JavaScript, Tailwind CSS</li>
-            </ul>
-            <div class="mt-5 flex flex-wrap gap-2">
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">PHP</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">MySQL</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">JavaScript</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">Tailwind CSS</span>
-
-            </div>
-          </article>
-
-         <!-- SDS Techmed -->
-          <article class="group rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 dark:border-slate-800 dark:bg-slate-950">
-            <div class="flex items-start justify-between gap-4">
-              <h3 class="text-lg font-bold">Aesthetic Clinic Management System</h3>
-              <a class="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-800 dark:text-sky-400" href="https://myevolvedcms.com/" target="_blank">
-                <i class="fa-brands fa-chrome"></i> Live
-              </a>
-            </div>
-            <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">Developed a Aesthetic Clinic Management System.</p>
-            <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Patient management: profiles, history, visit tracking</li>
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Appointment scheduling: centralized booking workflow.</li>
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Billing & invoicing: invoice generation, service-based billing, payment tracking.</li>
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Admin controls: role-based access concept.</li>
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Built with PHP/Laravel, MySQL, JavaScript, HTML/CSS</li>
-            </ul>
-            <div class="mt-5 flex flex-wrap gap-2">
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">PHP</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">MySQL</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">JavaScript</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">HTML/CSS</span>
-
-            </div>
-          </article>
-
-
-          <!-- Krishica -->
-          <article class="group rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 dark:border-slate-800 dark:bg-slate-950">
-            <div class="flex items-start justify-between gap-4">
-              <h3 class="text-lg font-bold">Krishica.com — E-commerce Platform</h3>
-              <a class="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-800 dark:text-sky-400" href="https://github.com/rishuvro/krishica.com" target="_blank">
-                <i class="fa-brands fa-github"></i> Repo
-              </a>
-            </div>
-            <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">Scalable e-commerce platform for organic/farm products with admin controls and structured catalog design.</p>
-            <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Product/catalog structure with maintainable admin operations.</li>
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Designed for future growth (orders/payments/integrations).</li>
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Built with Laravel/PHP, MySQL, JavaScript.</li>
-            </ul>
-            <div class="mt-5 flex flex-wrap gap-2">
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">E-commerce</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">Laravel</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">MySQL</span>
-            </div>
-          </article>
-
-          <!-- Store Management -->
-          <article class="group rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 dark:border-slate-800 dark:bg-slate-950">
-            <div class="flex items-start justify-between gap-4">
-              <h3 class="text-lg font-bold">Store Management System</h3>
-              <a class="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-800 dark:text-sky-400" href="https://github.com/rishuvro/store" target="_blank">
-                <i class="fa-brands fa-github"></i> Repo
-              </a>
-            </div>
-            <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">Store workflow system for product tracking, sales management and customer records.</p>
-            <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Centralized inventory, sales tracking, and customer records.</li>
-              <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Maintainable admin workflows for day-to-day operations.</li>
-            </ul>
-            <div class="mt-5 flex flex-wrap gap-2">
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">PHP</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">MySQL</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs dark:bg-slate-900">CRUD</span>
-            </div>
-          </article>
-
-          <!-- Other projects (quick list) -->
-          <article class="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-            <h3 class="text-lg font-bold">More Projects</h3>
-            <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">A few more public projects from GitHub (ML, IoT, dashboards, utilities).</p>
-            <div class="mt-4 grid gap-3">
-              <a class="group flex items-center justify-between rounded-2xl border border-slate-200 px-4 py-3 text-sm hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900" target="_blank" href="https://github.com/rishuvro/Heart_disease_prediction_using_AI">
-                <span class="font-semibold">Heart Disease Prediction (ML)</span>
-                <span class="text-slate-500 group-hover:text-slate-700 dark:text-slate-400">View →</span>
-              </a>
-              <a class="group flex items-center justify-between rounded-2xl border border-slate-200 px-4 py-3 text-sm hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900" target="_blank" href="https://github.com/rishuvro/Automatic_Water_Dispenser_System_Using_Arduino">
-                <span class="font-semibold">Automatic Water Dispenser (Arduino)</span>
-                <span class="text-slate-500 group-hover:text-slate-700 dark:text-slate-400">View →</span>
-              </a>
-              <a class="group flex items-center justify-between rounded-2xl border border-slate-200 px-4 py-3 text-sm hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900" target="_blank" href="https://github.com/rishuvro/PETROL_PUMP_MANAGEMENT_SYSTEM">
-                <span class="font-semibold">Petrol Pump Management System</span>
-                <span class="text-slate-500 group-hover:text-slate-700 dark:text-slate-400">View →</span>
-              </a>
-              <a class="group flex items-center justify-between rounded-2xl border border-slate-200 px-4 py-3 text-sm hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900" target="_blank" href="https://github.com/rishuvro/system_monitor_application_cpu-memory_using_python">
-                <span class="font-semibold">System Monitoring App (Python)</span>
-                <span class="text-slate-500 group-hover:text-slate-700 dark:text-slate-400">View →</span>
-              </a>
-            </div>
-          </article>
-
+        <div class="relative mt-5 flex flex-wrap gap-2 text-xs">
+          <span class="rounded-full bg-emerald-500/10 px-3 py-1 font-medium text-emerald-700 dark:text-emerald-300">RBAC</span>
+          <span class="rounded-full bg-sky-500/10 px-3 py-1 font-medium text-sky-700 dark:text-sky-300">Audit Logs</span>
+          <span class="rounded-full bg-violet-500/10 px-3 py-1 font-medium text-violet-700 dark:text-violet-300">Laravel</span>
+          <span class="rounded-full bg-amber-500/10 px-3 py-1 font-medium text-amber-700 dark:text-amber-300">MySQL</span>
         </div>
-      </div>
-    </section>
+      </article>
+
+      <!-- FEATURED: Maitri Tally -->
+      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
+        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
+        </div>
+
+        <div class="relative flex items-start justify-between gap-4">
+          <div>
+            <div class="text-sm text-slate-600 dark:text-slate-400">POS • Inventory • Reporting</div>
+            <h3 class="mt-1 text-lg font-bold">Maitri Tally — POS & Inventory</h3>
+          </div>
+          <a class="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-800 dark:text-sky-400"
+             href="https://github.com/rishuvro/maitri_tally" target="_blank">
+            <i class="fa-brands fa-github"></i> Repo
+          </a>
+        </div>
+
+        <p class="relative mt-2 text-sm text-slate-700 dark:text-slate-300">
+          Billing + inventory tracking for showroom operations, with product, sales, and reporting workflows.
+        </p>
+
+        <ul class="relative mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Billing workflow, sales records, and stock updates tied to sales events.</li>
+          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Product management + daily operational summaries and reports.</li>
+          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Laravel backend + MySQL data model + JS UI.</li>
+        </ul>
+
+        <div class="relative mt-5 flex flex-wrap gap-2 text-xs">
+          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Laravel</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">PHP</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">MySQL</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">JavaScript</span>
+        </div>
+      </article>
+
+      <!-- Supplier Business Website -->
+      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
+        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
+        </div>
+
+        <div class="relative flex items-start justify-between gap-4">
+          <div>
+            <div class="text-sm text-slate-600 dark:text-slate-400">Business Website • Lead Generation</div>
+            <h3 class="mt-1 text-lg font-bold">Supplier Business Website</h3>
+          </div>
+          <a class="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-800 dark:text-sky-400"
+             href="https://sdstechmed.com/" target="_blank">
+            <i class="fa-brands fa-chrome"></i> Live
+          </a>
+        </div>
+
+        <p class="relative mt-2 text-sm text-slate-700 dark:text-slate-300">
+          B2B website to present services, build credibility, and capture leads through contact workflows.
+        </p>
+
+        <ul class="relative mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Responsive UI with structured pages for services, branding, and lead capture.</li>
+          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Deployed and maintained for stability and performance.</li>
+          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Tailwind styling for modern look and fast iteration.</li>
+        </ul>
+
+        <div class="relative mt-5 flex flex-wrap gap-2 text-xs">
+          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">PHP</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Laravel</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Tailwind</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Hosting</span>
+        </div>
+      </article>
+
+      <!-- Krishica -->
+      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
+        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
+        </div>
+
+        <div class="relative flex items-start justify-between gap-4">
+          <div>
+            <div class="text-sm text-slate-600 dark:text-slate-400">E-commerce • Admin Controls</div>
+            <h3 class="mt-1 text-lg font-bold">Krishica.com — E-commerce Platform</h3>
+          </div>
+          <a class="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-800 dark:text-sky-400"
+             href="https://github.com/rishuvro/krishica.com" target="_blank">
+            <i class="fa-brands fa-github"></i> Repo
+          </a>
+        </div>
+
+        <p class="relative mt-2 text-sm text-slate-700 dark:text-slate-300">
+          E-commerce foundation with structured catalog + maintainable admin workflows, designed for future scale.
+        </p>
+
+        <ul class="relative mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Product catalog structure + admin-side controls for content/product management.</li>
+          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Designed for future growth (orders, payments, integrations).</li>
+          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Laravel/PHP + MySQL + JavaScript.</li>
+        </ul>
+
+        <div class="relative mt-5 flex flex-wrap gap-2 text-xs">
+          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">E-commerce</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Laravel</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">MySQL</span>
+        </div>
+      </article>
+
+      <!-- Store Management -->
+      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
+        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
+        </div>
+
+        <div class="relative flex items-start justify-between gap-4">
+          <div>
+            <div class="text-sm text-slate-600 dark:text-slate-400">Retail Ops • Inventory • CRM</div>
+            <h3 class="mt-1 text-lg font-bold">Store Management System</h3>
+          </div>
+          <a class="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-800 dark:text-sky-400"
+             href="https://github.com/rishuvro/store" target="_blank">
+            <i class="fa-brands fa-github"></i> Repo
+          </a>
+        </div>
+
+        <p class="relative mt-2 text-sm text-slate-700 dark:text-slate-300">
+          Store workflow system for inventory, sales management, and customer records with admin-friendly operations.
+        </p>
+
+        <ul class="relative mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Centralized inventory, sales tracking, and customer records.</li>
+          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Maintainable admin workflows for daily operations (create/update, summaries).</li>
+        </ul>
+
+        <div class="relative mt-5 flex flex-wrap gap-2 text-xs">
+          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">PHP</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">MySQL</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">CRUD</span>
+        </div>
+      </article>
+
+      <!-- MORE PROJECTS (upgraded list) -->
+      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950 md:col-span-2">
+        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
+        </div>
+
+        <div class="relative flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h3 class="text-lg font-bold">More Projects</h3>
+            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">
+              ML, IoT, dashboards, and utilities — all public on GitHub.
+            </p>
+          </div>
+
+          <a href="https://github.com/rishuvro?tab=repositories" target="_blank"
+             class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-900">
+            <i class="fa-solid fa-layer-group"></i> Browse All
+          </a>
+        </div>
+
+        <div class="relative mt-5 grid gap-3 sm:grid-cols-2">
+          <a class="group/item flex items-center justify-between rounded-2xl border border-slate-200 px-4 py-3 text-sm transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900"
+             target="_blank" href="https://github.com/rishuvro/Heart_disease_prediction_using_AI">
+            <span class="font-semibold">Heart Disease Prediction (ML)</span>
+            <span class="text-slate-500 group-hover/item:text-slate-700 dark:text-slate-400">View →</span>
+          </a>
+
+          <a class="group/item flex items-center justify-between rounded-2xl border border-slate-200 px-4 py-3 text-sm transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900"
+             target="_blank" href="https://github.com/rishuvro/Automatic_Water_Dispenser_System_Using_Arduino">
+            <span class="font-semibold">Automatic Water Dispenser (Arduino)</span>
+            <span class="text-slate-500 group-hover/item:text-slate-700 dark:text-slate-400">View →</span>
+          </a>
+
+          <a class="group/item flex items-center justify-between rounded-2xl border border-slate-200 px-4 py-3 text-sm transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900"
+             target="_blank" href="https://github.com/rishuvro/PETROL_PUMP_MANAGEMENT_SYSTEM">
+            <span class="font-semibold">Petrol Pump Management System</span>
+            <span class="text-slate-500 group-hover/item:text-slate-700 dark:text-slate-400">View →</span>
+          </a>
+
+          <a class="group/item flex items-center justify-between rounded-2xl border border-slate-200 px-4 py-3 text-sm transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900"
+             target="_blank" href="https://github.com/rishuvro/system_monitor_application_cpu-memory_using_python">
+            <span class="font-semibold">System Monitoring App (Python)</span>
+            <span class="text-slate-500 group-hover/item:text-slate-700 dark:text-slate-400">View →</span>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 
 
 
