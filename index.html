@@ -634,133 +634,215 @@
 
 
 
-<!-- SKILLS -->
+<!-- SKILLS (Merged + Best) -->
 <section id="skills" class="pt-16 sm:pt-20">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Skills</h2>
-    <p class="mt-2 text-slate-700 dark:text-slate-300">
-      Focused skill groups so recruiters can scan quickly.
-    </p>
+    <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Skills</h2>
+        <p class="mt-2 text-slate-700 dark:text-slate-300">
+        </p>
+      </div>
 
-    <!-- shared chip style -->
-    <style>
-      .chip{
-        @apply rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-800 transition
-               hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800;
-      }
-    </style>
+      <!-- quick chips (top keywords) -->
+      <div class="mt-2 flex flex-wrap gap-2 sm:mt-0">
+        <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
+          IT Support
+        </span>
+        <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
+          Network Troubleshooting
+        </span>
+        <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
+          PHP/Laravel
+        </span>
+        <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
+          Data/ML
+        </span>
+      </div>
+    </div>
 
+    <!-- cards -->
     <div class="mt-8 grid gap-6 md:grid-cols-2">
       <!-- IT SUPPORT -->
-      <div class="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-        <div class="flex items-center gap-2">
+      <div class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
+        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
+        </div>
+
+        <div class="relative flex items-center gap-2">
           <i class="fa-solid fa-headset text-emerald-500"></i>
           <h3 class="font-bold">IT Support & Operations</h3>
         </div>
-        <div class="mt-3 flex flex-wrap gap-2">
-          <span class="chip">Help Desk</span>
-          <span class="chip">Troubleshooting</span>
-          <span class="chip">Incident Handling</span>
-          <span class="chip">SOPs / Documentation</span>
-          <span class="chip">Asset & Inventory</span>
-          <span class="chip">User Onboarding</span>
-          <span class="chip">Access Provisioning</span>
-          <span class="chip">Vendor Coordination</span>
+
+        <div class="relative mt-3 flex flex-wrap gap-2 text-xs">
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Help Desk</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Troubleshooting</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Incident Handling</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">User Support</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Documentation</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">SOPs</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Asset Management</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Access Provisioning</span>
         </div>
       </div>
 
-      <!-- NETWORKING -->
-      <div class="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-        <div class="flex items-center gap-2">
+      <!-- NETWORKING & SYSTEMS -->
+      <div class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
+        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
+        </div>
+
+        <div class="relative flex items-center gap-2">
           <i class="fa-solid fa-network-wired text-sky-500"></i>
           <h3 class="font-bold">Networking & Systems</h3>
         </div>
-        <div class="mt-3 flex flex-wrap gap-2">
-          <span class="chip">LAN/WAN</span>
-          <span class="chip">Wi-Fi</span>
-          <span class="chip">IP/DNS</span>
-          <span class="chip">Windows</span>
-          <span class="chip">Linux</span>
-          <span class="chip">Nginx (Basics)</span>
-          <span class="chip">SSH</span>
-          <span class="chip">Cisco Packet Tracer</span>
+
+        <div class="relative mt-3 flex flex-wrap gap-2 text-xs">
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">LAN/WAN</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Wi-Fi</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">IP/DNS</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">System Administration</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Linux</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Windows</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Mac</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Raspbian</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Cisco Packet Tracer</span>
         </div>
       </div>
 
-      <!-- WEB DEV -->
-      <div class="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-        <div class="flex items-center gap-2">
+      <!-- WEB + DATABASE -->
+      <div class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
+        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
+        </div>
+
+        <div class="relative flex items-center gap-2">
           <i class="fa-solid fa-code text-violet-500"></i>
-          <h3 class="font-bold">Web Development</h3>
+          <h3 class="font-bold">Web Development & Database</h3>
         </div>
-        <div class="mt-3 flex flex-wrap gap-2">
-          <span class="chip">PHP</span>
-          <span class="chip">Laravel</span>
-          <span class="chip">REST APIs</span>
-          <span class="chip">Authentication</span>
-          <span class="chip">CRUD Modules</span>
-          <span class="chip">MySQL</span>
-          <span class="chip">JavaScript</span>
-          <span class="chip">HTML/CSS</span>
-          <span class="chip">Tailwind CSS</span>
+
+        <div class="relative mt-3 flex flex-wrap gap-2 text-xs">
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">PHP</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Laravel</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">REST APIs</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">JavaScript</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">HTML</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">CSS</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">MySQL</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">phpMyAdmin</span>
         </div>
       </div>
 
-      <!-- SECURITY / ADMIN SYSTEMS -->
-      <div class="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-        <div class="flex items-center gap-2">
-          <i class="fa-solid fa-shield-halved text-amber-500"></i>
-          <h3 class="font-bold">Security & Admin Systems</h3>
+      <!-- PROGRAMMING + SCRIPTING/MODELING -->
+      <div class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
+        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
         </div>
-        <div class="mt-3 flex flex-wrap gap-2">
-          <span class="chip">RBAC (Role-Based Access)</span>
-          <span class="chip">Audit Logging</span>
-          <span class="chip">Users & Roles</span>
-          <span class="chip">Permissions</span>
-          <span class="chip">System Admin Panels</span>
-          <span class="chip">Data Integrity</span>
+
+        <div class="relative flex items-center gap-2">
+          <i class="fa-solid fa-terminal text-fuchsia-500"></i>
+          <h3 class="font-bold">Programming • Scripting • Modeling</h3>
+        </div>
+
+        <div class="relative mt-3 flex flex-wrap gap-2 text-xs">
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Python</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">C/C++</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">SQL</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Assembly (Intel x86)</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Shell Script</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">LaTeX</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">UML</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">ER Diagram</span>
         </div>
       </div>
 
-      <!-- DATA/ML + TOOLS (full width on md) -->
-      <div class="md:col-span-2 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-        <div class="grid gap-5 md:grid-cols-2">
-          <div>
-            <div class="flex items-center gap-2">
-              <i class="fa-solid fa-chart-line text-fuchsia-500"></i>
-              <h3 class="font-bold">Data & ML (Research)</h3>
-            </div>
-            <div class="mt-3 flex flex-wrap gap-2">
-              <span class="chip">Python</span>
-              <span class="chip">pandas</span>
-              <span class="chip">NumPy</span>
-              <span class="chip">scikit-learn</span>
-              <span class="chip">TensorFlow</span>
-              <span class="chip">PyTorch</span>
-              <span class="chip">Jupyter / Colab</span>
-            </div>
-          </div>
+      <!-- LIBRARIES -->
+      <div class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
+        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
+        </div>
 
+        <div class="relative flex items-center gap-2">
+          <i class="fa-solid fa-brain text-violet-500"></i>
+          <h3 class="font-bold">Libraries (Data/ML)</h3>
+        </div>
+
+        <div class="relative mt-3 flex flex-wrap gap-2 text-xs">
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">pandas</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">NumPy</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Matplotlib</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">scikit-learn</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Keras</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">TensorFlow</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">PyTorch</span>
+        </div>
+      </div>
+
+      <!-- TOOLS + SIMULATOR + EMBEDDED + OTHER (FULL WIDTH) -->
+      <div class="md:col-span-2 group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
+        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
+        </div>
+
+        <div class="relative grid gap-6 md:grid-cols-3">
+          <!-- Tools -->
           <div>
             <div class="flex items-center gap-2">
               <i class="fa-solid fa-screwdriver-wrench text-emerald-500"></i>
-              <h3 class="font-bold">Tools & Workflow</h3>
+              <h3 class="font-bold">Tools</h3>
             </div>
-            <div class="mt-3 flex flex-wrap gap-2">
-              <span class="chip">Git</span>
-              <span class="chip">GitHub</span>
-              <span class="chip">VS Code</span>
-              <span class="chip">Postman</span>
-              <span class="chip">phpMyAdmin</span>
-              <span class="chip">XAMPP</span>
-              <span class="chip">Documentation</span>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs">
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Git</span>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Google Colab</span>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Visual Studio</span>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">PyCharm</span>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">IntelliJ</span>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Code::Blocks</span>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Android Studio</span>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">OpenGL</span>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Jupyter</span>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">XAMPP</span>
             </div>
+          </div>
+
+          <!-- Simulator -->
+          <div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-route text-sky-500"></i>
+              <h3 class="font-bold">Simulator</h3>
+            </div>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs">
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Cisco Packet Tracer</span>
+            </div>
+          </div>
+
+          <!-- Embedded -->
+          <div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-microchip text-amber-500"></i>
+              <h3 class="font-bold">Embedded Systems</h3>
+            </div>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs">
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Arduino</span>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">Raspberry Pi</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Others -->
+        <div class="relative mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700 dark:border-slate-800 dark:bg-slate-900/40 dark:text-slate-300">
+          <div class="flex items-start gap-2">
+            <i class="fa-solid fa-pen-nib mt-0.5 text-sky-500"></i>
+            <p>
+              <span class="font-semibold">Others:</span> Strong presentation and technical writing skills. Comfortable working independently and in teams.
+            </p>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 
 
 
