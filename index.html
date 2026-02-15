@@ -39,27 +39,22 @@
 
   <!-- Tailwind (Play CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
-<script>
+  <script>
   tailwind.config = {
     darkMode: 'class',
     theme: {
       extend: {
         fontFamily: {
           sans: [
-            'ui-sans-serif','system-ui','Inter','Segoe UI','Roboto','Helvetica','Arial',
-            'Noto Sans','Apple Color Emoji','Segoe UI Emoji'
+            'ui-sans-serif', 'system-ui', 'Inter', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial',
+            'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'
           ],
         },
-
         boxShadow: {
           soft: '0 10px 30px rgba(2, 6, 23, 0.12)',
-          glow: '0 0 0 1px rgba(56,189,248,.12), 0 12px 34px rgba(2,6,23,.16)',
-          // stronger “glass” glow for photo card
-          glow2: '0 0 0 1px rgba(255,255,255,.10), 0 18px 60px rgba(2,6,23,.28)',
+          glow: '0 0 0 1px rgba(56,189,248,.12), 0 10px 30px rgba(2,6,23,.14)',
         },
-
         keyframes: {
-          /* already good */
           floaty: {
             '0%,100%': { transform: 'translateY(0)' },
             '50%': { transform: 'translateY(-10px)' },
@@ -82,60 +77,18 @@
             '33%': { transform: 'translate(12px,-14px) scale(1.04)' },
             '66%': { transform: 'translate(-10px,10px) scale(0.98)' },
           },
-
-          /* NEW: slow cinematic zoom (photo) */
-          kenburns: {
-            '0%':   { transform: 'scale(1.02) translateY(0px)' },
-            '50%':  { transform: 'scale(1.08) translateY(-6px)' },
-            '100%': { transform: 'scale(1.02) translateY(0px)' },
-          },
-
-          /* NEW: subtle 3D wobble (card) */
-          wobble3d: {
-            '0%,100%': { transform: 'translateY(0) rotateX(0deg) rotateY(0deg)' },
-            '25%':     { transform: 'translateY(-2px) rotateX(1.6deg) rotateY(-1.4deg)' },
-            '50%':     { transform: 'translateY(0) rotateX(-1.2deg) rotateY(1.2deg)' },
-            '75%':     { transform: 'translateY(-1px) rotateX(1deg) rotateY(1.6deg)' },
-          },
-
-          /* NEW: gradient ring slow spin (glow ring) */
-          spinSlow: {
-            '0%': { transform: 'rotate(0deg)' },
-            '100%': { transform: 'rotate(360deg)' },
-          },
-
-          /* NEW: tiny sparkle twinkle (optional overlay dots) */
-          twinkle: {
-            '0%,100%': { opacity: '.25', transform: 'translateY(0)' },
-            '50%':     { opacity: '.60', transform: 'translateY(-2px)' },
-          },
-
-          /* NEW: breathing spotlight pulse (no JS) */
-          spotlight: {
-            '0%,100%': { opacity: '.25', transform: 'scale(1)' },
-            '50%':     { opacity: '.45', transform: 'scale(1.06)' },
-          },
         },
-
         animation: {
           floaty: 'floaty 7s ease-in-out infinite',
           orbit: 'orbit 10s linear infinite',
           sheen: 'sheen 1.15s ease-in-out',
           shimmer: 'shimmer 12s ease infinite',
           blob: 'blob 10s ease-in-out infinite',
-
-          // NEW
-          kenburns: 'kenburns 14s ease-in-out infinite',
-          wobble3d: 'wobble3d 10s ease-in-out infinite',
-          spinSlow: 'spinSlow 18s linear infinite',
-          twinkle: 'twinkle 3.6s ease-in-out infinite',
-          spotlight: 'spotlight 7s ease-in-out infinite',
         },
       },
     },
   }
 </script>
-
 
 
   <!-- Icons -->
@@ -2364,40 +2317,5 @@
       a.addEventListener('click', () => mobileMenu.classList.add('hidden'));
     });
   </script>
-
-
-<script>
-  (function () {
-    const card = document.querySelector('[data-tilt]');
-    if (!card) return;
-
-    const img = card.querySelector('[data-tilt-img]');
-    card.addEventListener('mousemove', (e) => {
-      const r = card.getBoundingClientRect();
-      const x = e.clientX - r.left;
-      const y = e.clientY - r.top;
-
-      const px = x / r.width;
-      const py = y / r.height;
-
-      const rotY = (px - 0.5) * 14;
-      const rotX = (0.5 - py) * 12;
-
-      card.style.setProperty('--mx', `${px * 100}%`);
-      card.style.setProperty('--my', `${py * 100}%`);
-
-      card.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
-      if (img) img.style.transform = `translateZ(28px) scale(1.06)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = `rotateX(0deg) rotateY(0deg)`;
-      if (img) img.style.transform = `translateZ(0px) scale(1)`;
-      card.style.setProperty('--mx', `50%`);
-      card.style.setProperty('--my', `40%`);
-    });
-  })();
-</script>
-
 </body>
 </html>
