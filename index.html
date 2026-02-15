@@ -1946,85 +1946,220 @@
 
 
 
+<!-- CONTACT (Upgraded + Cooler + Copy buttons + CTA) -->
+<section id="contact" class="pt-16 sm:pt-20 pb-20">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 shadow-soft dark:border-slate-800 dark:bg-slate-950">
+      <!-- subtle glow -->
+      <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
+        <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
+      </div>
 
+      <div class="relative grid gap-8 md:grid-cols-2">
+        <!-- Left: Pitch + contact cards -->
+        <div>
+          <div class="inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-white/60 px-4 py-2 text-xs text-slate-600 shadow-soft dark:border-slate-800/70 dark:bg-slate-950/50 dark:text-slate-300">
+            <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+            Open to: IT Support • IT Officer • Laravel/PHP
+          </div>
 
+          <h2 class="mt-5 text-2xl font-bold tracking-tight sm:text-3xl">Let’s work together</h2>
+          <p class="mt-3 text-slate-700 dark:text-slate-300">
+            If you’re hiring for IT support/operations, need a Laravel/PHP web app, or want internal tools (RBAC, billing,
+            reporting, dashboards), I’m happy to talk.
+          </p>
 
+          <!-- primary CTA buttons -->
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="mailto:rakibulislamshuvro@gmail.com"
+               class="inline-flex items-center gap-2 rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:opacity-95 dark:bg-white dark:text-slate-900">
+              <i class="fa-solid fa-paper-plane"></i> Email Me
+            </a>
+            <a href="asset/cv.pdf" target="_blank" rel="noreferrer"
+               class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100 dark:hover:bg-slate-900">
+              <i class="fa-solid fa-file-arrow-down"></i> Download CV
+            </a>
+            <a href="#projects"
+               class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100 dark:hover:bg-slate-900">
+              <i class="fa-solid fa-diagram-project"></i> View Projects
+            </a>
+          </div>
 
-
-
-
-
-
-
-
-
-
-    <!-- CONTACT -->
-    <section id="contact" class="pt-16 sm:pt-20 pb-20">
-      <div class="mx-auto max-w-6xl px-4 sm:px-6">
-        <div class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-          <div class="grid gap-8 md:grid-cols-2">
-            <div>
-              <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Let’s work together</h2>
-              <p class="mt-3 text-slate-700 dark:text-slate-300">If you have an IT support role, a Laravel/PHP project, or need help building internal tools, I’m happy to talk.</p>
-
-              <div class="mt-6 grid gap-3 text-sm">
-                <a class="flex items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900" href="mailto:rakibulislamshuvro@gmail.com">
-                  <i class="fa-solid fa-envelope text-sky-600 dark:text-sky-400"></i>
-                  <div>
-                    <div class="font-semibold">Email</div>
-                    <div class="text-slate-600 dark:text-slate-400">rakibulislamshuvro@gmail.com</div>
-                  </div>
-                </a>
-                <a class="flex items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900" href="tel:+8801727688491">
-                  <i class="fa-solid fa-phone text-sky-600 dark:text-sky-400"></i>
-                  <div>
-                    <div class="font-semibold">Phone</div>
-                    <div class="text-slate-600 dark:text-slate-400">+880 1727 688 491</div>
-                  </div>
-                </a>
-                <a class="flex items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900" target="_blank" href="https://www.linkedin.com/in/rishuvro">
-                  <i class="fa-brands fa-linkedin text-sky-600 dark:text-sky-400"></i>
-                  <div>
-                    <div class="font-semibold">LinkedIn</div>
-                    <div class="text-slate-600 dark:text-slate-400">linkedin.com/in/rishuvro</div>
-                  </div>
-                </a>
-              </div>
+          <!-- contact cards + copy -->
+          <div class="mt-7 grid gap-3 text-sm">
+            <!-- Email -->
+            <div class="flex items-center justify-between gap-3 rounded-2xl border border-slate-200 px-4 py-3 transition hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900">
+              <a class="flex items-center gap-3" href="mailto:rakibulislamshuvro@gmail.com">
+                <i class="fa-solid fa-envelope text-sky-600 dark:text-sky-400"></i>
+                <div>
+                  <div class="font-semibold">Email</div>
+                  <div class="text-slate-600 dark:text-slate-400">rakibulislamshuvro@gmail.com</div>
+                </div>
+              </a>
+              <button type="button" data-copy="rakibulislamshuvro@gmail.com"
+                class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-900">
+                <i class="fa-regular fa-copy"></i> Copy
+              </button>
             </div>
 
-            <div class="rounded-3xl bg-slate-50 p-6 dark:bg-slate-900">
-              <h3 class="font-bold">Quick Links</h3>
-              <div class="mt-4 grid gap-3 text-sm">
-                <a class="flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-soft hover:opacity-95 dark:bg-slate-950" target="_blank" href="https://github.com/rishuvro">
-                  <span class="inline-flex items-center gap-2 font-semibold"><i class="fa-brands fa-github"></i> GitHub</span>
-                  <span class="text-slate-500">Open →</span>
-                </a>
-                <a class="flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-soft hover:opacity-95 dark:bg-slate-950" target="_blank" href="https://www.kaggle.com/rishuvro">
-                  <span class="inline-flex items-center gap-2 font-semibold"><i class="fa-brands fa-kaggle"></i> Kaggle</span>
-                  <span class="text-slate-500">Open →</span>
-                </a>
-                <a class="flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-soft hover:opacity-95 dark:bg-slate-950" target="_blank" href="https://x.com/rishuvro">
-                  <span class="inline-flex items-center gap-2 font-semibold"><i class="fa-brands fa-x-twitter"></i> X</span>
-                  <span class="text-slate-500">Open →</span>
-                </a>
-                <a class="flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-soft hover:opacity-95 dark:bg-slate-950" target="_blank" href="asset/cv.pdf">
-                  <span class="inline-flex items-center gap-2 font-semibold"><i class="fa-solid fa-file-pdf"></i> CV (PDF)</span>
-                  <span class="text-slate-500">Open →</span>
-                </a>
-              </div>
-
-              <div class="mt-6 text-xs text-slate-600 dark:text-slate-400">
-                © <span id="year"></span> Rakibul Islam. Built with Tailwind CSS.
-              </div>
+            <!-- Phone -->
+            <div class="flex items-center justify-between gap-3 rounded-2xl border border-slate-200 px-4 py-3 transition hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900">
+              <a class="flex items-center gap-3" href="tel:+8801727688491">
+                <i class="fa-solid fa-phone text-sky-600 dark:text-sky-400"></i>
+                <div>
+                  <div class="font-semibold">Phone</div>
+                  <div class="text-slate-600 dark:text-slate-400">+880 1727 688 491</div>
+                </div>
+              </a>
+              <button type="button" data-copy="+8801727688491"
+                class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-900">
+                <i class="fa-regular fa-copy"></i> Copy
+              </button>
             </div>
 
+            <!-- Location + availability -->
+            <div class="flex items-center justify-between gap-3 rounded-2xl border border-slate-200 px-4 py-3 transition hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-location-dot text-sky-600 dark:text-sky-400"></i>
+                <div>
+                  <div class="font-semibold">Location</div>
+                  <div class="text-slate-600 dark:text-slate-400">Dhaka, Bangladesh • Remote-friendly</div>
+                </div>
+              </div>
+              <span class="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-300">
+                <i class="fa-solid fa-bolt"></i> Available
+              </span>
+            </div>
+
+            <!-- LinkedIn -->
+            <a class="flex items-center justify-between gap-3 rounded-2xl border border-slate-200 px-4 py-3 transition hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900"
+               target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/rishuvro">
+              <div class="flex items-center gap-3">
+                <i class="fa-brands fa-linkedin text-sky-600 dark:text-sky-400"></i>
+                <div>
+                  <div class="font-semibold">LinkedIn</div>
+                  <div class="text-slate-600 dark:text-slate-400">linkedin.com/in/rishuvro</div>
+                </div>
+              </div>
+              <span class="text-slate-500">Open →</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Quick links + socials + footer -->
+        <div class="relative rounded-3xl bg-slate-50 p-6 dark:bg-slate-900">
+          <div class="flex items-center justify-between">
+            <h3 class="font-bold">Quick Links</h3>
+            <span class="text-xs text-slate-600 dark:text-slate-400">Profiles & docs</span>
+          </div>
+
+          <div class="mt-4 grid gap-3 text-sm">
+            <a class="group/item flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-soft transition hover:-translate-y-0.5 hover:opacity-95 dark:bg-slate-950"
+               target="_blank" rel="noreferrer" href="https://github.com/rishuvro">
+              <span class="inline-flex items-center gap-2 font-semibold"><i class="fa-brands fa-github"></i> GitHub</span>
+              <span class="text-slate-500 group-hover/item:text-slate-700 dark:text-slate-400">Open →</span>
+            </a>
+
+            <a class="group/item flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-soft transition hover:-translate-y-0.5 hover:opacity-95 dark:bg-slate-950"
+               target="_blank" rel="noreferrer" href="https://rishuvro.github.io/">
+              <span class="inline-flex items-center gap-2 font-semibold"><i class="fa-solid fa-globe"></i> Portfolio</span>
+              <span class="text-slate-500 group-hover/item:text-slate-700 dark:text-slate-400">Open →</span>
+            </a>
+
+            <a class="group/item flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-soft transition hover:-translate-y-0.5 hover:opacity-95 dark:bg-slate-950"
+               target="_blank" rel="noreferrer" href="https://www.kaggle.com/rishuvro">
+              <span class="inline-flex items-center gap-2 font-semibold"><i class="fa-brands fa-kaggle"></i> Kaggle</span>
+              <span class="text-slate-500 group-hover/item:text-slate-700 dark:text-slate-400">Open →</span>
+            </a>
+
+            <a class="group/item flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-soft transition hover:-translate-y-0.5 hover:opacity-95 dark:bg-slate-950"
+               target="_blank" rel="noreferrer" href="https://x.com/rishuvro">
+              <span class="inline-flex items-center gap-2 font-semibold"><i class="fa-brands fa-x-twitter"></i> X (Twitter)</span>
+              <span class="text-slate-500 group-hover/item:text-slate-700 dark:text-slate-400">Open →</span>
+            </a>
+
+            <a class="group/item flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-soft transition hover:-translate-y-0.5 hover:opacity-95 dark:bg-slate-950"
+               target="_blank" rel="noreferrer" href="asset/cv.pdf">
+              <span class="inline-flex items-center gap-2 font-semibold"><i class="fa-solid fa-file-pdf"></i> CV (PDF)</span>
+              <span class="text-slate-500 group-hover/item:text-slate-700 dark:text-slate-400">Open →</span>
+            </a>
+          </div>
+
+          <!-- mini “what I can help with” -->
+          <div class="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-soft dark:border-slate-800 dark:bg-slate-950">
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-sparkles text-amber-500"></i>
+              <h4 class="font-semibold">What I can help with</h4>
+            </div>
+            <ul class="mt-3 grid gap-2 text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> IT Support, device setup, SOPs, troubleshooting</li>
+              <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> Laravel/PHP apps (RBAC, billing, dashboards, APIs)</li>
+              <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> Internal tools: reporting, admin panels, automation</li>
+            </ul>
+          </div>
+
+          <div class="mt-6 text-xs text-slate-600 dark:text-slate-400">
+            © <span id="year"></span> Rakibul Islam.
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
 
-  </main>
+  <!-- Copy-to-clipboard + year (vanilla JS, lightweight) -->
+  <script>
+    // year
+    (function () {
+      var y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+
+    // copy buttons
+    (function () {
+      function toast(msg) {
+        var t = document.createElement('div');
+        t.className =
+          'fixed bottom-6 left-1/2 -translate-x-1/2 z-[9999] rounded-2xl bg-slate-900 px-4 py-2 text-sm text-white shadow-soft dark:bg-white dark:text-slate-900';
+        t.textContent = msg;
+        document.body.appendChild(t);
+        setTimeout(function () { t.remove(); }, 1600);
+      }
+
+      document.addEventListener('click', async function (e) {
+        var btn = e.target.closest('[data-copy]');
+        if (!btn) return;
+        var val = btn.getAttribute('data-copy');
+        try {
+          await navigator.clipboard.writeText(val);
+          toast('Copied: ' + val);
+        } catch (err) {
+          // fallback
+          var ta = document.createElement('textarea');
+          ta.value = val;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          ta.remove();
+          toast('Copied: ' + val);
+        }
+      });
+    })();
+  </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
 
   <script>
     // Mobile menu
