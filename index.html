@@ -1117,24 +1117,126 @@
 </section>
 
 
-    <!-- PUBLICATIONS -->
-    <section id="publications" class="pt-16 sm:pt-20">
-      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+   <!-- PUBLICATIONS & DATA (Unified + Premium) -->
+<section id="publications" class="pt-16 sm:pt-20">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+      <div>
         <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Publications & Data</h2>
-        <div class="mt-8 grid gap-6 md:grid-cols-2">
-          <div class="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-            <div class="text-sm text-slate-600 dark:text-slate-400">ICECET 2024</div>
-            <h3 class="mt-1 text-lg font-bold">Hybrid Recommendation Systems</h3>
-            <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">Oral presentation on hybrid recommendation approaches. (Add paper link when available.)</p>
-          </div>
-          <div class="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-            <div class="text-sm text-slate-600 dark:text-slate-400">Mendeley Data</div>
-            <h3 class="mt-1 text-lg font-bold">Dhaka Stock Exchange Dataset</h3>
-            <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">Dataset published for research and analysis. (Add dataset link when available.)</p>
-          </div>
-        </div>
+        <p class="mt-2 text-slate-700 dark:text-slate-300">
+          Research publication + public dataset (with DOI links).
+        </p>
       </div>
-    </section>
+
+      <div class="mt-2 flex flex-wrap gap-2 sm:mt-0">
+        <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
+          IEEE Xplore (DOI)
+        </span>
+        <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
+          Mendeley Data (DOI)
+        </span>
+      </div>
+    </div>
+
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+      <!-- PUBLICATION: IEEE -->
+      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
+        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
+        </div>
+
+        <div class="relative flex items-start justify-between gap-3">
+          <div>
+            <div class="text-sm text-slate-600 dark:text-slate-400">IEEE • ICECET 2024 • Sydney, Australia</div>
+            <h3 class="mt-1 text-lg font-bold leading-tight">
+              Hybrid Recommendation Systems using Adaptive Clustering to address Cold Start Problems
+            </h3>
+          </div>
+
+          <span class="shrink-0 rounded-full bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold text-emerald-700 dark:text-emerald-300">
+            Publication
+          </span>
+        </div>
+
+        <div class="relative mt-4 grid gap-2 text-sm text-slate-700 dark:text-slate-300">
+          <p>
+            <span class="font-semibold">Conference:</span> 2024 International Conference on Electrical, Computer and Energy Technologies (ICECET)
+          </p>
+          <p>
+            <span class="font-semibold">Dates:</span> 25–27 July 2024 • <span class="font-semibold">Added to IEEE Xplore:</span> 08 Oct 2024
+          </p>
+          <p>
+            <span class="font-semibold">DOI:</span> 10.1109/ICECET61485.2024.10698666
+          </p>
+          <p class="text-xs text-slate-600 dark:text-slate-400">
+            ISBN: 979-8-3503-9591-4 (eBook) • 979-8-3503-9592-1 (PoD)
+          </p>
+        </div>
+
+        <div class="relative mt-5 flex flex-wrap gap-2">
+          <a href="http://dx.doi.org/10.1109/ICECET61485.2024.10698666" target="_blank"
+             class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:opacity-90 dark:bg-white dark:text-slate-900">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> View via DOI
+          </a>
+
+          <!-- optional: add your pdf link later if you have it -->
+          <!--
+          <a href="asset/papers/icecet_hybrid_recsys.pdf" target="_blank"
+             class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold text-slate-700 shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-900">
+            <i class="fa-solid fa-file-pdf text-rose-500"></i> PDF
+          </a>
+          -->
+        </div>
+      </article>
+
+      <!-- DATASET: MENDELEY -->
+      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
+        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
+        </div>
+
+        <div class="relative flex items-start justify-between gap-3">
+          <div>
+            <div class="text-sm text-slate-600 dark:text-slate-400">Mendeley Data • Published 08 Mar 2024</div>
+            <h3 class="mt-1 text-lg font-bold leading-tight">Dhaka Stock Exchange Historical Data</h3>
+          </div>
+
+          <span class="shrink-0 rounded-full bg-sky-500/10 px-3 py-1 text-[11px] font-semibold text-sky-700 dark:text-sky-300">
+            Dataset
+          </span>
+        </div>
+
+        <div class="relative mt-4 grid gap-2 text-sm text-slate-700 dark:text-slate-300">
+          <p>
+            Public dataset for research and analysis of Dhaka Stock Exchange historical records.
+          </p>
+          <p>
+            <span class="font-semibold">Version:</span> 3
+          </p>
+          <p>
+            <span class="font-semibold">DOI:</span> 10.17632/23553sm4tn.3
+          </p>
+        </div>
+
+        <div class="relative mt-5 flex flex-wrap gap-2">
+          <a href="https://data.mendeley.com/datasets/23553sm4tn/3" target="_blank"
+             class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:opacity-90 dark:bg-white dark:text-slate-900">
+            <i class="fa-solid fa-database"></i> View Dataset
+          </a>
+
+          <!-- optional: add a direct citation file later -->
+          <!--
+          <a href="asset/dse_dataset_citation.bib" target="_blank"
+             class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold text-slate-700 shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-900">
+            <i class="fa-solid fa-quote-left"></i> Citation
+          </a>
+          -->
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 
     <!-- CONTACT -->
     <section id="contact" class="pt-16 sm:pt-20 pb-20">
