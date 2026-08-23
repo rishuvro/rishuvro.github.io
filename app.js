@@ -524,3 +524,163 @@
     window.setInterval(tick, 1000);
   }
 })();
+
+// V8: global command layer — keyboard navigation, fast actions and mobile access.
+(() => {
+  const palette = document.getElementById('command-palette');
+  const trigger = document.getElementById('command-trigger');
+  const fab = document.getElementById('command-fab');
+  const input = document.getElementById('command-input');
+  const results = document.getElementById('command-results');
+  const empty = document.getElementById('command-empty');
+  const count = document.getElementById('command-result-count');
+  const toast = document.getElementById('system-toast');
+  const themeToggle = document.getElementById('theme-toggle');
+  if (!palette || !input || !results) return;
+
+  const isMac = /Mac|iPhone|iPad|iPod/i.test(navigator.platform || navigator.userAgent || '');
+  document.querySelectorAll('#command-trigger kbd, #command-fab b').forEach(el => {
+    el.textContent = isMac ? '⌘K' : 'CTRL K';
+  });
+
+  let selected = 0;
+  let returnFocus = null;
+  let toastTimer = 0;
+
+  const allItems = () => [...results.querySelectorAll('.command-item')];
+  const visibleItems = () => allItems().filter(item => !item.hidden);
+
+  const showToast = message => {
+    if (!toast) return;
+    window.clearTimeout(toastTimer);
+    toast.textContent = message;
+    toast.classList.add('is-visible');
+    toastTimer = window.setTimeout(() => toast.classList.remove('is-visible'), 1700);
+  };
+
+  const setSelected = (index, scroll = true) => {
+    const items = visibleItems();
+    if (!items.length) return;
+    selected = ((index % items.length) + items.length) % items.length;
+    allItems().forEach(item => item.classList.remove('is-command-active'));
+    const item = items[selected];
+    item.classList.add('is-command-active');
+    if (scroll) item.scrollIntoView({ block: 'nearest' });
+  };
+
+  const filterItems = () => {
+    const query = input.value.trim().toLowerCase();
+    let visible = 0;
+    results.querySelectorAll('[data-command-group]').forEach(group => {
+      let groupVisible = 0;
+      group.querySelectorAll('.command-item').forEach(item => {
+        const haystack = `${item.dataset.search || ''} ${item.textContent || ''}`.toLowerCase();
+        const show = !query || query.split(/\s+/).every(token => haystack.includes(token));
+        item.hidden = !show;
+        if (show) { visible += 1; groupVisible += 1; }
+      });
+      group.hidden = groupVisible === 0;
+    });
+    if (empty) empty.hidden = visible !== 0;
+    if (count) count.textContent = `${String(visible).padStart(2, '0')} ${visible === 1 ? 'COMMAND' : 'COMMANDS'}`;
+    selected = 0;
+    setSelected(0, false);
+  };
+
+  const openPalette = source => {
+    if (!palette.hidden) return;
+    returnFocus = source instanceof HTMLElement ? source : document.activeElement;
+    palette.hidden = false;
+    palette.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('command-open');
+    input.value = '';
+    filterItems();
+    requestAnimationFrame(() => input.focus({ preventScroll: true }));
+  };
+
+  const closePalette = () => {
+    if (palette.hidden) return;
+    palette.hidden = true;
+    palette.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('command-open');
+    allItems().forEach(item => item.classList.remove('is-command-active'));
+    if (returnFocus && typeof returnFocus.focus === 'function') returnFocus.focus({ preventScroll: true });
+  };
+
+  const activateItem = async item => {
+    if (!item) return;
+    const command = item.dataset.command || '';
+    const target = item.dataset.target || '';
+    closePalette();
+
+    if (command === 'hash') {
+      const anchor = document.querySelector(`a[href="${target}"]`);
+      if (anchor) anchor.click();
+      else if (target === '#top') window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    if (command === 'url') {
+      window.open(target, '_blank', 'noopener,noreferrer');
+      return;
+    }
+    if (command === 'mail') {
+      window.location.href = target;
+      return;
+    }
+    if (command === 'theme') {
+      themeToggle?.click();
+      showToast(`APPEARANCE / ${document.documentElement.dataset.theme?.toUpperCase() || 'UPDATED'}`);
+      return;
+    }
+    if (command === 'copy') {
+      try {
+        await navigator.clipboard.writeText(target);
+        showToast('EMAIL COPIED TO CLIPBOARD');
+      } catch (_) {
+        window.location.href = `mailto:${target}`;
+      }
+    }
+  };
+
+  trigger?.addEventListener('click', () => openPalette(trigger));
+  fab?.addEventListener('click', () => openPalette(fab));
+  palette.querySelectorAll('[data-command-close]').forEach(button => button.addEventListener('click', closePalette));
+  input.addEventListener('input', filterItems);
+  allItems().forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      const items = visibleItems();
+      const index = items.indexOf(item);
+      if (index >= 0) setSelected(index, false);
+    });
+    item.addEventListener('click', () => activateItem(item));
+  });
+
+  document.addEventListener('keydown', event => {
+    const modifier = isMac ? event.metaKey : event.ctrlKey;
+    if (modifier && event.key.toLowerCase() === 'k') {
+      event.preventDefault();
+      palette.hidden ? openPalette(document.activeElement) : closePalette();
+      return;
+    }
+    if (palette.hidden) return;
+    if (event.key === 'Escape') {
+      event.preventDefault(); closePalette(); return;
+    }
+    if (event.key === 'ArrowDown') {
+      event.preventDefault(); setSelected(selected + 1); return;
+    }
+    if (event.key === 'ArrowUp') {
+      event.preventDefault(); setSelected(selected - 1); return;
+    }
+    if (event.key === 'Enter' && document.activeElement === input) {
+      event.preventDefault(); activateItem(visibleItems()[selected]); return;
+    }
+    if (event.key === 'Tab') {
+      const focusables = [...palette.querySelectorAll('button:not([hidden]),input')].filter(el => !el.disabled && el.offsetParent !== null);
+      if (!focusables.length) return;
+      const first = focusables[0], last = focusables[focusables.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    }
+  });
+})();
