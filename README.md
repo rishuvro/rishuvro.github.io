@@ -1,28 +1,24 @@
-# Rakibul Islam Portfolio — V3
+# Rakibul Islam Portfolio — V3.1
 
-A custom, static, GitHub Pages-ready portfolio focused on **Business Operations × Digital Growth × Technology**.
+Production-ready GitHub Pages build for https://rishuvro.github.io/.
 
-## V3 polish
-- Branded RI boot sequence with reduced-motion fallback
-- Scroll progress indicator and active section navigation
-- Cinematic portrait signal map with animated connectors, readouts and monogram layers
-- Refined hero motion and four-part operating rail
-- Mouse-responsive project spotlights and contextual cursor labels
-- More dimensional project, research, timeline and credential interactions
-- Animated capability-map core and signature contact scene
-- Dark/light theme retained
-- Mobile-specific layout and motion safeguards
-- No framework, package manager or build process required
+## Deploy
 
-## Deploy on GitHub Pages
-Copy the contents of this folder to the root of `rishuvro.github.io`, commit and push. GitHub Pages will serve `index.html` automatically.
+Place **all files in this folder directly in the repository root** of `rishuvro/rishuvro.github.io` on the `main` branch.
 
-## Main files
-- `index.html` — content and semantic structure
-- `styles.css` — complete visual system and responsive design
-- `app.js` — interaction, motion, theme and navigation logic
-- `assets/` — portrait, CV, certificate previews/PDFs, favicon and social card
-- `404.html`, `robots.txt`, `sitemap.xml` — supporting GitHub Pages / SEO files
+Required root structure:
 
-## Motion & accessibility
-The site automatically respects `prefers-reduced-motion`. Cursor and hover-specific effects only run on fine-pointer devices.
+```text
+index.html
+styles.css
+app.js
+404.html
+.nojekyll
+robots.txt
+sitemap.xml
+assets/
+```
+
+GitHub Pages settings: **Deploy from a branch → main → /(root)**.
+
+V3.1 adds cache-busted CSS/JS URLs and `.nojekyll` to make static deployment more reliable. Legacy V1/V2/draft files are intentionally excluded.
