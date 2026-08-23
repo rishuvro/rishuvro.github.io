@@ -1,26 +1,28 @@
-# Rakibul Islam Portfolio — Rebuild
+# Rakibul Islam Portfolio — V3
 
-A dependency-light static portfolio rebuilt for GitHub Pages.
+A custom, static, GitHub Pages-ready portfolio focused on **Business Operations × Digital Growth × Technology**.
 
-## Files
-- `index.html` — structure, SEO metadata and content
-- `styles.css` — responsive visual system and animations
-- `app.js` — canvas signal field, reveal animations, custom cursor, theme and mobile navigation
-- `assets/` — profile, CV, certificates, social card and favicon
-- `404.html` — custom GitHub Pages 404
-- `robots.txt` / `sitemap.xml` — search-engine basics
+## V3 polish
+- Branded RI boot sequence with reduced-motion fallback
+- Scroll progress indicator and active section navigation
+- Cinematic portrait signal map with animated connectors, readouts and monogram layers
+- Refined hero motion and four-part operating rail
+- Mouse-responsive project spotlights and contextual cursor labels
+- More dimensional project, research, timeline and credential interactions
+- Animated capability-map core and signature contact scene
+- Dark/light theme retained
+- Mobile-specific layout and motion safeguards
+- No framework, package manager or build process required
 
-## Deploy to GitHub Pages
-1. Back up the current repository.
-2. Replace the current root files with the contents of this folder.
-3. Commit and push to the `main` branch.
-4. In **GitHub → Settings → Pages**, use **Deploy from a branch → main → /(root)**.
-5. Wait for GitHub Pages to finish deployment, then hard-refresh `https://rishuvro.github.io/`.
+## Deploy on GitHub Pages
+Copy the contents of this folder to the root of `rishuvro.github.io`, commit and push. GitHub Pages will serve `index.html` automatically.
 
-No build command is required.
+## Main files
+- `index.html` — content and semantic structure
+- `styles.css` — complete visual system and responsive design
+- `app.js` — interaction, motion, theme and navigation logic
+- `assets/` — portrait, CV, certificate previews/PDFs, favicon and social card
+- `404.html`, `robots.txt`, `sitemap.xml` — supporting GitHub Pages / SEO files
 
-## Notes
-- Animations automatically reduce when the visitor enables reduced motion.
-- Mobile layouts have dedicated breakpoints.
-- The design has no Tailwind or Font Awesome runtime dependency.
-- Certificate PDFs are stored locally in `assets/` so the portfolio remains self-contained.
+## Motion & accessibility
+The site automatically respects `prefers-reduced-motion`. Cursor and hover-specific effects only run on fine-pointer devices.

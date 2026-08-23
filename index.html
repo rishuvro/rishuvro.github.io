@@ -9,6 +9,8 @@
   <title>Rakibul Islam — Operations × Growth × Technology</title>
   <meta name="description" content="Portfolio of Rakibul Islam — business operations, digital growth, IT systems, Laravel/PHP products, research and applied technology." />
   <meta name="author" content="Rakibul Islam" />
+  <meta name="application-name" content="Rakibul Islam Portfolio" />
+  <meta name="generator" content="Custom static portfolio · V3" />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://rishuvro.github.io/" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
@@ -57,12 +59,23 @@
   }
   </script>
 </head>
-<body>
+<body class="is-loading">
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="boot-screen" id="boot-screen" aria-hidden="true">
+    <div class="boot-grid"></div>
+    <div class="boot-content">
+      <div class="boot-mark"><span>R</span><span>I</span></div>
+      <div class="boot-copy"><strong>RAKIBUL ISLAM</strong><span>OPERATIONS × GROWTH × TECHNOLOGY</span></div>
+      <div class="boot-meter"><i></i></div>
+      <div class="boot-status"><span>PORTFOLIO / V3</span><span>SYSTEM READY</span></div>
+    </div>
+  </div>
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
   <canvas id="signal-canvas" aria-hidden="true"></canvas>
   <div class="noise" aria-hidden="true"></div>
   <div class="cursor-dot" aria-hidden="true"></div>
   <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="cursor-label" aria-hidden="true">VIEW</div>
 
   <header class="site-header" id="top">
     <a class="brand magnetic" href="#top" aria-label="Rakibul Islam — home">
@@ -103,9 +116,9 @@
       <div class="hero-copy">
         <div class="eyebrow reveal"><span class="status-pulse"></span> Business operations · digital growth · technology</div>
         <h1 id="hero-title" class="display reveal">
-          <span class="display-line">I connect</span>
-          <span class="display-line gradient-text">operations, growth</span>
-          <span class="display-line">& technology.</span>
+          <span class="display-line kinetic-line" data-ghost="I connect">I connect</span>
+          <span class="display-line gradient-text kinetic-line" data-ghost="operations, growth">operations, growth</span>
+          <span class="display-line kinetic-line" data-ghost="& technology.">& technology.</span>
         </h1>
         <p class="hero-lede reveal">I’m <strong>Rakibul Islam</strong>. I turn messy workflows, digital channels and technical systems into structured operations that are easier to manage, measure and scale.</p>
 
@@ -120,7 +133,18 @@
       </div>
 
       <div class="identity-stage reveal" id="identity-stage" aria-label="Portrait of Rakibul Islam with animated professional disciplines">
+        <div class="stage-grid" aria-hidden="true"></div>
+        <div class="stage-monogram" aria-hidden="true">RI</div>
         <div class="stage-glow" aria-hidden="true"></div>
+        <svg class="stage-connectors" viewBox="0 0 700 700" aria-hidden="true">
+          <path class="connector-line connector-a" d="M72 196 C184 76 262 110 350 170 S520 194 632 112" />
+          <path class="connector-line connector-b" d="M60 484 C166 574 264 566 350 518 S528 474 650 574" />
+          <path class="connector-line connector-c" d="M112 344 C188 322 216 234 350 246 S500 384 600 334" />
+          <circle class="signal-dot signal-one" cx="72" cy="196" r="4" />
+          <circle class="signal-dot signal-two" cx="632" cy="112" r="4" />
+          <circle class="signal-dot signal-three" cx="60" cy="484" r="4" />
+          <circle class="signal-dot signal-four" cx="650" cy="574" r="4" />
+        </svg>
         <div class="orbit orbit-a" aria-hidden="true"></div>
         <div class="orbit orbit-b" aria-hidden="true"></div>
         <div class="orbit orbit-c" aria-hidden="true"></div>
@@ -133,7 +157,17 @@
         <div class="orbit-tag tag-growth">GROWTH</div>
         <div class="orbit-tag tag-systems">SYSTEMS</div>
         <div class="orbit-tag tag-research">RESEARCH</div>
-        <div class="stage-caption"><span>Signal map</span><strong>strategy → execution → measurement</strong></div>
+        <div class="stage-readout readout-a" aria-hidden="true"><span>01</span><strong>OPERATE</strong><small>structure / coordinate</small></div>
+        <div class="stage-readout readout-b" aria-hidden="true"><span>02</span><strong>GROW</strong><small>acquire / measure</small></div>
+        <div class="stage-readout readout-c" aria-hidden="true"><span>03</span><strong>BUILD</strong><small>systems / automate</small></div>
+        <div class="stage-caption"><span>Signal map · RI/26</span><strong>strategy → execution → measurement</strong></div>
+      </div>
+
+      <div class="hero-rail reveal" aria-label="How Rakibul Islam works">
+        <div><span>01 / OPERATE</span><strong>Turn complexity into repeatable workflow.</strong></div>
+        <div><span>02 / GROW</span><strong>Connect visibility, acquisition and measurement.</strong></div>
+        <div><span>03 / BUILD</span><strong>Make the system fit the operation.</strong></div>
+        <div><span>04 / RESEARCH</span><strong>Test ideas with data and evidence.</strong></div>
       </div>
     </section>
 
@@ -144,7 +178,7 @@
       </div>
     </section>
 
-    <section class="section section-shell" id="approach">
+    <section class="section section-shell" id="approach" data-section-title="OPERATING MODEL">
       <div class="section-heading reveal">
         <p class="kicker">01 · Working model</p>
         <h2>One person. Three operating layers.</h2>
@@ -176,7 +210,7 @@
       </div>
     </section>
 
-    <section class="section work-section" id="work">
+    <section class="section work-section" id="work" data-section-title="SELECTED WORK">
       <div class="section-shell">
         <div class="section-heading section-heading-row reveal">
           <div>
@@ -187,7 +221,7 @@
         </div>
 
         <div class="project-grid">
-          <article class="project project-feature reveal" data-project="clinic">
+          <article class="project project-feature reveal cursor-view" data-project="clinic" data-cursor-label="OPEN">
             <div class="project-topline"><span>LIVE SYSTEM</span><span>01 / CLINIC OPERATIONS</span></div>
             <div class="system-window" aria-hidden="true">
               <div class="window-bar"><i></i><i></i><i></i><span>EVOLVEDCMS / OPERATIONS</span></div>
@@ -208,7 +242,7 @@
             <div class="project-tech"><span>Laravel / PHP</span><span>MySQL</span><span>RBAC</span><span>Audit Logs</span><span>Business Workflow</span></div>
           </article>
 
-          <article class="project reveal tilt-card">
+          <article class="project reveal tilt-card cursor-view" data-cursor-label="VIEW">
             <div class="project-topline"><span>POS + INVENTORY</span><span>02</span></div>
             <div class="project-visual visual-ledger" aria-hidden="true">
               <div class="ledger-card"><span>DAILY SALES</span><strong>৳</strong><i></i><i></i><i></i></div>
@@ -219,7 +253,7 @@
             <div class="project-footer"><div class="project-tech"><span>Laravel</span><span>MySQL</span></div><a class="round-link magnetic" href="https://github.com/rishuvro/maitri_tally" target="_blank" rel="noreferrer" aria-label="Open Maitri Tally repository">↗</a></div>
           </article>
 
-          <article class="project reveal tilt-card">
+          <article class="project reveal tilt-card cursor-view" data-cursor-label="VIEW">
             <div class="project-topline"><span>B2B + LEAD GENERATION</span><span>03</span></div>
             <div class="project-visual visual-web" aria-hidden="true">
               <div class="web-frame"><div class="web-nav"></div><div class="web-hero"><b>Digital credibility</b><span></span><i></i></div><div class="web-row"><span></span><span></span><span></span></div></div>
@@ -229,7 +263,7 @@
             <div class="project-footer"><div class="project-tech"><span>Laravel</span><span>SEO</span></div><a class="round-link magnetic" href="https://sdstechmed.com/" target="_blank" rel="noreferrer" aria-label="Open supplier business website">↗</a></div>
           </article>
 
-          <article class="project reveal tilt-card">
+          <article class="project reveal tilt-card cursor-view" data-cursor-label="VIEW">
             <div class="project-topline"><span>ECOMMERCE</span><span>04</span></div>
             <div class="project-visual visual-commerce" aria-hidden="true">
               <div class="commerce-orbit"></div><div class="product-card pc-a"><i></i><span></span></div><div class="product-card pc-b"><i></i><span></span></div><div class="product-card pc-c"><i></i><span></span></div>
@@ -239,7 +273,7 @@
             <div class="project-footer"><div class="project-tech"><span>PHP</span><span>MySQL</span></div><a class="round-link magnetic" href="https://github.com/rishuvro/krishica.com" target="_blank" rel="noreferrer" aria-label="Open Krishica repository">↗</a></div>
           </article>
 
-          <article class="project reveal tilt-card">
+          <article class="project reveal tilt-card cursor-view" data-cursor-label="VIEW">
             <div class="project-topline"><span>RETAIL OPERATIONS</span><span>05</span></div>
             <div class="project-visual visual-store" aria-hidden="true">
               <div class="store-stack"><span></span><span></span><span></span><span></span></div><div class="store-wave"><i></i><i></i><i></i><i></i><i></i><i></i></div>
@@ -249,7 +283,7 @@
             <div class="project-footer"><div class="project-tech"><span>PHP</span><span>CRUD</span></div><a class="round-link magnetic" href="https://github.com/rishuvro/store" target="_blank" rel="noreferrer" aria-label="Open Store Management System repository">↗</a></div>
           </article>
 
-          <article class="project reveal tilt-card">
+          <article class="project reveal tilt-card cursor-view" data-cursor-label="VIEW">
             <div class="project-topline"><span>NETWORKING LABS</span><span>06</span></div>
             <div class="project-visual visual-network" aria-hidden="true">
               <svg viewBox="0 0 520 240" role="img" aria-label="Animated network diagram">
@@ -273,7 +307,7 @@
       </div>
     </section>
 
-    <section class="section section-shell" id="experience">
+    <section class="section section-shell" id="experience" data-section-title="EXPERIENCE">
       <div class="section-heading reveal">
         <p class="kicker">03 · Experience</p>
         <h2>From support to systems to growth operations.</h2>
@@ -322,7 +356,7 @@
       </div>
     </section>
 
-    <section class="section research-section" id="research">
+    <section class="section research-section" id="research" data-section-title="RESEARCH">
       <div class="section-shell">
         <div class="section-heading reveal">
           <p class="kicker">04 · Research + recognition</p>
@@ -362,7 +396,7 @@
       </div>
     </section>
 
-    <section class="section section-shell" id="skills">
+    <section class="section section-shell" id="skills" data-section-title="CAPABILITY MAP">
       <div class="skills-layout">
         <div class="section-heading reveal">
           <p class="kicker">05 · Capability map</p>
@@ -383,7 +417,7 @@
       </div>
     </section>
 
-    <section class="section credentials-section" id="credentials">
+    <section class="section credentials-section" id="credentials" data-section-title="CREDENTIALS">
       <div class="section-shell">
         <div class="section-heading section-heading-row reveal">
           <div><p class="kicker">06 · Credentials</p><h2>Selected certificates.</h2></div>
@@ -391,25 +425,25 @@
         </div>
 
         <div class="credential-grid">
-          <a class="credential-card credential-feature reveal" href="assets/cert-iccsc-scientific.pdf" target="_blank" rel="noreferrer">
+          <a class="credential-card credential-feature reveal cursor-view" data-cursor-label="CERT" href="assets/cert-iccsc-scientific.pdf" target="_blank" rel="noreferrer">
             <img src="assets/cert-iccsc-scientific.png" alt="ICCSC 2026 Scientific Committee certificate preview" loading="lazy" />
             <div class="credential-overlay"><span>ICCSC 2026</span><h3>Scientific Committee</h3><small>Fez, Morocco · 2026</small></div>
           </a>
-          <a class="credential-card credential-feature reveal" href="assets/cert-iccsc-organizing.pdf" target="_blank" rel="noreferrer">
+          <a class="credential-card credential-feature reveal cursor-view" data-cursor-label="CERT" href="assets/cert-iccsc-organizing.pdf" target="_blank" rel="noreferrer">
             <img src="assets/cert-iccsc-organizing.png" alt="ICCSC 2026 Organizing Committee certificate preview" loading="lazy" />
             <div class="credential-overlay"><span>ICCSC 2026</span><h3>Organizing Committee</h3><small>Fez, Morocco · 2026</small></div>
           </a>
-          <a class="credential-card reveal" href="assets/cert-icecet-2024.pdf" target="_blank" rel="noreferrer"><img src="assets/cert-icecet-2024.jpg" alt="ICECET 2024 oral presentation certificate" loading="lazy" /><div class="credential-overlay"><span>ICECET 2024</span><h3>Oral Presentation</h3><small>Research · IEEE conference</small></div></a>
-          <a class="credential-card reveal" href="assets/cert-programming-everybody.pdf" target="_blank" rel="noreferrer"><img src="assets/cert-programming-everybody.jpg" alt="Programming for Everybody certificate" loading="lazy" /><div class="credential-overlay"><span>University of Michigan</span><h3>Programming for Everybody</h3><small>Coursera</small></div></a>
-          <a class="credential-card reveal" href="assets/cert-python-data-structures.pdf" target="_blank" rel="noreferrer"><img src="assets/cert-python-data-structures.jpg" alt="Python Data Structures certificate" loading="lazy" /><div class="credential-overlay"><span>University of Michigan</span><h3>Python Data Structures</h3><small>Coursera</small></div></a>
-          <a class="credential-card reveal" href="assets/cert-software-testing.pdf" target="_blank" rel="noreferrer"><img src="assets/cert-software-testing.jpg" alt="Foundations of Software Testing and Validation certificate" loading="lazy" /><div class="credential-overlay"><span>University of Leeds</span><h3>Software Testing & Validation</h3><small>Coursera</small></div></a>
-          <a class="credential-card reveal" href="assets/cert-google-data.pdf" target="_blank" rel="noreferrer"><img src="assets/cert-google-data.jpg" alt="Foundations Data Data Everywhere certificate" loading="lazy" /><div class="credential-overlay"><span>Google</span><h3>Foundations: Data, Data, Everywhere</h3><small>Coursera</small></div></a>
-          <a class="credential-card reveal" href="assets/cert-tech-support.pdf" target="_blank" rel="noreferrer"><img src="assets/cert-tech-support.jpg" alt="Technical Support Fundamentals certificate" loading="lazy" /><div class="credential-overlay"><span>Google</span><h3>Technical Support Fundamentals</h3><small>Coursera</small></div></a>
+          <a class="credential-card reveal cursor-view" data-cursor-label="CERT" href="assets/cert-icecet-2024.pdf" target="_blank" rel="noreferrer"><img src="assets/cert-icecet-2024.jpg" alt="ICECET 2024 oral presentation certificate" loading="lazy" /><div class="credential-overlay"><span>ICECET 2024</span><h3>Oral Presentation</h3><small>Research · IEEE conference</small></div></a>
+          <a class="credential-card reveal cursor-view" data-cursor-label="CERT" href="assets/cert-programming-everybody.pdf" target="_blank" rel="noreferrer"><img src="assets/cert-programming-everybody.jpg" alt="Programming for Everybody certificate" loading="lazy" /><div class="credential-overlay"><span>University of Michigan</span><h3>Programming for Everybody</h3><small>Coursera</small></div></a>
+          <a class="credential-card reveal cursor-view" data-cursor-label="CERT" href="assets/cert-python-data-structures.pdf" target="_blank" rel="noreferrer"><img src="assets/cert-python-data-structures.jpg" alt="Python Data Structures certificate" loading="lazy" /><div class="credential-overlay"><span>University of Michigan</span><h3>Python Data Structures</h3><small>Coursera</small></div></a>
+          <a class="credential-card reveal cursor-view" data-cursor-label="CERT" href="assets/cert-software-testing.pdf" target="_blank" rel="noreferrer"><img src="assets/cert-software-testing.jpg" alt="Foundations of Software Testing and Validation certificate" loading="lazy" /><div class="credential-overlay"><span>University of Leeds</span><h3>Software Testing & Validation</h3><small>Coursera</small></div></a>
+          <a class="credential-card reveal cursor-view" data-cursor-label="CERT" href="assets/cert-google-data.pdf" target="_blank" rel="noreferrer"><img src="assets/cert-google-data.jpg" alt="Foundations Data Data Everywhere certificate" loading="lazy" /><div class="credential-overlay"><span>Google</span><h3>Foundations: Data, Data, Everywhere</h3><small>Coursera</small></div></a>
+          <a class="credential-card reveal cursor-view" data-cursor-label="CERT" href="assets/cert-tech-support.pdf" target="_blank" rel="noreferrer"><img src="assets/cert-tech-support.jpg" alt="Technical Support Fundamentals certificate" loading="lazy" /><div class="credential-overlay"><span>Google</span><h3>Technical Support Fundamentals</h3><small>Coursera</small></div></a>
         </div>
       </div>
     </section>
 
-    <section class="section section-shell" id="education">
+    <section class="section section-shell" id="education" data-section-title="EDUCATION">
       <div class="education-layout">
         <div class="section-heading reveal">
           <p class="kicker">07 · Education</p>
@@ -425,6 +459,7 @@
     </section>
 
     <section class="contact-section" id="contact">
+      <div class="contact-monogram" aria-hidden="true">RI</div>
       <div class="contact-glow" aria-hidden="true"></div>
       <div class="section-shell contact-inner">
         <p class="kicker reveal">08 · Contact</p>

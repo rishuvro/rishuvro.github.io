@@ -5,13 +5,14 @@
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
   // Theme
-  const savedTheme = localStorage.getItem('ri-theme');
+  let savedTheme = null;
   const systemLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+  try { savedTheme = localStorage.getItem('ri-theme'); } catch (_) {}
   root.dataset.theme = savedTheme || (systemLight ? 'light' : 'dark');
   const themeToggle = document.getElementById('theme-toggle');
   themeToggle?.addEventListener('click', () => {
     root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    localStorage.setItem('ri-theme', root.dataset.theme);
+    try { localStorage.setItem('ri-theme', root.dataset.theme); } catch (_) {}
   });
 
   // Header + mobile navigation
@@ -170,4 +171,137 @@
   }
 
   document.getElementById('year').textContent = new Date().getFullYear();
+})();
+
+// V3 cinematic polish: load sequence, scroll intelligence and interaction labels.
+(() => {
+  const root = document.documentElement;
+  const body = document.body;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  // Short branded boot sequence. It never blocks reduced-motion users.
+  const boot = document.getElementById('boot-screen');
+  const finishBoot = () => {
+    boot?.classList.add('is-done');
+    body.classList.remove('is-loading');
+    window.setTimeout(() => boot?.remove(), 800);
+  };
+  if (reducedMotion) {
+    finishBoot();
+  } else {
+    // Guarantee dismissal even if load fires before this deferred script executes.
+    const wait = document.readyState === 'complete' ? 920 : 1080;
+    window.setTimeout(finishBoot, wait);
+    window.addEventListener('load', () => window.setTimeout(finishBoot, 720), { once: true });
+  }
+
+  // Page progress + subtle hero scroll choreography.
+  const progress = document.getElementById('scroll-progress-bar');
+  const hero = document.querySelector('.hero');
+  const heroLines = [...document.querySelectorAll('.display-line')];
+  let ticking = false;
+  const updateScrollScene = () => {
+    const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const ratio = Math.min(1, Math.max(0, window.scrollY / max));
+    if (progress) progress.style.transform = `scaleX(${ratio})`;
+
+    if (!reducedMotion && hero && window.innerWidth > 900) {
+      const heroRect = hero.getBoundingClientRect();
+      const p = Math.min(1, Math.max(0, -heroRect.top / Math.max(1, heroRect.height * .72)));
+      heroLines.forEach((line, index) => {
+        const drift = p * (index + 1) * 7;
+        line.style.transform = `translate3d(${drift}px, ${p * -4}px, 0)`;
+      });
+      hero.style.setProperty('--hero-scroll', p.toFixed(3));
+    } else {
+      heroLines.forEach(line => { line.style.transform = ''; });
+    }
+    ticking = false;
+  };
+  const requestScrollScene = () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(updateScrollScene);
+    }
+  };
+  updateScrollScene();
+  window.addEventListener('scroll', requestScrollScene, { passive: true });
+  window.addEventListener('resize', requestScrollScene, { passive: true });
+
+  // Active chapter in the primary navigation.
+  const navLinks = [...document.querySelectorAll('.desktop-nav a[href^="#"]')];
+  const navTargets = navLinks
+    .map(link => ({ link, target: document.querySelector(link.getAttribute('href')) }))
+    .filter(item => item.target);
+  if ('IntersectionObserver' in window && navTargets.length) {
+    const activeMap = new Map();
+    const navObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => activeMap.set(entry.target.id, entry.intersectionRatio));
+      let best = null;
+      navTargets.forEach(item => {
+        const score = activeMap.get(item.target.id) || 0;
+        if (!best || score > best.score) best = { ...item, score };
+      });
+      if (best && best.score > 0) {
+        navLinks.forEach(link => link.classList.toggle('is-active', link === best.link));
+      }
+    }, { threshold: [0, .12, .3, .55, .8], rootMargin: '-24% 0px -58% 0px' });
+    navTargets.forEach(item => navObserver.observe(item.target));
+  }
+
+  // Personal signal stage: all layers respond together but at different depths.
+  const stage = document.getElementById('identity-stage');
+  if (stage && finePointer && !reducedMotion) {
+    stage.addEventListener('pointermove', e => {
+      const r = stage.getBoundingClientRect();
+      const x = ((e.clientX - r.left) / r.width - .5) * 2;
+      const y = ((e.clientY - r.top) / r.height - .5) * 2;
+      stage.style.setProperty('--stage-x', x.toFixed(3));
+      stage.style.setProperty('--stage-y', y.toFixed(3));
+    }, { passive: true });
+    stage.addEventListener('pointerleave', () => {
+      stage.style.setProperty('--stage-x', '0');
+      stage.style.setProperty('--stage-y', '0');
+    });
+  }
+
+  // Project spotlight follows the pointer even on the large non-tilting feature card.
+  if (finePointer && !reducedMotion) {
+    document.querySelectorAll('.project').forEach(card => {
+      card.addEventListener('pointermove', e => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--px', `${((e.clientX-r.left)/r.width)*100}%`);
+        card.style.setProperty('--py', `${((e.clientY-r.top)/r.height)*100}%`);
+      }, { passive:true });
+    });
+  }
+
+  // Cursor action mode for portfolio objects.
+  const cursorLabel = document.querySelector('.cursor-label');
+  if (finePointer && !reducedMotion && cursorLabel) {
+    let labelX = innerWidth / 2, labelY = innerHeight / 2;
+    let tx = labelX, ty = labelY;
+    window.addEventListener('pointermove', e => { tx = e.clientX; ty = e.clientY; }, { passive:true });
+    const labelLoop = () => {
+      labelX += (tx - labelX) * .2;
+      labelY += (ty - labelY) * .2;
+      cursorLabel.style.left = `${labelX}px`;
+      cursorLabel.style.top = `${labelY}px`;
+      requestAnimationFrame(labelLoop);
+    };
+    labelLoop();
+    document.querySelectorAll('.cursor-view').forEach(item => {
+      item.addEventListener('pointerenter', () => {
+        cursorLabel.textContent = item.dataset.cursorLabel || 'VIEW';
+        body.classList.add('cursor-action');
+      });
+      item.addEventListener('pointerleave', () => body.classList.remove('cursor-action'));
+    });
+  }
+
+  // Pause expensive ambience while the tab is not visible.
+  document.addEventListener('visibilitychange', () => {
+    body.classList.toggle('page-hidden', document.hidden);
+  });
 })();
