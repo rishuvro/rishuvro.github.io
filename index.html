@@ -1,2055 +1,455 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#08090d" />
+  <meta name="color-scheme" content="dark light" />
 
-  <title>Rakibul Islam — Business Operations, Digital Growth & IT Systems</title>
-  <meta name="description" content="Rakibul Islam — Business Operations, Digital Growth & IT Systems professional. SEO, Google Ads, social media marketing, lead generation, reporting, Laravel/PHP systems, and business operations." />
-  <meta name="theme-color" content="#0b1220" />
-  <meta name="color-scheme" content="light dark" />
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://rishuvro.github.io/" />
-
-  <!-- Favicons (optional: add these files) -->
-  <link rel="icon" href="asset/favicon.ico" />
-  <link rel="apple-touch-icon" href="asset/apple-touch-icon.png" />
-
-  <!-- Robots -->
+  <title>Rakibul Islam — Operations × Growth × Technology</title>
+  <meta name="description" content="Portfolio of Rakibul Islam — business operations, digital growth, IT systems, Laravel/PHP products, research and applied technology." />
+  <meta name="author" content="Rakibul Islam" />
   <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://rishuvro.github.io/" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Rakibul Islam — Business Operations, Digital Growth & IT Systems" />
-  <meta property="og:description" content="Business operations, digital marketing, SEO, Google Ads, lead generation, Laravel/PHP systems, projects, experience, and contact." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rishuvro.github.io/" />
-  <meta property="og:image" content="asset/rakib.png" />
-  <meta property="og:image:alt" content="Rakibul Islam — Profile photo" />
-
-  <!-- Twitter Card -->
+  <meta property="og:title" content="Rakibul Islam — Operations × Growth × Technology" />
+  <meta property="og:description" content="I connect business operations, digital growth and technology to build systems that perform." />
+  <meta property="og:image" content="https://rishuvro.github.io/assets/social-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Rakibul Islam — Business Operations, Digital Growth & IT Systems" />
-  <meta name="twitter:description" content="Business Operations • SEO • Google Ads • Lead Generation • Laravel/PHP Systems • Projects & Contact" />
-  <meta name="twitter:image" content="asset/rakib.png" />
+  <meta name="twitter:title" content="Rakibul Islam — Operations × Growth × Technology" />
+  <meta name="twitter:description" content="Business Operations × Digital Growth × Technology" />
+  <meta name="twitter:image" content="https://rishuvro.github.io/assets/social-card.png" />
 
-  <!-- Preconnects -->
-  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-
-  <!-- Tailwind (Play CDN) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-  tailwind.config = {
-    darkMode: 'class',
-    theme: {
-      extend: {
-        fontFamily: {
-          sans: [
-            'ui-sans-serif', 'system-ui', 'Inter', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial',
-            'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'
-          ],
-        },
-        boxShadow: {
-          soft: '0 10px 30px rgba(2, 6, 23, 0.12)',
-          glow: '0 0 0 1px rgba(56,189,248,.12), 0 10px 30px rgba(2,6,23,.14)',
-        },
-        keyframes: {
-          floaty: {
-            '0%,100%': { transform: 'translateY(0)' },
-            '50%': { transform: 'translateY(-10px)' },
-          },
-          orbit: {
-            '0%': { transform: 'rotate(0deg) translateX(18px) rotate(0deg)' },
-            '100%': { transform: 'rotate(360deg) translateX(18px) rotate(-360deg)' },
-          },
-          sheen: {
-            '0%': { transform: 'translateX(-140%) skewX(-12deg)' },
-            '100%': { transform: 'translateX(140%) skewX(-12deg)' },
-          },
-          shimmer: {
-            '0%': { backgroundPosition: '0% 50%' },
-            '50%': { backgroundPosition: '100% 50%' },
-            '100%': { backgroundPosition: '0% 50%' },
-          },
-          blob: {
-            '0%,100%': { transform: 'translate(0,0) scale(1)' },
-            '33%': { transform: 'translate(12px,-14px) scale(1.04)' },
-            '66%': { transform: 'translate(-10px,10px) scale(0.98)' },
-          },
-        },
-        animation: {
-          floaty: 'floaty 7s ease-in-out infinite',
-          orbit: 'orbit 10s linear infinite',
-          sheen: 'sheen 1.15s ease-in-out',
-          shimmer: 'shimmer 12s ease infinite',
-          blob: 'blob 10s ease-in-out infinite',
-        },
-      },
-    },
-  }
-</script>
-
-
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <style>
-    :focus-visible { outline: 3px solid rgba(56, 189, 248, .65); outline-offset: 2px; border-radius: 10px; }
-    @media (prefers-reduced-motion: reduce) {
-      * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
-    }
-  </style>
-
-  <!-- Theme init (prevents flash) -->
+  <link rel="preload" href="assets/profile-cutout.png" as="image" />
   <script>
     (function () {
-      const saved = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (saved === 'dark' || (!saved && prefersDark)) document.documentElement.classList.add('dark');
+      try {
+        const saved = localStorage.getItem('ri-theme');
+        const systemLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+        document.documentElement.dataset.theme = saved || (systemLight ? 'light' : 'dark');
+      } catch (_) {}
     })();
   </script>
+  <link rel="stylesheet" href="styles.css" />
 
-  <!-- JSON-LD (SEO) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Rakibul Islam",
-    "jobTitle": ["Business Operations Professional","Digital Growth Specialist","IT Systems Professional"],
     "url": "https://rishuvro.github.io/",
-    "image": "https://rishuvro.github.io/asset/rakib.png",
+    "image": "https://rishuvro.github.io/assets/profile-cutout.png",
+    "jobTitle": "Business Operations, Digital Growth & IT Systems Professional",
+    "address": {"@type": "PostalAddress", "addressLocality": "Dhaka", "addressCountry": "BD"},
     "sameAs": [
       "https://www.linkedin.com/in/rishuvro",
       "https://github.com/rishuvro",
       "https://www.kaggle.com/rishuvro",
-      "https://x.com/rishuvro"
-    ],
-    "address": { "@type": "PostalAddress", "addressLocality": "Dhaka", "addressCountry": "BD" }
+      "https://orcid.org/0009-0004-0055-9928",
+      "https://scholar.google.com/citations?user=8-ZX2LYAAAAJ&hl=en",
+      "https://www.researchgate.net/profile/Rakibul-Islam-97"
+    ]
   }
   </script>
 </head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <canvas id="signal-canvas" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
 
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
-  <!-- Skip link -->
-  <a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-xl focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:shadow-soft dark:focus:bg-slate-950">
-    Skip to content
-  </a>
+  <header class="site-header" id="top">
+    <a class="brand magnetic" href="#top" aria-label="Rakibul Islam — home">
+      <span class="brand-mark">RI</span>
+      <span class="brand-copy"><strong>Rakibul Islam</strong><small>Dhaka · Bangladesh</small></span>
+    </a>
 
-  <!-- Top gradient glow -->
-  <div aria-hidden="true" class="pointer-events-none fixed inset-x-0 -top-40 z-0 h-[520px] opacity-70 blur-3xl">
-    <div class="mx-auto h-full w-[980px] bg-gradient-to-r from-sky-400/30 via-indigo-400/20 to-fuchsia-400/30 animate-shimmer"
-         style="background-size: 200% 200%"></div>
-  </div>
-
-  <!-- NAV (Upgraded: hover lift + aria + Hire Me) -->
-  <header class="sticky top-0 z-50">
-    <nav class="backdrop-blur bg-white/70 dark:bg-slate-950/60 border-b border-slate-200/70 dark:border-slate-800/70">
-      <div class="mx-auto max-w-6xl px-4 sm:px-6">
-        <div class="flex h-16 items-center justify-between">
-          <a href="#content" class="group flex items-center gap-2 font-semibold tracking-tight">
-            <span class="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-soft transition group-hover:-translate-y-0.5">
-              R
-            </span>
-            <span class="transition group-hover:text-sky-700 dark:group-hover:text-sky-400">Rakibul Islam</span>
-          </a>
-
-          <div class="hidden md:flex items-center gap-6 text-sm">
-            <a class="hover:text-sky-600 dark:hover:text-sky-400" href="#projects">Projects</a>
-            <a class="hover:text-sky-600 dark:hover:text-sky-400" href="#experience">Experience</a>
-            <a class="hover:text-sky-600 dark:hover:text-sky-400" href="#skills">Skills</a>
-            <a class="hover:text-sky-600 dark:hover:text-sky-400" href="#certificates">Certificates</a>
-            <a class="hover:text-sky-600 dark:hover:text-sky-400" href="#publications">Publications</a>
-            <a class="hover:text-sky-600 dark:hover:text-sky-400" href="#education">Education</a>
-            <a class="hover:text-sky-600 dark:hover:text-sky-400" href="#cv">CV</a>
-
-            <a class="hover:text-sky-600 dark:hover:text-sky-400" href="#contact">Contact</a>
-          </div>
-
-
-
-          <div class="flex items-center gap-2">
-            <a href="#contact"
-               class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-slate-900 px-3 py-2 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:opacity-95 dark:bg-white dark:text-slate-900">
-              <i class="fa-solid fa-paper-plane"></i> Hire Me
-            </a>
-
-            <button id="themeBtn"
-              class="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 px-3 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-slate-100 dark:hover:bg-slate-900"
-              type="button" aria-label="Toggle dark mode">
-              <i id="themeIcon" class="fa-solid fa-moon"></i>
-              <span class="hidden sm:inline">Theme</span>
-            </button>
-
-            <button id="menuBtn"
-              class="md:hidden inline-flex items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 px-3 py-2 transition hover:-translate-y-0.5 hover:bg-slate-100 dark:hover:bg-slate-900"
-              type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-              <i class="fa-solid fa-bars"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- mobile menu -->
-        <div id="mobileMenu" class="md:hidden hidden pb-4">
-          <div class="grid gap-2 text-sm">
-            <a class="rounded-xl px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-900" href="#projects">Projects</a>
-            <a class="rounded-xl px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-900" href="#experience">Experience</a>
-            <a class="rounded-xl px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-900" href="#skills">Skills</a>
-            <a class="rounded-xl px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-900" href="#certificates">Certificates</a>
-            <a class="rounded-xl px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-900" href="#publications">Publications</a>
-            <a class="rounded-xl px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-900" href="#education">Education</a>
-            <a class="rounded-xl px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-900" href="#cv">CV</a>
-            <a class="rounded-xl px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-900" href="#contact">Contact</a>
-          </div>
-        </div>
-      </div>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#research">Research</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#contact">Contact</a>
     </nav>
+
+    <div class="header-actions">
+      <button class="icon-button magnetic" id="theme-toggle" type="button" aria-label="Toggle color theme">
+        <span class="theme-icon" aria-hidden="true">◐</span>
+      </button>
+      <a class="button button-small magnetic" href="assets/rakibul-islam-cv.pdf" target="_blank" rel="noreferrer">CV <span>↗</span></a>
+      <button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#research">Research</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#contact">Contact</a>
+      <a href="assets/rakibul-islam-cv.pdf" target="_blank" rel="noreferrer">Open CV ↗</a>
+    </div>
   </header>
 
-  <main id="content" class="relative z-10">
-
-
-
-
-    
-
-
-<!-- HERO (Upgraded + More Animated + Cooler) -->
-<section class="relative pt-10 sm:pt-14">
-  <!-- background glow + grid -->
-  <div class="pointer-events-none absolute inset-0 overflow-hidden">
-    <div class="absolute -top-24 left-1/2 h-[420px] w-[820px] -translate-x-1/2 rounded-full bg-gradient-to-r from-sky-500/25 via-indigo-500/15 to-fuchsia-500/25 blur-3xl"></div>
-    <div class="absolute inset-0 opacity-[0.08] dark:opacity-[0.12]"
-         style="background-image: radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0); background-size: 22px 22px;">
-    </div>
-
-    <!-- extra vignette for depth -->
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-50/70 dark:to-slate-950/50"></div>
-  </div>
-
-  <div class="relative mx-auto max-w-6xl px-4 sm:px-6">
-    <div class="grid items-center gap-10 md:grid-cols-[1.2fr_.8fr]">
-      <!-- LEFT -->
-      <div>
-        <!-- status + role chips -->
-        <div class="flex flex-wrap items-center gap-2">
-          <div
-            class="inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-white/60 px-4 py-2 text-xs text-slate-600 shadow-soft backdrop-blur transition hover:-translate-y-0.5 dark:border-slate-800/70 dark:bg-slate-950/50 dark:text-slate-300">
-            <span class="relative flex h-2 w-2">
-              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/70"></span>
-              <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
-            </span>
-            Open to: Business Operations • Digital Growth • IT Systems Roles
-          </div>
-
-          <span
-            class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-2 text-xs font-medium text-slate-700 shadow-soft backdrop-blur transition hover:-translate-y-0.5 dark:border-slate-800 dark:bg-slate-950/60 dark:text-slate-200">
-            <i class="fa-solid fa-shield-halved text-sky-600 dark:text-sky-400"></i> SEO + Ads + Lead Gen
-          </span>
-
-          <span
-            class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-2 text-xs font-medium text-slate-700 shadow-soft backdrop-blur transition hover:-translate-y-0.5 dark:border-slate-800 dark:bg-slate-950/60 dark:text-slate-200">
-            <i class="fa-solid fa-microchip text-violet-600 dark:text-violet-400"></i> Operations • Reporting • Systems
-          </span>
-        </div>
-
-        <h1 class="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
-          Business Operations & Digital Growth
-          <span class="block bg-gradient-to-r from-sky-600 via-indigo-600 to-fuchsia-600 bg-clip-text text-transparent">
-            Rakibul Islam
-          </span>
+  <main id="main">
+    <section class="hero section-shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow reveal"><span class="status-pulse"></span> Business operations · digital growth · technology</div>
+        <h1 id="hero-title" class="display reveal">
+          <span class="display-line">I connect</span>
+          <span class="display-line gradient-text">operations, growth</span>
+          <span class="display-line">& technology.</span>
         </h1>
+        <p class="hero-lede reveal">I’m <strong>Rakibul Islam</strong>. I turn messy workflows, digital channels and technical systems into structured operations that are easier to manage, measure and scale.</p>
 
-        <p class="mt-4 text-base leading-relaxed text-slate-700 dark:text-slate-300">
-          I connect business operations, performance marketing, SEO, lead generation, reporting, and IT systems to build smarter workflows and measurable digital growth using <span class="font-semibold">Google Ads</span>, <span class="font-semibold">SEO</span>, <span class="font-semibold">Social Media Marketing</span>, and <span class="font-semibold">Laravel/PHP</span> systems.
-        </p>
-
-        <!-- quick impact stats -->
-        <div class="mt-6 grid gap-3 sm:grid-cols-3">
-          <div class="group rounded-2xl border border-slate-200 bg-white/70 p-4 shadow-soft backdrop-blur transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950/60">
-            <div class="flex items-center gap-2 text-sm font-semibold">
-              <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-700 dark:text-emerald-300">
-                <i class="fa-solid fa-headset"></i>
-              </span>
-              Business Ops
-            </div>
-            <div class="mt-2 text-xs text-slate-600 dark:text-slate-400">
-              Workflow coordination, planning, documentation, reporting, process improvement
-            </div>
-          </div>
-
-          <div class="group rounded-2xl border border-slate-200 bg-white/70 p-4 shadow-soft backdrop-blur transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950/60">
-            <div class="flex items-center gap-2 text-sm font-semibold">
-              <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-sky-500/10 text-sky-700 dark:text-sky-300">
-                <i class="fa-solid fa-code"></i>
-              </span>
-              Digital Growth
-            </div>
-            <div class="mt-2 text-xs text-slate-600 dark:text-slate-400">
-              SEO, Google Ads, social media campaigns, WhatsApp/Messenger leads
-            </div>
-          </div>
-
-          <div class="group rounded-2xl border border-slate-200 bg-white/70 p-4 shadow-soft backdrop-blur transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950/60">
-            <div class="flex items-center gap-2 text-sm font-semibold">
-              <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-violet-500/10 text-violet-700 dark:text-violet-300">
-                <i class="fa-solid fa-brain"></i>
-              </span>
-              IT Systems
-            </div>
-            <div class="mt-2 text-xs text-slate-600 dark:text-slate-400">
-              CRM, POS, inventory, clinic systems, Laravel/PHP business tools
-            </div>
-          </div>
+        <div class="hero-actions reveal">
+          <a class="button button-primary magnetic" href="#work">Explore selected work <span>↓</span></a>
+          <a class="text-link magnetic" href="mailto:rakibulislamshuvro@gmail.com">rakibulislamshuvro@gmail.com <span>↗</span></a>
         </div>
 
-        <!-- CTA buttons -->
-        <div class="mt-7 flex flex-wrap gap-3">
-          <a href="#projects"
-             class="group inline-flex items-center gap-2 rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:opacity-95 dark:bg-white dark:text-slate-900">
-            <i class="fa-solid fa-diagram-project transition group-hover:rotate-6"></i> View Projects
-          </a>
-
-          <a href="asset/cv.pdf" target="_blank" rel="noreferrer"
-             class="group inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100 dark:hover:bg-slate-900">
-            <i class="fa-solid fa-file-arrow-down transition group-hover:-translate-y-0.5"></i> Download CV
-          </a>
-
-          <a href="#contact"
-             class="group inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100 dark:hover:bg-slate-900">
-            <i class="fa-solid fa-paper-plane transition group-hover:translate-x-0.5"></i> Contact
-          </a>
-        </div>
-
-        <!-- location + contact -->
-        <div class="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-slate-700 dark:text-slate-300">
-          <span class="inline-flex items-center gap-2">
-            <i class="fa-solid fa-location-dot text-sky-600 dark:text-sky-400"></i> Dhaka, Bangladesh
-          </span>
-
-          <a class="inline-flex items-center gap-2 transition hover:text-sky-600 dark:hover:text-sky-400"
-             href="mailto:rakibulislamshuvro@gmail.com">
-            <i class="fa-solid fa-envelope"></i> rakibulislamshuvro@gmail.com
-          </a>
-
-          <a class="inline-flex items-center gap-2 transition hover:text-sky-600 dark:hover:text-sky-400"
-             href="tel:+8801727688491">
-            <i class="fa-solid fa-phone"></i> +880 1727 688 491
-          </a>
-        </div>
-
-        <!-- socials (animated hover) -->
-        <div class="mt-6 flex flex-wrap gap-2">
-          <a class="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-900"
-             target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/rishuvro">
-            <i class="fa-brands fa-linkedin text-sky-700 dark:text-sky-400 transition group-hover:scale-110"></i> LinkedIn
-          </a>
-
-          <a class="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-900"
-             target="_blank" rel="noreferrer" href="https://github.com/rishuvro">
-            <i class="fa-brands fa-github transition group-hover:rotate-6"></i> GitHub
-          </a>
-
-          <a class="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-900"
-             target="_blank" rel="noreferrer" href="https://www.kaggle.com/rishuvro">
-            <i class="fa-brands fa-kaggle transition group-hover:scale-110"></i> Kaggle
-          </a>
-
-          <a class="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-900"
-             target="_blank" rel="noreferrer" href="https://orcid.org/0009-0004-0055-9928">
-            <i class="fa-brands fa-orcid transition group-hover:scale-110"></i> ORCID
-          </a>
-
-          <a class="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-900"
-             target="_blank" rel="noreferrer" href="https://scholar.google.com/citations?user=8-ZX2LYAAAAJ&hl=en">
-            <i class="fa-brands fa-google-scholar transition group-hover:scale-110"></i> Google Scholar
-          </a>
-
-          <a class="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-900"
-             target="_blank" rel="noreferrer" href="https://www.researchgate.net/profile/Rakibul-Islam-97">
-            <i class="fa-brands fa-researchgate transition group-hover:scale-110"></i> ResearchGate
-          </a>
-
-          <a class="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-900"
-             target="_blank" rel="noreferrer" href="https://x.com/rishuvro">
-            <i class="fa-brands fa-x-twitter transition group-hover:-rotate-6"></i> X
-          </a>
-
-          <a class="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-900"
-             target="_blank" rel="noreferrer" href="https://rishuvro.github.io/">
-            <i class="fa-solid fa-globe transition group-hover:rotate-6"></i> Portfolio
-          </a>
+        <div class="hero-meta reveal" aria-label="Core disciplines">
+          <span>OPERATIONS</span><i></i><span>PERFORMANCE</span><i></i><span>SYSTEMS</span><i></i><span>RESEARCH</span>
         </div>
       </div>
 
-      <!-- RIGHT  -->
-      <div class="relative">
-        <!-- BIG ambient glow -->
-        <div aria-hidden="true" class="pointer-events-none absolute -inset-10 opacity-80 blur-3xl">
-          <div class="absolute left-1/2 top-6 h-[420px] w-[520px] -translate-x-1/2 rounded-full bg-gradient-to-r from-sky-500/25 via-indigo-500/15 to-fuchsia-500/25"></div>
-          <div class="absolute -left-8 top-24 h-36 w-36 rounded-full bg-emerald-500/15 blur-2xl"></div>
-          <div class="absolute -right-10 top-10 h-44 w-44 rounded-full bg-sky-500/15 blur-2xl"></div>
+      <div class="identity-stage reveal" id="identity-stage" aria-label="Portrait of Rakibul Islam with animated professional disciplines">
+        <div class="stage-glow" aria-hidden="true"></div>
+        <div class="orbit orbit-a" aria-hidden="true"></div>
+        <div class="orbit orbit-b" aria-hidden="true"></div>
+        <div class="orbit orbit-c" aria-hidden="true"></div>
+        <div class="portrait-frame">
+          <div class="portrait-scan" aria-hidden="true"></div>
+          <img src="assets/profile-cutout.png" width="531" height="650" alt="Rakibul Islam" />
+          <div class="portrait-label"><span>RAKIBUL / 01</span><span>DHAKA</span></div>
+        </div>
+        <div class="orbit-tag tag-ops">OPS</div>
+        <div class="orbit-tag tag-growth">GROWTH</div>
+        <div class="orbit-tag tag-systems">SYSTEMS</div>
+        <div class="orbit-tag tag-research">RESEARCH</div>
+        <div class="stage-caption"><span>Signal map</span><strong>strategy → execution → measurement</strong></div>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="Capabilities">
+      <div class="ticker-track">
+        <span>BUSINESS OPERATIONS</span><b>✦</b><span>SEO</span><b>✦</b><span>GOOGLE ADS</span><b>✦</b><span>LEAD GENERATION</span><b>✦</b><span>LARAVEL / PHP</span><b>✦</b><span>REPORTING</span><b>✦</b><span>IT SYSTEMS</span><b>✦</b><span>WORKFLOW DESIGN</span><b>✦</b>
+        <span>BUSINESS OPERATIONS</span><b>✦</b><span>SEO</span><b>✦</b><span>GOOGLE ADS</span><b>✦</b><span>LEAD GENERATION</span><b>✦</b><span>LARAVEL / PHP</span><b>✦</b><span>REPORTING</span><b>✦</b><span>IT SYSTEMS</span><b>✦</b><span>WORKFLOW DESIGN</span><b>✦</b>
+      </div>
+    </section>
+
+    <section class="section section-shell" id="approach">
+      <div class="section-heading reveal">
+        <p class="kicker">01 · Working model</p>
+        <h2>One person. Three operating layers.</h2>
+        <p>I work where business execution, digital performance and software systems overlap — so decisions are not separated from the tools and data that support them.</p>
+      </div>
+
+      <div class="pillars">
+        <article class="pillar reveal tilt-card">
+          <div class="pillar-index">01</div>
+          <div class="pillar-icon ops-icon" aria-hidden="true"><span></span><span></span><span></span></div>
+          <h3>Operations</h3>
+          <p>Workflow coordination, documentation, reporting, process improvement and day-to-day execution.</p>
+          <div class="micro-tags"><span>SOPs</span><span>Reporting</span><span>Planning</span><span>Coordination</span></div>
+        </article>
+        <article class="pillar reveal tilt-card">
+          <div class="pillar-index">02</div>
+          <div class="pillar-icon growth-icon" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <h3>Digital Growth</h3>
+          <p>SEO, paid campaigns, lead flows, landing pages, performance tracking and digital visibility.</p>
+          <div class="micro-tags"><span>SEO</span><span>Google Ads</span><span>Meta</span><span>Leads</span></div>
+        </article>
+        <article class="pillar reveal tilt-card">
+          <div class="pillar-index">03</div>
+          <div class="pillar-icon systems-icon" aria-hidden="true"><span></span><span></span><span></span></div>
+          <h3>Technology</h3>
+          <p>Business systems, Laravel/PHP applications, databases, IT support and practical automation.</p>
+          <div class="micro-tags"><span>Laravel</span><span>MySQL</span><span>RBAC</span><span>APIs</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section work-section" id="work">
+      <div class="section-shell">
+        <div class="section-heading section-heading-row reveal">
+          <div>
+            <p class="kicker">02 · Selected work</p>
+            <h2>Systems built around real operations.</h2>
+          </div>
+          <a class="text-link magnetic" href="https://github.com/rishuvro?tab=repositories" target="_blank" rel="noreferrer">All repositories <span>↗</span></a>
         </div>
 
-        <!-- PHOTO WRAP (better: borderless + 3D tilt + fit) -->
-        <div class="group relative [perspective:1200px]">
-          <!-- glow frame -->
-          <div aria-hidden="true" class="pointer-events-none absolute -inset-2 rounded-[2.35rem] bg-gradient-to-br from-sky-500/25 via-indigo-500/10 to-fuchsia-500/25 blur-xl"></div>
-
-          <div
-            class="relative overflow-hidden rounded-[2.25rem] bg-white/70 shadow-soft backdrop-blur transition duration-500
-                   group-hover:-translate-y-1 group-hover:shadow-lg dark:bg-slate-950/55
-                   [transform-style:preserve-3d] group-hover:[transform:rotateX(6deg)_rotateY(-8deg)]">
-
-            <!-- edge highlight (no border) -->
-            <div aria-hidden="true" class="pointer-events-none absolute inset-0 ring-1 ring-white/40 dark:ring-white/10"></div>
-
-            <!-- moving spotlight -->
-            <div aria-hidden="true" class="pointer-events-none absolute -top-24 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-gradient-to-br from-white/22 to-transparent blur-2xl opacity-70 transition duration-700 group-hover:opacity-95"></div>
-
-            <!-- animated sheen (on hover) -->
-            <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-0 transition duration-700 group-hover:opacity-100">
-              <div class="absolute inset-y-0 left-0 w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-white/18 to-transparent animate-sheen"></div>
-            </div>
-
-            <!-- depth overlay -->
-            <div aria-hidden="true" class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/35 via-transparent to-transparent"></div>
-
-            <!-- FLOATING corner chips -->
-            <div class="absolute left-4 top-4 z-20 flex flex-wrap gap-2 [transform:translateZ(30px)]">
-              <span class="inline-flex items-center gap-2 rounded-full bg-white/70 px-3 py-1 text-xs font-semibold text-slate-900 shadow-soft backdrop-blur dark:bg-slate-950/60 dark:text-slate-100">
-                <span class="relative flex h-2 w-2">
-                  <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/70"></span>
-                  <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
-                </span>
-                Open to work
-              </span>
-              
-            </div>
-
-            <!-- THE PHOTO (better fit: object-center + slight lift) -->
-            <img
-              src="asset/rakib.png"
-              alt="Rakibul Islam"
-              class="h-[460px] w-full object-cover object-center transition duration-700 group-hover:scale-[1.08]"
-              loading="lazy"
-            />
-
-            <!-- bottom floating profile card -->
-            <div class="absolute inset-x-0 bottom-0 z-30 p-4 [transform:translateZ(40px)]">
-              <div class="rounded-3xl bg-white/75 p-4 shadow-soft backdrop-blur dark:bg-slate-950/60">
-                <div class="flex items-start justify-between gap-3">
-                  <div>
-                    <div class="text-sm font-bold tracking-tight">Rakibul Islam</div>
-                    <div class="mt-0.5 text-xs text-slate-600 dark:text-slate-300">
-                      Business Operations • Digital Growth • IT Systems
-                    </div>
-                  </div>
-
-                  <a href="#contact"
-                     class="inline-flex items-center gap-2 rounded-2xl bg-slate-900 px-3 py-2 text-xs font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:opacity-95 dark:bg-white dark:text-slate-900">
-                    <i class="fa-solid fa-paper-plane"></i> Contact Me
-                  </a>
-                </div>
-
-                <!-- tech pills -->
-                <div class="mt-3 flex flex-wrap gap-2 text-xs">
-                  <span class="rounded-full bg-emerald-500/10 px-3 py-1 font-medium text-emerald-700 dark:text-emerald-300">Business Ops</span>
-                  <span class="rounded-full bg-sky-500/10 px-3 py-1 font-medium text-sky-700 dark:text-sky-300">SEO + Ads</span>
-                  <span class="rounded-full bg-amber-500/10 px-3 py-1 font-medium text-amber-700 dark:text-amber-300">Lead Gen</span>
-                  <span class="rounded-full bg-violet-500/10 px-3 py-1 font-medium text-violet-700 dark:text-violet-300">Laravel/PHP</span>
+        <div class="project-grid">
+          <article class="project project-feature reveal" data-project="clinic">
+            <div class="project-topline"><span>LIVE SYSTEM</span><span>01 / CLINIC OPERATIONS</span></div>
+            <div class="system-window" aria-hidden="true">
+              <div class="window-bar"><i></i><i></i><i></i><span>EVOLVEDCMS / OPERATIONS</span></div>
+              <div class="window-body">
+                <div class="mock-sidebar"><b>EC</b><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="mock-content">
+                  <div class="mock-header"><span>Management overview</span><em>Live</em></div>
+                  <div class="metric-row"><div><small>Patients</small><strong>Active</strong></div><div><small>System</small><strong>Live</strong></div><div><small>Modules</small><strong>08+</strong></div></div>
+                  <div class="mock-chart"><span style="--h:35%"></span><span style="--h:52%"></span><span style="--h:44%"></span><span style="--h:76%"></span><span style="--h:64%"></span><span style="--h:88%"></span><span style="--h:72%"></span><span style="--h:94%"></span></div>
+                  <div class="mock-table"><span></span><span></span><span></span></div>
                 </div>
               </div>
             </div>
-          </div>
+            <div class="project-copy">
+              <div><h3>Clinic Management Platform</h3><p>Custom operational system for patients, appointments, billing, inventory, reporting, expenses, access control and auditability.</p></div>
+              <div class="project-links"><a class="round-link magnetic" href="https://myevolvedcms.com/" target="_blank" rel="noreferrer" aria-label="Open Clinic Management Platform">↗</a></div>
+            </div>
+            <div class="project-tech"><span>Laravel / PHP</span><span>MySQL</span><span>RBAC</span><span>Audit Logs</span><span>Business Workflow</span></div>
+          </article>
+
+          <article class="project reveal tilt-card">
+            <div class="project-topline"><span>POS + INVENTORY</span><span>02</span></div>
+            <div class="project-visual visual-ledger" aria-hidden="true">
+              <div class="ledger-card"><span>DAILY SALES</span><strong>৳</strong><i></i><i></i><i></i></div>
+              <div class="ledger-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+            <h3>Maitri Tally</h3>
+            <p>Billing, inventory and showroom reporting workflows connected to day-to-day sales operations.</p>
+            <div class="project-footer"><div class="project-tech"><span>Laravel</span><span>MySQL</span></div><a class="round-link magnetic" href="https://github.com/rishuvro/maitri_tally" target="_blank" rel="noreferrer" aria-label="Open Maitri Tally repository">↗</a></div>
+          </article>
+
+          <article class="project reveal tilt-card">
+            <div class="project-topline"><span>B2B + LEAD GENERATION</span><span>03</span></div>
+            <div class="project-visual visual-web" aria-hidden="true">
+              <div class="web-frame"><div class="web-nav"></div><div class="web-hero"><b>Digital credibility</b><span></span><i></i></div><div class="web-row"><span></span><span></span><span></span></div></div>
+            </div>
+            <h3>Supplier Business Website</h3>
+            <p>Responsive B2B website focused on services, credibility, discoverability and lead capture.</p>
+            <div class="project-footer"><div class="project-tech"><span>Laravel</span><span>SEO</span></div><a class="round-link magnetic" href="https://sdstechmed.com/" target="_blank" rel="noreferrer" aria-label="Open supplier business website">↗</a></div>
+          </article>
+
+          <article class="project reveal tilt-card">
+            <div class="project-topline"><span>ECOMMERCE</span><span>04</span></div>
+            <div class="project-visual visual-commerce" aria-hidden="true">
+              <div class="commerce-orbit"></div><div class="product-card pc-a"><i></i><span></span></div><div class="product-card pc-b"><i></i><span></span></div><div class="product-card pc-c"><i></i><span></span></div>
+            </div>
+            <h3>Krishica.com</h3>
+            <p>E-commerce foundation with maintainable catalog and admin workflows designed for future scale.</p>
+            <div class="project-footer"><div class="project-tech"><span>PHP</span><span>MySQL</span></div><a class="round-link magnetic" href="https://github.com/rishuvro/krishica.com" target="_blank" rel="noreferrer" aria-label="Open Krishica repository">↗</a></div>
+          </article>
+
+          <article class="project reveal tilt-card">
+            <div class="project-topline"><span>RETAIL OPERATIONS</span><span>05</span></div>
+            <div class="project-visual visual-store" aria-hidden="true">
+              <div class="store-stack"><span></span><span></span><span></span><span></span></div><div class="store-wave"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+            <h3>Store Management System</h3>
+            <p>Inventory, sales and customer workflows organized into an admin-friendly business system.</p>
+            <div class="project-footer"><div class="project-tech"><span>PHP</span><span>CRUD</span></div><a class="round-link magnetic" href="https://github.com/rishuvro/store" target="_blank" rel="noreferrer" aria-label="Open Store Management System repository">↗</a></div>
+          </article>
+
+          <article class="project reveal tilt-card">
+            <div class="project-topline"><span>NETWORKING LABS</span><span>06</span></div>
+            <div class="project-visual visual-network" aria-hidden="true">
+              <svg viewBox="0 0 520 240" role="img" aria-label="Animated network diagram">
+                <path d="M80 120 L205 50 L310 112 L440 55 M205 50 L205 190 M310 112 L430 190 M205 190 L430 190" />
+                <circle cx="80" cy="120" r="10"/><circle cx="205" cy="50" r="10"/><circle cx="310" cy="112" r="10"/><circle cx="440" cy="55" r="10"/><circle cx="205" cy="190" r="10"/><circle cx="430" cy="190" r="10"/>
+              </svg>
+            </div>
+            <h3>Cisco Networking Labs</h3>
+            <p>Topology design, routing, switching, IP/DNS configuration and troubleshooting practice.</p>
+            <div class="project-footer"><div class="project-tech"><span>Cisco</span><span>LAN/WAN</span></div><a class="round-link magnetic" href="https://github.com/rishuvro/Computer_Networking_cisco" target="_blank" rel="noreferrer" aria-label="Open networking repository">↗</a></div>
+          </article>
         </div>
 
-        <!-- MINI STATS (same content, slightly cleaner motion) -->
-        <div class="mt-4 grid grid-cols-3 gap-3 text-center">
-          <div class="group relative overflow-hidden rounded-2xl bg-white/70 p-3 text-xs shadow-soft backdrop-blur transition hover:-translate-y-0.5 hover:shadow-lg dark:bg-slate-950/60">
-            <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-              <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
-            </div>
-            <div class="relative flex items-center justify-center gap-2">
-              <i class="fa-solid fa-screwdriver-wrench text-emerald-500"></i>
-              <div class="text-xl font-extrabold">Ops</div>
-            </div>
-            <div class="relative text-slate-600 dark:text-slate-400">Planning</div>
-          </div>
-
-          <div class="group relative overflow-hidden rounded-2xl bg-white/70 p-3 text-xs shadow-soft backdrop-blur transition hover:-translate-y-0.5 hover:shadow-lg dark:bg-slate-950/60">
-            <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-              <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
-            </div>
-            <div class="relative flex items-center justify-center gap-2">
-              <i class="fa-solid fa-code text-sky-600 dark:text-sky-400"></i>
-              <div class="text-xl font-extrabold">Leads</div>
-            </div>
-            <div class="relative text-slate-600 dark:text-slate-400">Growth</div>
-          </div>
-
-          <div class="group relative overflow-hidden rounded-2xl bg-white/70 p-3 text-xs shadow-soft backdrop-blur transition hover:-translate-y-0.5 hover:shadow-lg dark:bg-slate-950/60">
-            <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-              <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
-            </div>
-            <div class="relative flex items-center justify-center gap-2">
-              <i class="fa-solid fa-brain text-violet-600 dark:text-violet-400"></i>
-              <div class="text-xl font-extrabold">IT Systems</div>
-            </div>
-            <div class="relative text-slate-600 dark:text-slate-400">Automation</div>
-          </div>
+        <div class="more-work reveal">
+          <div class="more-work-intro"><span>LAB / SIDE BUILDS</span><h3>ML, IoT and utilities.</h3></div>
+          <a class="mini-project" href="https://github.com/rishuvro/Heart_disease_prediction_using_AI" target="_blank" rel="noreferrer"><span class="mini-number">07</span><strong>Heart Disease Prediction</strong><small>Machine Learning</small><em>↗</em></a>
+          <a class="mini-project" href="https://github.com/rishuvro/Automatic_Water_Dispenser_System_Using_Arduino" target="_blank" rel="noreferrer"><span class="mini-number">08</span><strong>Automatic Water Dispenser</strong><small>Arduino / IoT</small><em>↗</em></a>
+          <a class="mini-project" href="https://github.com/rishuvro/PETROL_PUMP_MANAGEMENT_SYSTEM" target="_blank" rel="noreferrer"><span class="mini-number">09</span><strong>Petrol Pump Management</strong><small>Business System</small><em>↗</em></a>
+          <a class="mini-project" href="https://github.com/rishuvro/system_monitor_application_cpu-memory_using_python" target="_blank" rel="noreferrer"><span class="mini-number">10</span><strong>System Monitoring App</strong><small>Python Utility</small><em>↗</em></a>
         </div>
       </div>
+    </section>
 
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-<!-- FEATURED PROJECTS (Upgraded + Cooler) -->
-<section id="projects" class="pt-16 sm:pt-20">
-  <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-      <div>
-        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Featured Projects</h2>
-        <p class="mt-2 text-slate-700 dark:text-slate-300">
-          Projects that represent business systems, lead generation websites, clinic operations, POS/inventory, e-commerce, and digital workflow automation.
-        </p>
+    <section class="section section-shell" id="experience">
+      <div class="section-heading reveal">
+        <p class="kicker">03 · Experience</p>
+        <h2>From support to systems to growth operations.</h2>
       </div>
 
-      <div class="flex flex-wrap items-center gap-2">
-        <a href="https://github.com/rishuvro" target="_blank" rel="noreferrer"
-           class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-900">
-          <i class="fa-brands fa-github"></i> All Repositories
-        </a>
-        <a href="#contact"
-           class="inline-flex items-center gap-2 rounded-2xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:opacity-90 dark:bg-white dark:text-slate-900">
-          <i class="fa-solid fa-paper-plane"></i> Hire Me
-        </a>
-      </div>
-    </div>
-
-    <!-- quick filter chips -->
-    <div class="mt-6 flex flex-wrap gap-2">
-      <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
-        Laravel/PHP
-      </span>
-      <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
-        MySQL
-      </span>
-      <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
-        Admin Panels
-      </span>
-      <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
-        SEO / Lead Gen
-      </span>
-      <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
-        Business Systems
-      </span>
-    </div>
-
-    <div class="mt-8 grid gap-6 md:grid-cols-2">
-      <!-- FEATURED: EvolvedCMS / Clinic Management -->
-      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
-        </div>
-
-        <div class="relative flex items-start justify-between gap-4">
-          <div>
-            <div class="text-sm text-slate-600 dark:text-slate-400">Live System • Clinic Operations</div>
-            <h3 class="mt-1 text-lg font-bold"> Clinic Management Platform</h3>
-          </div>
-          <a class="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-800 dark:text-sky-400"
-             href="https://myevolvedcms.com/" target="_blank" rel="noreferrer">
-            <i class="fa-brands fa-chrome"></i> Live
-          </a>
-        </div>
-
-        <p class="relative mt-2 text-sm text-slate-700 dark:text-slate-300">
-          Custom-built clinic system with admin dashboard and day-to-day workflows. I also provide user support and handle
-          IT operations for smooth adoption.
-        </p>
-
-        <ul class="relative mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
-          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Modules: Patients, Appointments/Calendar, Billing, Store, Reports, Expenses.</li>
-          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Admin: Users/Roles (RBAC) + Audit Logging for security and traceability.</li>
-          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Ongoing support: onboarding, troubleshooting, documentation, workflow training.</li>
-        </ul>
-
-        <div class="relative mt-5 flex flex-wrap gap-2 text-xs">
-          <span class="rounded-full bg-emerald-500/10 px-3 py-1 font-medium text-emerald-700 dark:text-emerald-300">RBAC</span>
-          <span class="rounded-full bg-sky-500/10 px-3 py-1 font-medium text-sky-700 dark:text-sky-300">Audit Logs</span>
-          <span class="rounded-full bg-violet-500/10 px-3 py-1 font-medium text-violet-700 dark:text-violet-300">PHP/Laravel</span>
-          <span class="rounded-full bg-amber-500/10 px-3 py-1 font-medium text-amber-700 dark:text-amber-300">MySQL</span>
-        </div>
-      </article>
-
-      <!-- FEATURED: Maitri Tally -->
-      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
-        </div>
-
-        <div class="relative flex items-start justify-between gap-4">
-          <div>
-            <div class="text-sm text-slate-600 dark:text-slate-400">POS • Inventory • Reporting</div>
-            <h3 class="mt-1 text-lg font-bold">Maitri Tally — POS & Inventory</h3>
-          </div>
-          <a class="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-800 dark:text-sky-400"
-             href="https://github.com/rishuvro/maitri_tally" target="_blank" rel="noreferrer">
-            <i class="fa-brands fa-github"></i> Repo
-          </a>
-        </div>
-
-        <p class="relative mt-2 text-sm text-slate-700 dark:text-slate-300">
-          Billing + inventory tracking for showroom operations, with product, sales, and reporting workflows.
-        </p>
-
-        <ul class="relative mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
-          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Billing workflow, sales records, and stock updates tied to sales events.</li>
-          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Product management + daily operational summaries and reports.</li>
-          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> PHP/Laravel backend + MySQL data model + JS UI.</li>
-        </ul>
-
-        <div class="relative mt-5 flex flex-wrap gap-2 text-xs">
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Laravel</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">PHP</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">MySQL</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">JavaScript</span>
-        </div>
-      </article>
-
-      <!-- Supplier Business Website -->
-      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
-        </div>
-
-        <div class="relative flex items-start justify-between gap-4">
-          <div>
-            <div class="text-sm text-slate-600 dark:text-slate-400">Business Website • Lead Generation</div>
-            <h3 class="mt-1 text-lg font-bold">Supplier Business Website</h3>
-          </div>
-          <a class="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-800 dark:text-sky-400"
-             href="https://sdstechmed.com/" target="_blank" rel="noreferrer">
-            <i class="fa-brands fa-chrome"></i> Live
-          </a>
-        </div>
-
-        <p class="relative mt-2 text-sm text-slate-700 dark:text-slate-300">
-          B2B website to present services, build credibility, and capture leads through contact workflows.
-        </p>
-
-        <ul class="relative mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
-          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Responsive UI with structured pages for services, branding, and lead capture.</li>
-          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Deployed and maintained for stability and performance.</li>
-          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Tailwind styling for modern look and fast iteration.</li>
-        </ul>
-
-        <div class="relative mt-5 flex flex-wrap gap-2 text-xs">
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">PHP</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Laravel</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Tailwind</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Hosting</span>
-        </div>
-      </article>
-
-      <!-- Krishica -->
-      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
-        </div>
-
-        <div class="relative flex items-start justify-between gap-4">
-          <div>
-            <div class="text-sm text-slate-600 dark:text-slate-400">E-commerce • Admin Controls</div>
-            <h3 class="mt-1 text-lg font-bold">Krishica.com — E-commerce Platform</h3>
-          </div>
-          <a class="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-800 dark:text-sky-400"
-             href="https://github.com/rishuvro/krishica.com" target="_blank" rel="noreferrer">
-            <i class="fa-brands fa-github"></i> Repo
-          </a>
-        </div>
-
-        <p class="relative mt-2 text-sm text-slate-700 dark:text-slate-300">
-          E-commerce foundation with structured catalog + maintainable admin workflows, designed for future scale.
-        </p>
-
-        <ul class="relative mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
-          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Product catalog structure + admin-side controls for content/product management.</li>
-          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Designed for future growth (orders, payments, integrations).</li>
-          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Laravel/PHP + MySQL + JavaScript.</li>
-        </ul>
-
-        <div class="relative mt-5 flex flex-wrap gap-2 text-xs">
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">E-commerce</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">PHP/Laravel</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">MySQL</span>
-        </div>
-      </article>
-
-      <!-- Store Management -->
-      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
-        </div>
-
-        <div class="relative flex items-start justify-between gap-4">
-          <div>
-            <div class="text-sm text-slate-600 dark:text-slate-400">Retail Ops • Inventory • CRM</div>
-            <h3 class="mt-1 text-lg font-bold">Store Management System</h3>
-          </div>
-          <a class="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-800 dark:text-sky-400"
-             href="https://github.com/rishuvro/store" target="_blank" rel="noreferrer">
-            <i class="fa-brands fa-github"></i> Repo
-          </a>
-        </div>
-
-        <p class="relative mt-2 text-sm text-slate-700 dark:text-slate-300">
-          Store workflow system for inventory, sales management, and customer records with admin-friendly operations.
-        </p>
-
-        <ul class="relative mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
-          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Centralized inventory, sales tracking, and customer records.</li>
-          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Maintainable admin workflows for daily operations (create/update, summaries).</li>
-        </ul>
-
-        <div class="relative mt-5 flex flex-wrap gap-2 text-xs">
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">PHP</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">MySQL</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">CRUD</span>
-        </div>
-      </article>
-
-      <!-- Computer SEO / Lead Gen (Cisco Packet Tracer) -->
-      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
-        </div>
-
-        <div class="relative flex items-start justify-between gap-4">
-          <div>
-            <div class="text-sm text-slate-600 dark:text-slate-400">Networking Labs • Routing • Switching</div>
-            <h3 class="mt-1 text-lg font-bold">Computer Networking — Cisco Packet Tracer</h3>
-          </div>
-          <a class="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-800 dark:text-sky-400"
-             href="https://github.com/rishuvro/Computer_Networking_cisco" target="_blank" rel="noreferrer">
-            <i class="fa-brands fa-github"></i> Repo
-          </a>
-        </div>
-
-        <p class="relative mt-2 text-sm text-slate-700 dark:text-slate-300">
-          A collection of Cisco Packet Tracer practice labs covering network fundamentals, topology design, and troubleshooting.
-        </p>
-
-        <ul class="relative mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
-          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Built multiple topologies (LAN/WAN) and validated connectivity using IP/DNS configuration.</li>
-          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Practiced routing & switching concepts: device setup, segmentation, and verification.</li>
-          <li class="flex gap-2"><i class="fa-solid fa-check mt-1 text-emerald-500"></i> Troubleshooting workflows: diagnosing misconfigurations and verifying end-to-end communication.</li>
-        </ul>
-
-        <div class="relative mt-5 flex flex-wrap gap-2 text-xs">
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Cisco Packet Tracer</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">LAN/WAN</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">IP/DNS</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Troubleshooting</span>
-        </div>
-      </article>
-
-      <!-- MORE PROJECTS (upgraded list) -->
-      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950 md:col-span-2">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
-        </div>
-
-        <div class="relative flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <h3 class="text-lg font-bold">More Projects</h3>
-            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">
-              ML, IoT, dashboards, and utilities — all public on GitHub.
-            </p>
-          </div>
-
-          <a href="https://github.com/rishuvro?tab=repositories" target="_blank" rel="noreferrer"
-             class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-900">
-            <i class="fa-solid fa-layer-group"></i> Browse All
-          </a>
-        </div>
-
-        <div class="relative mt-5 grid gap-3 sm:grid-cols-2">
-          <a class="group/item flex items-center justify-between rounded-2xl border border-slate-200 px-4 py-3 text-sm transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900"
-             target="_blank" rel="noreferrer" href="https://github.com/rishuvro/Heart_disease_prediction_using_AI">
-            <span class="font-semibold">Heart Disease Prediction (ML)</span>
-            <span class="text-slate-500 group-hover/item:text-slate-700 dark:text-slate-400">View →</span>
-          </a>
-
-          <a class="group/item flex items-center justify-between rounded-2xl border border-slate-200 px-4 py-3 text-sm transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900"
-             target="_blank" rel="noreferrer" href="https://github.com/rishuvro/Automatic_Water_Dispenser_System_Using_Arduino">
-            <span class="font-semibold">Automatic Water Dispenser (Arduino)</span>
-            <span class="text-slate-500 group-hover/item:text-slate-700 dark:text-slate-400">View →</span>
-          </a>
-
-          <a class="group/item flex items-center justify-between rounded-2xl border border-slate-200 px-4 py-3 text-sm transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900"
-             target="_blank" rel="noreferrer" href="https://github.com/rishuvro/PETROL_PUMP_MANAGEMENT_SYSTEM">
-            <span class="font-semibold">Petrol Pump Management System</span>
-            <span class="text-slate-500 group-hover/item:text-slate-700 dark:text-slate-400">View →</span>
-          </a>
-
-          <a class="group/item flex items-center justify-between rounded-2xl border border-slate-200 px-4 py-3 text-sm transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900"
-             target="_blank" rel="noreferrer" href="https://github.com/rishuvro/system_monitor_application_cpu-memory_using_python">
-            <span class="font-semibold">System Monitoring App (Python)</span>
-            <span class="text-slate-500 group-hover/item:text-slate-700 dark:text-slate-400">View →</span>
-          </a>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- EXPERIENCE -->
-<section id="experience" class="pt-16 sm:pt-20">
-  <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-      <div>
-        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Experience</h2>
-        <p class="mt-2 text-slate-700 dark:text-slate-300">
-          Business operations, digital growth, SEO, lead tracking, reporting, IT support, and business systems execution.
-        </p>
-      </div>
-
-      <div class="mt-2 flex flex-wrap gap-2 sm:mt-0">
-        <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">Business Operations</span>
-        <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">SEO + Google Ads</span>
-        <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">Lead Generation</span>
-        <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">Laravel/PHP Systems</span>
-      </div>
-    </div>
-
-    <div class="mt-10 grid gap-6">
-      <!-- Evolved role intentionally commented out per request.
-      <article>
-        <h3>Business Operations, Digital Growth & IT Systems — Evolved</h3>
-        <p>Hidden from live portfolio. Keep this only as a draft/reference if needed later.</p>
-      </article>
-      -->
-
-      <!-- CURRENT ROLE: SPST -->
-      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
-        </div>
-
-        <div class="relative flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <div class="text-sm text-slate-600 dark:text-slate-400">Apr 2024 — Present • Dhaka, Bangladesh</div>
-            <h3 class="mt-1 text-lg font-bold">Business Operations, Digital Growth & IT Officer — SPST, Ministry of Social Welfare</h3>
-
-            <p class="mt-2 text-xs text-slate-600 dark:text-slate-400">
-              <span class="font-semibold">Core:</span> Business Operations • IT Support • SEO • Google Ads • Lead Tracking • Reporting • Documentation • Process Automation
-            </p>
-
-            <p class="mt-2 max-w-3xl text-sm text-slate-700 dark:text-slate-300">
-              Manage daily operational workflows, IT support, documentation, reporting, digital growth support, and process improvements while connecting business execution with technology and data-driven reporting.
-            </p>
-
-            <div class="mt-3 flex flex-wrap gap-2">
-              <span class="rounded-full bg-violet-500/10 px-3 py-1 text-xs font-medium text-violet-700 dark:text-violet-300">Business Ops</span>
-              <span class="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-700 dark:text-emerald-300">IT Support</span>
-              <span class="rounded-full bg-sky-500/10 px-3 py-1 text-xs font-medium text-sky-700 dark:text-sky-300">SEO + Ads</span>
-              <span class="rounded-full bg-amber-500/10 px-3 py-1 text-xs font-medium text-amber-700 dark:text-amber-300">Reporting</span>
-            </div>
-          </div>
-
-          <div class="relative mt-2 sm:mt-0">
-            <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-semibold text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
-              <i class="fa-solid fa-bolt text-emerald-500"></i> Current Role
-            </span>
-          </div>
-        </div>
-
-        <ul class="relative mt-5 grid gap-2 text-sm text-slate-700 dark:text-slate-300">
-          <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> Manage business operations, administrative workflows, official documentation, reporting, and internal coordination.</li>
-          <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> Support operational planning, record management, communication flow, and cross-functional coordination between administrative and technical teams.</li>
-          <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> Support digital growth activities including website updates, SEO improvements, social media support, Google Ads support, and online visibility enhancement.</li>
-          <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> Track inquiries and leads from digital channels including Facebook, Instagram, WhatsApp, Messenger, Google, YouTube, and website sources.</li>
-          <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> Prepare performance reports covering ad spend, messages, leads, conversion sources, platform-wise results, and campaign insights.</li>
-          <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> Improve website visibility through keyword planning, content updates, meta titles/descriptions, internal linking, and technical fixes.</li>
-          <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> Provide IT support, access provisioning, troubleshooting, system maintenance, and user guidance to keep workflows smooth and productive.</li>
-        </ul>
-      </article>
-
-      <div class="grid gap-6 md:grid-cols-2">
-        <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-          <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-            <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
-          </div>
-          <div class="relative">
-            <div class="text-sm text-slate-600 dark:text-slate-400">Jan 2024 — May 2024 • Remote</div>
-            <h3 class="mt-1 text-lg font-bold">Software Engineer (Remote) — Nonagon Infolytic</h3>
-            <p class="mt-2 text-xs text-slate-600 dark:text-slate-400"><span class="font-semibold">Core:</span> PHP/Laravel • MySQL • REST APIs • Validation • Git</p>
-            <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">Developed business web applications focused on reliability, workflow efficiency, data management, and digital service delivery.</p>
-            <div class="mt-3 flex flex-wrap gap-2">
-              <span class="rounded-full bg-violet-500/10 px-3 py-1 text-xs font-medium text-violet-700 dark:text-violet-300">PHP/Laravel</span>
-              <span class="rounded-full bg-amber-500/10 px-3 py-1 text-xs font-medium text-amber-700 dark:text-amber-300">MySQL</span>
-              <span class="rounded-full bg-sky-500/10 px-3 py-1 text-xs font-medium text-sky-700 dark:text-sky-300">REST APIs</span>
-              <span class="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-700 dark:text-emerald-300">Git</span>
-            </div>
-            <ul class="mt-5 grid gap-2 text-sm text-slate-700 dark:text-slate-300">
-              <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> Built CRUD modules, database relationships, validation systems, reporting workflows, and backend business logic.</li>
-              <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> Integrated REST APIs and improved system stability through debugging, testing, and workflow optimization.</li>
-            </ul>
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <div class="timeline-date"><span>NOW</span><small>Dhaka</small></div>
+          <div class="timeline-node"><i></i></div>
+          <div class="timeline-content">
+            <div class="timeline-heading"><h3>IT Manager · Business Operations & Digital Growth</h3><span>Evolved Aesthetics Clinic</span></div>
+            <p>Connecting clinic operations, digital acquisition, reporting, internal systems and day-to-day technology execution.</p>
+            <div class="timeline-tags"><span>Business Ops</span><span>Digital Growth</span><span>IT Systems</span><span>Workflow</span></div>
           </div>
         </article>
 
-        <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-          <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-            <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
+        <article class="timeline-item reveal">
+          <div class="timeline-date"><span>2024—2025</span><small>Dhaka</small></div>
+          <div class="timeline-node"><i></i></div>
+          <div class="timeline-content">
+            <div class="timeline-heading"><h3>Business Operations, Digital Growth & IT Officer</h3><span>SPST · Ministry of Social Welfare</span></div>
+            <p>Operational workflows, official documentation, reporting, digital visibility, lead tracking, IT support and process automation.</p>
+            <div class="timeline-tags"><span>Operations</span><span>SEO + Ads</span><span>Reporting</span><span>IT Support</span></div>
           </div>
-          <div class="relative">
-            <div class="text-sm text-slate-600 dark:text-slate-400">Oct 2023 — Apr 2024 • Dhaka, Bangladesh</div>
-            <h3 class="mt-1 text-lg font-bold">Support Engineer — Icebreakers Ltd. (Enterprise Support)</h3>
-            <p class="mt-2 text-xs text-slate-600 dark:text-slate-400"><span class="font-semibold">Core:</span> Enterprise Support • Setup/Configuration • Troubleshooting • Documentation</p>
-            <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">Supported enterprise users with troubleshooting, setup, configuration, operational guidance, and knowledge documentation.</p>
-            <div class="mt-3 flex flex-wrap gap-2">
-              <span class="rounded-full bg-violet-500/10 px-3 py-1 text-xs font-medium text-violet-700 dark:text-violet-300">User Support</span>
-              <span class="rounded-full bg-amber-500/10 px-3 py-1 text-xs font-medium text-amber-700 dark:text-amber-300">Troubleshooting</span>
-              <span class="rounded-full bg-sky-500/10 px-3 py-1 text-xs font-medium text-sky-700 dark:text-sky-300">Documentation</span>
-              <span class="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-700 dark:text-emerald-300">Operations</span>
-            </div>
-            <ul class="mt-5 grid gap-2 text-sm text-slate-700 dark:text-slate-300">
-              <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> Diagnosed technical issues and guided enterprise users through resolution steps.</li>
-              <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> Documented recurring issues and solutions to improve support quality and response time.</li>
-            </ul>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-date"><span>2024</span><small>Remote</small></div>
+          <div class="timeline-node"><i></i></div>
+          <div class="timeline-content">
+            <div class="timeline-heading"><h3>Software Engineer</h3><span>Nonagon Infolytic</span></div>
+            <p>Laravel/PHP applications, MySQL data models, REST APIs, validation, debugging and business workflow logic.</p>
+            <div class="timeline-tags"><span>Laravel</span><span>MySQL</span><span>REST APIs</span><span>Git</span></div>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-date"><span>2023—2024</span><small>Dhaka</small></div>
+          <div class="timeline-node"><i></i></div>
+          <div class="timeline-content">
+            <div class="timeline-heading"><h3>Support Engineer</h3><span>Icebreakers Ltd.</span></div>
+            <p>Enterprise user support, setup, troubleshooting, configuration guidance and recurring-issue documentation.</p>
+            <div class="timeline-tags"><span>Support</span><span>Troubleshooting</span><span>Documentation</span></div>
           </div>
         </article>
       </div>
+    </section>
 
-      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
-        </div>
-        <div class="relative flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <div class="text-sm text-slate-600 dark:text-slate-400">2026 • Fez, Morocco</div>
-            <h3 class="mt-1 text-lg font-bold">Reviewer — 2026 International Conference on Circuit, Systems and Communication (ICCSC)</h3>
-            <p class="mt-2 max-w-3xl text-sm text-slate-700 dark:text-slate-300">
-              Reviewed research papers in AI, IoT, communication systems, and applied computing; assessed technical quality, originality, methodology, and presentation.
-            </p>
-          </div>
-          <span class="inline-flex h-fit items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-semibold text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
-            <i class="fa-solid fa-award text-sky-500"></i> Academic Review
-          </span>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- SKILLS -->
-<section id="skills" class="pt-16 sm:pt-20">
-  <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-      <div>
-        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Skills</h2>
-        <p class="mt-2 text-slate-700 dark:text-slate-300">
-          A blended skill set across business operations, digital growth, lead generation, SEO, paid ads, reporting, and IT systems.
-        </p>
-      </div>
-
-      <div class="mt-2 flex flex-wrap gap-2 sm:mt-0">
-        <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">Business Ops</span>
-        <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">SEO</span>
-        <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">Google Ads</span>
-        <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">Lead Generation</span>
-      </div>
-    </div>
-
-    <div class="mt-8 grid gap-6 md:grid-cols-2">
-      <div class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100"><div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div></div>
-        <div class="relative flex items-center gap-2"><i class="fa-solid fa-briefcase text-emerald-500"></i><h3 class="font-bold">Business Operations & Planning</h3></div>
-        <div class="relative mt-3 flex flex-wrap gap-2 text-xs">
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Business Operations</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Operational Planning</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Workflow Coordination</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Process Improvement</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Documentation</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">SOPs</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Reporting</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Stakeholder Coordination</span>
-        </div>
-      </div>
-
-      <div class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100"><div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div></div>
-        <div class="relative flex items-center gap-2"><i class="fa-solid fa-bullhorn text-sky-500"></i><h3 class="font-bold">Digital Marketing & Lead Generation</h3></div>
-        <div class="relative mt-3 flex flex-wrap gap-2 text-xs">
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Social Media Marketing</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Facebook Ads</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Instagram Ads</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Google Ads</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">YouTube Ads</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">TikTok Ads</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">LinkedIn Ads</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">WhatsApp Leads</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Messenger Leads</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Campaign Reporting</span>
-        </div>
-      </div>
-
-      <div class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100"><div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div></div>
-        <div class="relative flex items-center gap-2"><i class="fa-solid fa-magnifying-glass-chart text-violet-500"></i><h3 class="font-bold">Website, SEO & Digital Growth</h3></div>
-        <div class="relative mt-3 flex flex-wrap gap-2 text-xs">
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Website Management</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">WordPress</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">On-Page SEO</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Technical SEO</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Keyword Research</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Google Business Profile</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Landing Page Optimization</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Content Planning</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Google Analytics</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Search Console</span>
-        </div>
-      </div>
-
-      <div class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100"><div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div></div>
-        <div class="relative flex items-center gap-2"><i class="fa-solid fa-gears text-amber-500"></i><h3 class="font-bold">IT Support & Business Systems</h3></div>
-        <div class="relative mt-3 flex flex-wrap gap-2 text-xs">
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Technical Support</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Troubleshooting</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Access Provisioning</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Asset Tracking</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">CRM Support</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">POS Systems</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Inventory Systems</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Clinic Management Systems</span>
-        </div>
-      </div>
-
-      <div class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100"><div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div></div>
-        <div class="relative flex items-center gap-2"><i class="fa-solid fa-code text-indigo-500"></i><h3 class="font-bold">Web Development & Databases</h3></div>
-        <div class="relative mt-3 flex flex-wrap gap-2 text-xs">
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">PHP</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Laravel</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">JavaScript</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">HTML</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">CSS</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">REST APIs</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">MySQL</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">SQL</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Python</span>
-        </div>
-      </div>
-
-      <div class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100"><div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div></div>
-        <div class="relative flex items-center gap-2"><i class="fa-solid fa-toolbox text-fuchsia-500"></i><h3 class="font-bold">Tools & Platforms</h3></div>
-        <div class="relative mt-3 flex flex-wrap gap-2 text-xs">
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Git</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">XAMPP</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Linux</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Windows</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Meta Business Suite</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Google Ads</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Google Analytics</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Google Search Console</span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">LaTeX</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CERTIFICATES (Unified + Premium) -->
-<section id="certificates" class="pt-16 sm:pt-20">
-  <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-      <div>
-        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Certificates</h2>
-        <p class="mt-2 text-slate-700 dark:text-slate-300">
-        </p>
-      </div>
-
-      <div class="mt-2 flex flex-wrap gap-2 sm:mt-0">
-        <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
-          Click to view
-        </span>
-        <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
-          Verify when available
-        </span>
-      </div>
-    </div>
-
-    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      <!-- CARD: ICECET -->
-      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-4 shadow-soft transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
+    <section class="section research-section" id="research">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <p class="kicker">04 · Research + recognition</p>
+          <h2>Applied technology, published work and conference service.</h2>
         </div>
 
-        <a href="asset/857 (1).pdf" target="_blank" class="relative block">
-          <img class="h-44 w-full rounded-2xl object-cover" src="asset/857 (1)_1.jpg" alt="ICECET 2024 Certificate" />
-        </a>
+        <div class="research-grid">
+          <article class="research-card research-paper reveal">
+            <div class="research-label"><span>IEEE · ICECET 2024</span><span>PUBLICATION</span></div>
+            <div class="paper-orbit" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <h3>Hybrid Recommendation Systems using Adaptive Clustering to address Cold Start Problems</h3>
+            <p>Conference publication presented at ICECET 2024 in Sydney, Australia.</p>
+            <div class="research-meta"><span>DOI</span><code>10.1109/ICECET61485.2024.10698666</code></div>
+            <a class="button button-ghost magnetic" href="https://dx.doi.org/10.1109/ICECET61485.2024.10698666" target="_blank" rel="noreferrer">View publication <span>↗</span></a>
+          </article>
 
-        <div class="relative mt-3">
-          <div class="flex items-start justify-between gap-3">
-            <div>
-              <h3 class="text-sm font-bold leading-tight">ICECET 2024 — Oral Presentation</h3>
-              <p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Conference certificate (PDF)</p>
+          <article class="research-card reveal">
+            <div class="research-label"><span>MENDELEY DATA</span><span>DATASET</span></div>
+            <div class="data-viz" aria-hidden="true"><i style="--v:36%"></i><i style="--v:58%"></i><i style="--v:42%"></i><i style="--v:72%"></i><i style="--v:66%"></i><i style="--v:88%"></i><i style="--v:77%"></i><i style="--v:92%"></i><i style="--v:69%"></i><i style="--v:96%"></i></div>
+            <h3>Dhaka Stock Exchange Historical Data</h3>
+            <p>Public dataset for research and analysis of Dhaka Stock Exchange historical records.</p>
+            <div class="research-meta"><span>DOI</span><code>10.17632/23553sm4tn.3</code></div>
+            <a class="button button-ghost magnetic" href="https://data.mendeley.com/datasets/23553sm4tn/3" target="_blank" rel="noreferrer">View dataset <span>↗</span></a>
+          </article>
+
+          <article class="research-card conference-card reveal">
+            <div class="research-label"><span>ICCSC 2026 · FEZ, MOROCCO</span><span>CONFERENCE SERVICE</span></div>
+            <div class="conference-mark" aria-hidden="true"><span>IC</span><span>CS</span><span>C</span><i>26</i></div>
+            <h3>Scientific + Organizing Committee</h3>
+            <p>Recognition for service to the 2026 International Conference on Circuit, Systems and Communication.</p>
+            <div class="committee-links">
+              <a href="assets/cert-iccsc-scientific.pdf" target="_blank" rel="noreferrer"><span>Scientific Committee</span><em>Certificate ↗</em></a>
+              <a href="assets/cert-iccsc-organizing.pdf" target="_blank" rel="noreferrer"><span>Organizing Committee</span><em>Certificate ↗</em></a>
             </div>
-            <span class="rounded-full bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold text-emerald-700 dark:text-emerald-300">
-              Research
-            </span>
-          </div>
-
-          <div class="mt-3 flex gap-2">
-            <a href="asset/857 (1).pdf" target="_blank"
-              class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold text-slate-700 shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-900">
-              <i class="fa-solid fa-file-pdf text-rose-500"></i> View PDF
-            </a>
-          </div>
+          </article>
         </div>
-      </article>
+      </div>
+    </section>
 
-      <!-- CARD: Programming for Everybody -->
-      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-4 shadow-soft transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
+    <section class="section section-shell" id="skills">
+      <div class="skills-layout">
+        <div class="section-heading reveal">
+          <p class="kicker">05 · Capability map</p>
+          <h2>Useful because the skills connect.</h2>
+          <p>The value is not one tool. It is knowing how operations, acquisition, reporting and software affect one another.</p>
         </div>
-
-        <a href="asset/Coursera 6ZE6KM3TNCFE.pdf" target="_blank" class="relative block">
-          <img class="h-44 w-full rounded-2xl object-cover" src="asset/Coursera 6ZE6KM3TNCFE.jpg" alt="Programming for Everybody certificate" />
-        </a>
-
-        <div class="relative mt-3">
-          <div class="flex items-start justify-between gap-3">
-            <div>
-              <h3 class="text-sm font-bold leading-tight">Programming for Everybody</h3>
-              <p class="mt-1 text-xs text-slate-600 dark:text-slate-400">University of Michigan (Coursera)</p>
-            </div>
-            <span class="rounded-full bg-sky-500/10 px-3 py-1 text-[11px] font-semibold text-sky-700 dark:text-sky-300">
-              Verified
-            </span>
-          </div>
-
-          <div class="mt-3 flex flex-wrap gap-2">
-            <a href="asset/Coursera 6ZE6KM3TNCFE.pdf" target="_blank"
-              class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold text-slate-700 shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-900">
-              <i class="fa-solid fa-file-pdf text-rose-500"></i> View PDF
-            </a>
-
-            <a href="https://coursera.org/verify/6ZE6KM3TNCFE" target="_blank"
-              class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:opacity-90 dark:bg-white dark:text-slate-900">
-              <i class="fa-solid fa-shield-check"></i> Verify
-            </a>
-          </div>
+        <div class="skill-map reveal" id="skill-map">
+          <div class="skill-core">RI<span>OPERATING<br>SYSTEM</span></div>
+          <div class="skill-ring ring-one"><span style="--a:0deg">Operations</span><span style="--a:72deg">Reporting</span><span style="--a:144deg">SEO</span><span style="--a:216deg">Ads</span><span style="--a:288deg">Systems</span></div>
+          <div class="skill-ring ring-two"><span style="--a:20deg">Laravel</span><span style="--a:80deg">MySQL</span><span style="--a:140deg">Analytics</span><span style="--a:200deg">Lead Gen</span><span style="--a:260deg">IT Support</span><span style="--a:320deg">Automation</span></div>
         </div>
-      </article>
-
-      <!-- CARD: Python Data Structures -->
-      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-4 shadow-soft transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
-        </div>
-
-        <a href="asset/Coursera EQVJF5MGHCC9.pdf.pdf" target="_blank" class="relative block">
-          <img class="h-44 w-full rounded-2xl object-cover" src="asset/Coursera EQVJF5MGHCC9_page.jpg" alt="Python Data Structures certificate" />
-        </a>
-
-        <div class="relative mt-3">
-          <div class="flex items-start justify-between gap-3">
-            <div>
-              <h3 class="text-sm font-bold leading-tight">Python Data Structures</h3>
-              <p class="mt-1 text-xs text-slate-600 dark:text-slate-400">University of Michigan (Coursera)</p>
-            </div>
-            <span class="rounded-full bg-sky-500/10 px-3 py-1 text-[11px] font-semibold text-sky-700 dark:text-sky-300">
-              Verified
-            </span>
-          </div>
-
-          <div class="mt-3 flex flex-wrap gap-2">
-            <a href="asset/Coursera EQVJF5MGHCC9.pdf.pdf" target="_blank"
-              class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold text-slate-700 shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-900">
-              <i class="fa-solid fa-file-pdf text-rose-500"></i> View PDF
-            </a>
-
-            <a href="https://coursera.org/verify/EQVJF5MGHCC9" target="_blank"
-              class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:opacity-90 dark:bg-white dark:text-slate-900">
-              <i class="fa-solid fa-shield-check"></i> Verify
-            </a>
-          </div>
-        </div>
-      </article>
-
-     
-
-      <!-- CARD: Software Testing -->
-      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-4 shadow-soft transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
-        </div>
-
-        <a href="asset/Coursera BKHJF4M7M4KE.pdf" target="_blank" class="relative block">
-          <img class="h-44 w-full rounded-2xl object-cover" src="asset/Coursera BKHJF4M7M4KE.jpg" alt="Foundations of Software Testing and Validation certificate" />
-        </a>
-
-        <div class="relative mt-3">
-          <div class="flex items-start justify-between gap-3">
-            <div>
-              <h3 class="text-sm font-bold leading-tight">Foundations of Software Testing & Validation</h3>
-              <p class="mt-1 text-xs text-slate-600 dark:text-slate-400">University of Leeds (Coursera)</p>
-            </div>
-            <span class="rounded-full bg-sky-500/10 px-3 py-1 text-[11px] font-semibold text-sky-700 dark:text-sky-300">
-              Verified
-            </span>
-          </div>
-
-          <div class="mt-3 flex flex-wrap gap-2">
-            <a href="asset/Coursera BKHJF4M7M4KE.pdf" target="_blank"
-              class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold text-slate-700 shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-900">
-              <i class="fa-solid fa-file-pdf text-rose-500"></i> View PDF
-            </a>
-
-            <a href="https://coursera.org/verify/BKHJF4M7M4KE" target="_blank"
-              class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:opacity-90 dark:bg-white dark:text-slate-900">
-              <i class="fa-solid fa-shield-check"></i> Verify
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- CARD: Data Foundations -->
-      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-4 shadow-soft transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
-        </div>
-
-        <a href="asset/Coursera 97Z3RZMWD5TV.pdf" target="_blank" class="relative block">
-          <img class="h-44 w-full rounded-2xl object-cover" src="asset/Coursera 97Z3RZMWD5TV.jpg" alt="Foundations: Data, Data, Everywhere certificate" />
-        </a>
-
-        <div class="relative mt-3">
-          <div class="flex items-start justify-between gap-3">
-            <div>
-              <h3 class="text-sm font-bold leading-tight">Foundations: Data, Data, Everywhere</h3>
-              <p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Google (Coursera)</p>
-            </div>
-            <span class="rounded-full bg-sky-500/10 px-3 py-1 text-[11px] font-semibold text-sky-700 dark:text-sky-300">
-              Verified
-            </span>
-          </div>
-
-          <div class="mt-3 flex flex-wrap gap-2">
-            <a href="asset/Coursera 97Z3RZMWD5TV.pdf" target="_blank"
-              class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold text-slate-700 shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-900">
-              <i class="fa-solid fa-file-pdf text-rose-500"></i> View PDF
-            </a>
-
-            <a href="https://coursera.org/verify/97Z3RZMWD5TV" target="_blank"
-              class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:opacity-90 dark:bg-white dark:text-slate-900">
-              <i class="fa-solid fa-shield-check"></i> Verify
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- CARD: Technical Support Fundamentals -->
-      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-4 shadow-soft transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
-        </div>
-
-        <a href="asset/Coursera CS6P8GMK65PR.pdf" target="_blank" class="relative block">
-          <img class="h-44 w-full rounded-2xl object-cover" src="asset/Coursera CS6P8GMK65PR.jpg" alt="Technical Support Fundamentals certificate" />
-        </a>
-
-        <div class="relative mt-3">
-          <div class="flex items-start justify-between gap-3">
-            <div>
-              <h3 class="text-sm font-bold leading-tight">Technical Support Fundamentals</h3>
-              <p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Google (Coursera)</p>
-            </div>
-            <span class="rounded-full bg-sky-500/10 px-3 py-1 text-[11px] font-semibold text-sky-700 dark:text-sky-300">
-              Verified
-            </span>
-          </div>
-
-          <div class="mt-3 flex flex-wrap gap-2">
-            <a href="asset/Coursera CS6P8GMK65PR.pdf" target="_blank"
-              class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold text-slate-700 shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-900">
-              <i class="fa-solid fa-file-pdf text-rose-500"></i> View PDF
-            </a>
-
-            <a href="https://coursera.org/verify/CS6P8GMK65PR" target="_blank"
-              class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:opacity-90 dark:bg-white dark:text-slate-900">
-              <i class="fa-solid fa-shield-check"></i> Verify
-            </a>
-          </div>
-        </div>
-      </article>
-    </div>
-
-    <div class="mt-6 text-sm text-slate-700 dark:text-slate-300">
-    </div>
-  </div>
-</section>
-
-
-   <!-- PUBLICATIONS & DATA (Unified + Premium) -->
-<section id="publications" class="pt-16 sm:pt-20">
-  <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-      <div>
-        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Publications & Data</h2>
-        <p class="mt-2 text-slate-700 dark:text-slate-300">
-          Research publication + public dataset (with DOI links).
-        </p>
       </div>
 
-      <div class="mt-2 flex flex-wrap gap-2 sm:mt-0">
-        <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
-          IEEE Xplore (DOI)
-        </span>
-        <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
-          Mendeley Data (DOI)
-        </span>
+      <div class="skill-columns">
+        <div class="skill-column reveal"><span class="skill-number">01</span><h3>Operations</h3><p>Operational planning · workflow coordination · process improvement · documentation · SOPs · stakeholder coordination</p></div>
+        <div class="skill-column reveal"><span class="skill-number">02</span><h3>Growth</h3><p>SEO · Google Ads · Meta Ads · social media · lead funnels · landing pages · Google Analytics · Search Console</p></div>
+        <div class="skill-column reveal"><span class="skill-number">03</span><h3>Technology</h3><p>PHP · Laravel · JavaScript · MySQL · REST APIs · admin panels · CRM/POS/inventory systems · technical support</p></div>
       </div>
-    </div>
+    </section>
 
-    <div class="mt-8 grid gap-6 md:grid-cols-2">
-      <!-- PUBLICATION: IEEE -->
-      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
+    <section class="section credentials-section" id="credentials">
+      <div class="section-shell">
+        <div class="section-heading section-heading-row reveal">
+          <div><p class="kicker">06 · Credentials</p><h2>Selected certificates.</h2></div>
+          <p class="section-note">Tap a card to open the original PDF.</p>
         </div>
 
-        <div class="relative flex items-start justify-between gap-3">
-          <div>
-            <div class="text-sm text-slate-600 dark:text-slate-400">IEEE • ICECET 2024 • Sydney, Australia</div>
-            <h3 class="mt-1 text-lg font-bold leading-tight">
-              Hybrid Recommendation Systems using Adaptive Clustering to address Cold Start Problems
-            </h3>
-          </div>
-
-          <span class="shrink-0 rounded-full bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold text-emerald-700 dark:text-emerald-300">
-            Publication
-          </span>
-        </div>
-
-        <div class="relative mt-4 grid gap-2 text-sm text-slate-700 dark:text-slate-300">
-          <p>
-            <span class="font-semibold">Conference:</span> 2024 International Conference on Electrical, Computer and Energy Technologies (ICECET)
-          </p>
-          <p>
-            <span class="font-semibold">Dates:</span> 25–27 July 2024 • <span class="font-semibold">Added to IEEE Xplore:</span> 08 Oct 2024
-          </p>
-          <p>
-            <span class="font-semibold">DOI:</span> 10.1109/ICECET61485.2024.10698666
-          </p>
-          <p class="text-xs text-slate-600 dark:text-slate-400">
-            ISBN: 979-8-3503-9591-4 (eBook) • 979-8-3503-9592-1 (PoD)
-          </p>
-        </div>
-
-        <div class="relative mt-5 flex flex-wrap gap-2">
-          <a href="https://dx.doi.org/10.1109/ICECET61485.2024.10698666" target="_blank" class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:opacity-90 dark:bg-white dark:text-slate-900">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> View via DOI
+        <div class="credential-grid">
+          <a class="credential-card credential-feature reveal" href="assets/cert-iccsc-scientific.pdf" target="_blank" rel="noreferrer">
+            <img src="assets/cert-iccsc-scientific.png" alt="ICCSC 2026 Scientific Committee certificate preview" loading="lazy" />
+            <div class="credential-overlay"><span>ICCSC 2026</span><h3>Scientific Committee</h3><small>Fez, Morocco · 2026</small></div>
           </a>
-
-          <!-- optional: add your pdf link later if you have it -->
-          <!--
-          <a href="asset/papers/icecet_hybrid_recsys.pdf" target="_blank"
-             class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold text-slate-700 shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-900">
-            <i class="fa-solid fa-file-pdf text-rose-500"></i> PDF
+          <a class="credential-card credential-feature reveal" href="assets/cert-iccsc-organizing.pdf" target="_blank" rel="noreferrer">
+            <img src="assets/cert-iccsc-organizing.png" alt="ICCSC 2026 Organizing Committee certificate preview" loading="lazy" />
+            <div class="credential-overlay"><span>ICCSC 2026</span><h3>Organizing Committee</h3><small>Fez, Morocco · 2026</small></div>
           </a>
-          -->
-          <button
-  type="button"
-  data-copy="10.1109/ICECET61485.2024.10698666"
-  data-label="Copy DOI"
-  class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold text-slate-700 shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-900"
->
-  <i class="fa-regular fa-copy"></i> Copy
-</button>
-        </div>
-        
-      </article>
-
-      <!-- DATASET: MENDELEY -->
-      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
-        </div>
-
-        <div class="relative flex items-start justify-between gap-3">
-          <div>
-            <div class="text-sm text-slate-600 dark:text-slate-400">Mendeley Data • Published 08 Mar 2024</div>
-            <h3 class="mt-1 text-lg font-bold leading-tight">Dhaka Stock Exchange Historical Data</h3>
-          </div>
-
-          <span class="shrink-0 rounded-full bg-sky-500/10 px-3 py-1 text-[11px] font-semibold text-sky-700 dark:text-sky-300">
-            Dataset
-          </span>
-        </div>
-
-        <div class="relative mt-4 grid gap-2 text-sm text-slate-700 dark:text-slate-300">
-          <p>
-            Public dataset for research and analysis of Dhaka Stock Exchange historical records.
-          </p>
-          <p>
-            <span class="font-semibold">Version:</span> 3
-          </p>
-          <p>
-            <span class="font-semibold">DOI:</span> 10.17632/23553sm4tn.3
-          </p>
-        </div>
-
-        <div class="relative mt-5 flex flex-wrap gap-2">
-          <a href="https://data.mendeley.com/datasets/23553sm4tn/3" target="_blank"
-             class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:opacity-90 dark:bg-white dark:text-slate-900">
-            <i class="fa-solid fa-database"></i> View Dataset
-          </a>
-          <!-- Example: Mendeley dataset card (put inside the card button row) -->
-<button
-  type="button"
-  data-copy="10.17632/23553sm4tn.3"
-  data-label="Copy DOI"
-  class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold text-slate-700 shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-900"
->
-  <i class="fa-regular fa-copy"></i> Copy
-</button>
-
-          <!-- optional: add a direct citation file later -->
-          <!--
-          <a href="asset/dse_dataset_citation.bib" target="_blank"
-             class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold text-slate-700 shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-900">
-            <i class="fa-solid fa-quote-left"></i> Citation
-          </a>
-          -->
-        </div>
-      </article>
-    </div>
-  </div>
-
-  <!-- PUBLICATIONS & DATA (Add: Copy DOI buttons) -->
-<script>
-  (function () {
-    function setBtn(btn, state, text) {
-      btn.dataset.state = state;
-      btn.innerHTML = text;
-    }
-
-    async function copyText(text) {
-      // best effort: modern clipboard, fallback to execCommand
-      if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(text);
-        return;
-      }
-      const ta = document.createElement("textarea");
-      ta.value = text;
-      ta.setAttribute("readonly", "");
-      ta.style.position = "absolute";
-      ta.style.left = "-9999px";
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand("copy");
-      document.body.removeChild(ta);
-    }
-
-    document.addEventListener("click", async (e) => {
-      const btn = e.target.closest("[data-copy]");
-      if (!btn) return;
-
-      const value = btn.getAttribute("data-copy");
-      const original = btn.getAttribute("data-label") || "Copy DOI";
-
-      try {
-        await copyText(value);
-        setBtn(btn, "ok", `<i class="fa-solid fa-check"></i> Copied`);
-      } catch (err) {
-        setBtn(btn, "err", `<i class="fa-solid fa-triangle-exclamation"></i> Failed`);
-      }
-
-      window.setTimeout(() => {
-        setBtn(btn, "idle", `<i class="fa-regular fa-copy"></i> ${original}`);
-      }, 1400);
-    });
-  })();
-</script>
-
-
-
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- EDUCATION (Upgraded + Cleaner + Recruiter-friendly) -->
-<section id="education" class="pt-16 sm:pt-20">
-  <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-      <div>
-        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Education</h2>
-        <p class="mt-2 text-slate-700 dark:text-slate-300">
-          Formal education and ongoing graduate study in ICT.
-        </p>
-      </div>
-
-      <!-- quick chips -->
-      <div class="flex flex-wrap gap-2">
-        <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
-          MSc in ICT (Ongoing)
-        </span>
-        <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
-          CSE Graduate
-        </span>
-      </div>
-    </div>
-
-    <div class="mt-8 grid gap-6 md:grid-cols-2">
-      <!-- MSc -->
-      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
-        </div>
-
-        <div class="relative flex items-start gap-3">
-          <span class="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-sky-500/10 text-sky-700 dark:text-sky-300">
-            <i class="fa-solid fa-user-graduate"></i>
-          </span>
-
-          <div class="flex-1">
-            <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-              <h3 class="text-lg font-bold">MSc in ICT</h3>
-              <span class="text-sm text-slate-600 dark:text-slate-400">2024 — Present</span>
-            </div>
-            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">
-              Bangladesh University of Professionals (BUP) • Dhaka, Bangladesh
-            </p>
-
-            <div class="mt-4 flex flex-wrap gap-2 text-xs">
-              <span class="rounded-full bg-emerald-500/10 px-3 py-1 font-medium text-emerald-700 dark:text-emerald-300">Ongoing</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Research</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">AI/ML</span>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- BSc -->
-      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
-        </div>
-
-        <div class="relative flex items-start gap-3">
-          <span class="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-700 dark:text-emerald-300">
-            <i class="fa-solid fa-graduation-cap"></i>
-          </span>
-
-          <div class="flex-1">
-            <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-              <h3 class="text-lg font-bold">BSc in Computer Science & Engineering (CSE)</h3>
-              <span class="text-sm text-slate-600 dark:text-slate-400">2019 — 2023</span>
-            </div>
-            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">
-              Southeast University • Dhaka, Bangladesh
-            </p>
-
-            <div class="mt-4 flex flex-wrap gap-2 text-xs">
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Software Engineering</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">Web Development</span>
-              <span class="rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-900">SEO / Lead Gen</span>
-            </div>
-          </div>
-        </div>
-      </article>
-    </div>
-
-    <!-- Secondary education (compact, ATS-friendly) -->
-    <div class="mt-6 grid gap-4 md:grid-cols-2">
-      <div class="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-        <div class="flex items-start gap-3">
-          <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-slate-100 text-slate-700 dark:bg-slate-900 dark:text-slate-200">
-            <i class="fa-solid fa-school"></i>
-          </span>
-          <div class="flex-1">
-            <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-              <h3 class="font-bold">HSC (Science)</h3>
-              <span class="text-sm text-slate-600 dark:text-slate-400">2019</span>
-            </div>
-            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Cantonment College Jashore • Jashore, Bangladesh</p>
-          </div>
+          <a class="credential-card reveal" href="assets/cert-icecet-2024.pdf" target="_blank" rel="noreferrer"><img src="assets/cert-icecet-2024.jpg" alt="ICECET 2024 oral presentation certificate" loading="lazy" /><div class="credential-overlay"><span>ICECET 2024</span><h3>Oral Presentation</h3><small>Research · IEEE conference</small></div></a>
+          <a class="credential-card reveal" href="assets/cert-programming-everybody.pdf" target="_blank" rel="noreferrer"><img src="assets/cert-programming-everybody.jpg" alt="Programming for Everybody certificate" loading="lazy" /><div class="credential-overlay"><span>University of Michigan</span><h3>Programming for Everybody</h3><small>Coursera</small></div></a>
+          <a class="credential-card reveal" href="assets/cert-python-data-structures.pdf" target="_blank" rel="noreferrer"><img src="assets/cert-python-data-structures.jpg" alt="Python Data Structures certificate" loading="lazy" /><div class="credential-overlay"><span>University of Michigan</span><h3>Python Data Structures</h3><small>Coursera</small></div></a>
+          <a class="credential-card reveal" href="assets/cert-software-testing.pdf" target="_blank" rel="noreferrer"><img src="assets/cert-software-testing.jpg" alt="Foundations of Software Testing and Validation certificate" loading="lazy" /><div class="credential-overlay"><span>University of Leeds</span><h3>Software Testing & Validation</h3><small>Coursera</small></div></a>
+          <a class="credential-card reveal" href="assets/cert-google-data.pdf" target="_blank" rel="noreferrer"><img src="assets/cert-google-data.jpg" alt="Foundations Data Data Everywhere certificate" loading="lazy" /><div class="credential-overlay"><span>Google</span><h3>Foundations: Data, Data, Everywhere</h3><small>Coursera</small></div></a>
+          <a class="credential-card reveal" href="assets/cert-tech-support.pdf" target="_blank" rel="noreferrer"><img src="assets/cert-tech-support.jpg" alt="Technical Support Fundamentals certificate" loading="lazy" /><div class="credential-overlay"><span>Google</span><h3>Technical Support Fundamentals</h3><small>Coursera</small></div></a>
         </div>
       </div>
+    </section>
 
-      <div class="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-        <div class="flex items-start gap-3">
-          <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-slate-100 text-slate-700 dark:bg-slate-900 dark:text-slate-200">
-            <i class="fa-solid fa-school-flag"></i>
-          </span>
-          <div class="flex-1">
-            <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-              <h3 class="font-bold">SSC</h3>
-              <span class="text-sm text-slate-600 dark:text-slate-400">2017</span>
-            </div>
-            <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">Yakub Ali Chowdhury Bidyapith • Bangladesh</p>
-          </div>
+    <section class="section section-shell" id="education">
+      <div class="education-layout">
+        <div class="section-heading reveal">
+          <p class="kicker">07 · Education</p>
+          <h2>Computer science foundation. ICT research direction.</h2>
+        </div>
+        <div class="education-list">
+          <article class="education-item reveal"><span>2024 — Present</span><div><h3>MSc in Information & Communication Technology</h3><p>Bangladesh University of Professionals (BUP) · Dhaka</p></div><em>Ongoing</em></article>
+          <article class="education-item reveal"><span>2019 — 2023</span><div><h3>BSc in Computer Science & Engineering</h3><p>Southeast University · Dhaka</p></div><em>Completed</em></article>
+          <article class="education-item reveal"><span>2019</span><div><h3>HSC · Science</h3><p>Cantonment College Jashore</p></div><em>Completed</em></article>
+          <article class="education-item reveal"><span>2017</span><div><h3>SSC</h3><p>Yakub Ali Chowdhury Bidyapith</p></div><em>Completed</em></article>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Optional: If you REALLY want primary school info, keep it collapsed -->
-    <details class="mt-6 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-      <summary class="cursor-pointer select-none font-semibold text-slate-800 dark:text-slate-100">
-        Earlier Education (optional)
-        <span class="ml-2 text-sm font-normal text-slate-600 dark:text-slate-400">Click to expand</span>
-      </summary>
-
-      <div class="mt-4 grid gap-3 md:grid-cols-2 text-sm text-slate-700 dark:text-slate-300">
-        <div class="rounded-2xl border border-slate-200 p-4 dark:border-slate-800">
-          <div class="font-semibold">Primary School</div>
-          <div class="text-slate-600 dark:text-slate-400">Jashai Primary School • 2008 — 2011</div>
+    <section class="contact-section" id="contact">
+      <div class="contact-glow" aria-hidden="true"></div>
+      <div class="section-shell contact-inner">
+        <p class="kicker reveal">08 · Contact</p>
+        <h2 class="contact-title reveal">Have a workflow, growth problem or system idea?</h2>
+        <p class="contact-subtitle reveal">Let’s make it clearer, faster and measurable.</p>
+        <div class="contact-actions reveal">
+          <a class="button button-primary button-large magnetic" href="mailto:rakibulislamshuvro@gmail.com">Start a conversation <span>↗</span></a>
+          <a class="button button-ghost button-large magnetic" href="assets/rakibul-islam-cv.pdf" target="_blank" rel="noreferrer">Open CV <span>↗</span></a>
         </div>
-        <div class="rounded-2xl border border-slate-200 p-4 dark:border-slate-800">
-          <div class="font-semibold">Primary School</div>
-          <div class="text-slate-600 dark:text-slate-400">Goshaidangi Primary School • 2007 — 2008</div>
-        </div>
-        <div class="rounded-2xl border border-slate-200 p-4 dark:border-slate-800 md:col-span-2">
-          <div class="font-semibold">Kindergarten</div>
-          <div class="text-slate-600 dark:text-slate-400">Ideal Kindergarten • 2005 — 2007</div>
+        <div class="contact-grid reveal">
+          <a href="mailto:rakibulislamshuvro@gmail.com"><span>EMAIL</span><strong>rakibulislamshuvro@gmail.com</strong><em>↗</em></a>
+          <a href="tel:+8801727688491"><span>PHONE</span><strong>+880 1727 688 491</strong><em>↗</em></a>
+          <a href="https://www.linkedin.com/in/rishuvro" target="_blank" rel="noreferrer"><span>LINKEDIN</span><strong>/in/rishuvro</strong><em>↗</em></a>
+          <a href="https://github.com/rishuvro" target="_blank" rel="noreferrer"><span>GITHUB</span><strong>@rishuvro</strong><em>↗</em></a>
         </div>
       </div>
-    </details>
-  </div>
-</section>
+    </section>
+  </main>
 
+  <footer class="site-footer section-shell">
+    <div class="footer-brand"><span class="brand-mark">RI</span><p>Business Operations × Digital Growth × Technology</p></div>
+    <div class="footer-links"><a href="https://www.kaggle.com/rishuvro" target="_blank" rel="noreferrer">Kaggle</a><a href="https://orcid.org/0009-0004-0055-9928" target="_blank" rel="noreferrer">ORCID</a><a href="https://scholar.google.com/citations?user=8-ZX2LYAAAAJ&hl=en" target="_blank" rel="noreferrer">Scholar</a><a href="https://www.researchgate.net/profile/Rakibul-Islam-97" target="_blank" rel="noreferrer">ResearchGate</a><a href="https://x.com/rishuvro" target="_blank" rel="noreferrer">X</a></div>
+    <p class="copyright">© <span id="year"></span> Rakibul Islam.</p>
+  </footer>
 
-
-
-<!-- CV (Upgraded + Modern + CTA) -->
-<section id="cv" class="pt-16 sm:pt-20">
-  <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-      <div>
-        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">CV</h2>
-        <p class="mt-2 text-slate-700 dark:text-slate-300">
-          Download my latest CV or open it in a new tab.
-        </p>
-      </div>
-
-      <!-- quick badge -->
-      <div class="flex flex-wrap gap-2">
-        <span class="rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-200">
-          Updated • PDF
-        </span>
-      </div>
-    </div>
-
-    <div class="mt-8 grid gap-6 md:grid-cols-5">
-      <!-- Main card -->
-      <article class="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950 md:col-span-3">
-        <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
-        </div>
-
-        <div class="relative flex items-start gap-3">
-          <span class="mt-1 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-sky-500/10 text-sky-700 dark:text-sky-300">
-            <i class="fa-solid fa-file-arrow-down"></i>
-          </span>
-
-          <div class="flex-1">
-            <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-              <h3 class="text-lg font-bold">Download my CV</h3>
-              <span class="text-sm text-slate-600 dark:text-slate-400">
-                PDF
-              </span>
-            </div>
-
-            <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">
-              
-            </p>
-
-            <div class="mt-5 flex flex-wrap gap-3">
-              <a href="asset/cv.pdf" target="_blank" rel="noreferrer"
-                 class="inline-flex items-center gap-2 rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:opacity-95 dark:bg-white dark:text-slate-900">
-                <i class="fa-solid fa-download"></i> Download PDF
-              </a>
-
-              <a href="asset/cv.pdf" target="_blank" rel="noreferrer"
-                 class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100 dark:hover:bg-slate-900">
-                <i class="fa-solid fa-up-right-from-square"></i> Open in new tab
-              </a>
-            </div>
-
-            <div class="mt-5 flex flex-wrap gap-2 text-xs">
-              <span class="rounded-full bg-emerald-500/10 px-3 py-1 font-medium text-emerald-700 dark:text-emerald-300">
-                IT Support
-              </span>
-              <span class="rounded-full bg-sky-500/10 px-3 py-1 font-medium text-sky-700 dark:text-sky-300">
-                Laravel/PHP
-              </span>
-              <span class="rounded-full bg-violet-500/10 px-3 py-1 font-medium text-violet-700 dark:text-violet-300">
-                MySQL
-              </span>
-              <span class="rounded-full bg-amber-500/10 px-3 py-1 font-medium text-amber-700 dark:text-amber-300">
-                Documentation (SOPs)
-              </span>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Side card: quick actions -->
-      <aside class="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-950 md:col-span-2">
-        <div class="flex items-center gap-2">
-          <span class="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-700 dark:text-emerald-300">
-            <i class="fa-solid fa-bolt"></i>
-          </span>
-          <h3 class="font-bold">Quick actions</h3>
-        </div>
-
-        <div class="mt-4 grid gap-3 text-sm">
-          <a href="#contact"
-             class="group flex items-center justify-between rounded-2xl border border-slate-200 px-4 py-3 transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900">
-            <span class="font-semibold">Contact me</span>
-            <span class="text-slate-500 group-hover:text-slate-700 dark:text-slate-400">Go →</span>
-          </a>
-
-          <a href="#projects"
-             class="group flex items-center justify-between rounded-2xl border border-slate-200 px-4 py-3 transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900">
-            <span class="font-semibold">View projects</span>
-            <span class="text-slate-500 group-hover:text-slate-700 dark:text-slate-400">Go →</span>
-          </a>
-
-          <a href="https://www.linkedin.com/in/rishuvro" target="_blank" rel="noreferrer"
-             class="group flex items-center justify-between rounded-2xl border border-slate-200 px-4 py-3 transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900">
-            <span class="font-semibold">LinkedIn profile</span>
-            <span class="text-slate-500 group-hover:text-slate-700 dark:text-slate-400">Open →</span>
-          </a>
-        </div>
-
-        <p class="mt-4 text-xs text-slate-600 dark:text-slate-400">
-          <span class="font-medium"></span>
-        </p>
-      </aside>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-
-
-<!-- CONTACT (Upgraded + Cooler + Copy buttons + CTA) -->
-<section id="contact" class="pt-16 sm:pt-20 pb-20">
-  <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <div class="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-      <!-- subtle glow -->
-      <div class="pointer-events-none absolute -inset-px opacity-0 transition group-hover:opacity-100">
-        <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-fuchsia-500/10"></div>
-      </div>
-
-      <div class="relative grid gap-8 md:grid-cols-2">
-        <!-- Left: Pitch + contact cards -->
-        <div>
-          <div class="inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-white/60 px-4 py-2 text-xs text-slate-600 shadow-soft dark:border-slate-800/70 dark:bg-slate-950/50 dark:text-slate-300">
-            <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-            Open to: IT Support • IT Officer • Laravel/PHP
-          </div>
-
-          <h2 class="mt-5 text-2xl font-bold tracking-tight sm:text-3xl">Let’s work together</h2>
-          <p class="mt-3 text-slate-700 dark:text-slate-300">
-            If you’re hiring for IT support/operations, need a Laravel/PHP web app, or want internal tools (RBAC, billing,
-            reporting, dashboards), I’m happy to talk.
-          </p>
-
-          <!-- primary CTA buttons -->
-          <div class="mt-6 flex flex-wrap gap-3">
-            <a href="mailto:rakibulislamshuvro@gmail.com"
-               class="inline-flex items-center gap-2 rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:opacity-95 dark:bg-white dark:text-slate-900">
-              <i class="fa-solid fa-paper-plane"></i> Email Me
-            </a>
-            <a href="asset/cv.pdf" target="_blank" rel="noreferrer"
-               class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100 dark:hover:bg-slate-900">
-              <i class="fa-solid fa-file-arrow-down"></i> Download CV
-            </a>
-            <a href="#projects"
-               class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100 dark:hover:bg-slate-900">
-              <i class="fa-solid fa-diagram-project"></i> View Projects
-            </a>
-          </div>
-
-          <!-- contact cards + copy -->
-          <div class="mt-7 grid gap-3 text-sm">
-            <!-- Email -->
-            <div class="flex items-center justify-between gap-3 rounded-2xl border border-slate-200 px-4 py-3 transition hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900">
-              <a class="flex items-center gap-3" href="mailto:rakibulislamshuvro@gmail.com">
-                <i class="fa-solid fa-envelope text-sky-600 dark:text-sky-400"></i>
-                <div>
-                  <div class="font-semibold">Email</div>
-                  <div class="text-slate-600 dark:text-slate-400">rakibulislamshuvro@gmail.com</div>
-                </div>
-              </a>
-              <button type="button" data-copy="rakibulislamshuvro@gmail.com"
-                class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-900">
-                <i class="fa-regular fa-copy"></i> Copy
-              </button>
-            </div>
-
-            <!-- Phone -->
-            <div class="flex items-center justify-between gap-3 rounded-2xl border border-slate-200 px-4 py-3 transition hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900">
-              <a class="flex items-center gap-3" href="tel:+8801727688491">
-                <i class="fa-solid fa-phone text-sky-600 dark:text-sky-400"></i>
-                <div>
-                  <div class="font-semibold">Phone</div>
-                  <div class="text-slate-600 dark:text-slate-400">+880 1727 688 491</div>
-                </div>
-              </a>
-              <button type="button" data-copy="+8801727688491"
-                class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-900">
-                <i class="fa-regular fa-copy"></i> Copy
-              </button>
-            </div>
-
-            <!-- Location + availability -->
-            <div class="flex items-center justify-between gap-3 rounded-2xl border border-slate-200 px-4 py-3 transition hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900">
-              <div class="flex items-center gap-3">
-                <i class="fa-solid fa-location-dot text-sky-600 dark:text-sky-400"></i>
-                <div>
-                  <div class="font-semibold">Location</div>
-                  <div class="text-slate-600 dark:text-slate-400">Dhaka, Bangladesh • Remote-friendly</div>
-                </div>
-              </div>
-              <span class="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-300">
-                <i class="fa-solid fa-bolt"></i> Available
-              </span>
-            </div>
-
-            <!-- LinkedIn -->
-            <a class="flex items-center justify-between gap-3 rounded-2xl border border-slate-200 px-4 py-3 transition hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900"
-               target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/rishuvro">
-              <div class="flex items-center gap-3">
-                <i class="fa-brands fa-linkedin text-sky-600 dark:text-sky-400"></i>
-                <div>
-                  <div class="font-semibold">LinkedIn</div>
-                  <div class="text-slate-600 dark:text-slate-400">linkedin.com/in/rishuvro</div>
-                </div>
-              </div>
-              <span class="text-slate-500">Open →</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Right: Quick links + socials + footer -->
-        <div class="relative rounded-3xl bg-slate-50 p-6 dark:bg-slate-900">
-          <div class="flex items-center justify-between">
-            <h3 class="font-bold">Quick Links</h3>
-            <span class="text-xs text-slate-600 dark:text-slate-400">Profiles & docs</span>
-          </div>
-
-          <div class="mt-4 grid gap-3 text-sm">
-            <a class="group/item flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-soft transition hover:-translate-y-0.5 hover:opacity-95 dark:bg-slate-950"
-               target="_blank" rel="noreferrer" href="https://github.com/rishuvro">
-              <span class="inline-flex items-center gap-2 font-semibold"><i class="fa-brands fa-github"></i> GitHub</span>
-              <span class="text-slate-500 group-hover/item:text-slate-700 dark:text-slate-400">Open →</span>
-            </a>
-
-            <a class="group/item flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-soft transition hover:-translate-y-0.5 hover:opacity-95 dark:bg-slate-950"
-               target="_blank" rel="noreferrer" href="https://rishuvro.github.io/">
-              <span class="inline-flex items-center gap-2 font-semibold"><i class="fa-solid fa-globe"></i> Portfolio</span>
-              <span class="text-slate-500 group-hover/item:text-slate-700 dark:text-slate-400">Open →</span>
-            </a>
-
-            <a class="group/item flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-soft transition hover:-translate-y-0.5 hover:opacity-95 dark:bg-slate-950"
-               target="_blank" rel="noreferrer" href="https://www.kaggle.com/rishuvro">
-              <span class="inline-flex items-center gap-2 font-semibold"><i class="fa-brands fa-kaggle"></i> Kaggle</span>
-              <span class="text-slate-500 group-hover/item:text-slate-700 dark:text-slate-400">Open →</span>
-            </a>
-
-            <a class="group/item flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-soft transition hover:-translate-y-0.5 hover:opacity-95 dark:bg-slate-950"
-               target="_blank" rel="noreferrer" href="https://x.com/rishuvro">
-              <span class="inline-flex items-center gap-2 font-semibold"><i class="fa-brands fa-x-twitter"></i> X (Twitter)</span>
-              <span class="text-slate-500 group-hover/item:text-slate-700 dark:text-slate-400">Open →</span>
-            </a>
-
-            <a class="group/item flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-soft transition hover:-translate-y-0.5 hover:opacity-95 dark:bg-slate-950"
-               target="_blank" rel="noreferrer" href="asset/cv.pdf">
-              <span class="inline-flex items-center gap-2 font-semibold"><i class="fa-solid fa-file-pdf"></i> CV (PDF)</span>
-              <span class="text-slate-500 group-hover/item:text-slate-700 dark:text-slate-400">Open →</span>
-            </a>
-          </div>
-
-          <!-- mini “what I can help with” -->
-          <div class="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-            <div class="flex items-center gap-2">
-              <i class="fa-solid fa-sparkles text-amber-500"></i>
-              <h4 class="font-semibold">What I can help with</h4>
-            </div>
-            <ul class="mt-3 grid gap-2 text-sm text-slate-700 dark:text-slate-300">
-              <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> IT Support, device setup, SOPs, troubleshooting</li>
-              <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> Laravel/PHP apps (RBAC, billing, dashboards, APIs)</li>
-              <li class="flex gap-2"><i class="fa-solid fa-circle-check mt-1 text-emerald-500"></i> Internal tools: reporting, admin panels, automation</li>
-            </ul>
-          </div>
-
-          <div class="mt-6 text-xs text-slate-600 dark:text-slate-400">
-            © <span id="year"></span> Rakibul Islam. 
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Copy-to-clipboard + year (vanilla JS, lightweight) -->
-  <script>
-    // year
-    (function () {
-      var y = document.getElementById('year');
-      if (y) y.textContent = new Date().getFullYear();
-    })();
-
-    // copy buttons
-    (function () {
-      function toast(msg) {
-        var t = document.createElement('div');
-        t.className =
-          'fixed bottom-6 left-1/2 -translate-x-1/2 z-[9999] rounded-2xl bg-slate-900 px-4 py-2 text-sm text-white shadow-soft dark:bg-white dark:text-slate-900';
-        t.textContent = msg;
-        document.body.appendChild(t);
-        setTimeout(function () { t.remove(); }, 1600);
-      }
-
-      document.addEventListener('click', async function (e) {
-        var btn = e.target.closest('[data-copy]');
-        if (!btn) return;
-        var val = btn.getAttribute('data-copy');
-        try {
-          await navigator.clipboard.writeText(val);
-          toast('Copied: ' + val);
-        } catch (err) {
-          // fallback
-          var ta = document.createElement('textarea');
-          ta.value = val;
-          document.body.appendChild(ta);
-          ta.select();
-          document.execCommand('copy');
-          ta.remove();
-          toast('Copied: ' + val);
-        }
-      });
-    })();
-  </script>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-
-  <script>
-    // Mobile menu
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (menuBtn && mobileMenu) {
-      menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-    }
-
-    // Theme
-    const themeBtn = document.getElementById('themeBtn');
-    const root = document.documentElement;
-    const stored = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    function setTheme(mode) {
-      if (mode === 'dark') {
-        root.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        root.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-      }
-    }
-
-    setTheme(stored ? stored : (prefersDark ? 'dark' : 'light'));
-
-    themeBtn?.addEventListener('click', () => {
-      const isDark = root.classList.contains('dark');
-      setTheme(isDark ? 'light' : 'dark');
-    });
-
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Close mobile menu on link click
-    document.querySelectorAll('#mobileMenu a').forEach(a => {
-      a.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-    });
-  </script>
+  <script src="app.js" defer></script>
 </body>
 </html>

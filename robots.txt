@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rishuvro.github.io/sitemap.xml
