@@ -405,3 +405,39 @@
   updateSafeOffset();
   window.addEventListener('resize', updateSafeOffset, { passive:true });
 })();
+
+// V5: selected-work filtering and project-index feedback.
+(() => {
+  const filters = [...document.querySelectorAll('.work-filter[data-filter]')];
+  const projects = [...document.querySelectorAll('#project-grid > .project[data-category]')];
+  const count = document.getElementById('work-visible-count');
+  if (!filters.length || !projects.length) return;
+
+  const applyFilter = (filter) => {
+    let visible = 0;
+    projects.forEach((project) => {
+      const categories = (project.dataset.category || '').split(/\s+/).filter(Boolean);
+      const show = filter === 'all' || categories.includes(filter);
+      project.classList.toggle('is-filtered-out', !show);
+      if (show) {
+        visible += 1;
+        project.classList.remove('is-filter-enter');
+        void project.offsetWidth;
+        project.classList.add('is-filter-enter');
+      }
+    });
+    if (count) count.textContent = String(visible).padStart(2, '0');
+  };
+
+  filters.forEach((button) => {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter || 'all';
+      filters.forEach((item) => {
+        const active = item === button;
+        item.classList.toggle('is-active', active);
+        item.setAttribute('aria-pressed', String(active));
+      });
+      applyFilter(filter);
+    });
+  });
+})();

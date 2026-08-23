@@ -10,22 +10,22 @@
   <meta name="description" content="Portfolio of Rakibul Islam — business operations, digital growth, IT systems, Laravel/PHP products, research and applied technology." />
   <meta name="author" content="Rakibul Islam" />
   <meta name="application-name" content="Rakibul Islam Portfolio" />
-  <meta name="generator" content="Custom static portfolio · V4" />
+  <meta name="generator" content="Custom static portfolio · V5" />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://rishuvro.github.io/" />
-  <link rel="icon" href="assets/favicon.svg?v=4.0.0" type="image/svg+xml" />
+  <link rel="icon" href="assets/favicon.svg?v=5.0.0" type="image/svg+xml" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rishuvro.github.io/" />
   <meta property="og:title" content="Rakibul Islam — Operations × Growth × Technology" />
   <meta property="og:description" content="I connect business operations, digital growth and technology to build systems that perform." />
-  <meta property="og:image" content="https://rishuvro.github.io/assets/social-card.png?v=4.0.0" />
+  <meta property="og:image" content="https://rishuvro.github.io/assets/social-card.png?v=5.0.0" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Rakibul Islam — Operations × Growth × Technology" />
   <meta name="twitter:description" content="Business Operations × Digital Growth × Technology" />
-  <meta name="twitter:image" content="https://rishuvro.github.io/assets/social-card.png?v=4.0.0" />
+  <meta name="twitter:image" content="https://rishuvro.github.io/assets/social-card.png?v=5.0.0" />
 
   <link rel="preload" href="assets/profile-cutout.png" as="image" />
   <script>
@@ -37,7 +37,7 @@
       } catch (_) {}
     })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=4.0.0" />
+  <link rel="stylesheet" href="styles.css?v=5.0.0" />
 
   <script type="application/ld+json">
   {
@@ -67,7 +67,7 @@
       <div class="boot-mark"><span>R</span><span>I</span></div>
       <div class="boot-copy"><strong>RAKIBUL ISLAM</strong><span>OPERATIONS × GROWTH × TECHNOLOGY</span></div>
       <div class="boot-meter"><i></i></div>
-      <div class="boot-status"><span>PORTFOLIO / V4</span><span>SYSTEM READY</span></div>
+      <div class="boot-status"><span>PORTFOLIO / V5</span><span>SYSTEM READY</span></div>
     </div>
   </div>
   <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
@@ -230,9 +230,35 @@
           <a class="text-link magnetic" href="https://github.com/rishuvro?tab=repositories" target="_blank" rel="noreferrer">All repositories <span>↗</span></a>
         </div>
 
-        <div class="project-grid">
-          <article class="project project-feature reveal cursor-view" data-project="clinic" data-cursor-label="OPEN">
-            <div class="project-topline"><span>LIVE SYSTEM</span><span>01 / CLINIC OPERATIONS</span></div>
+        <div class="work-command reveal" aria-label="Selected work controls">
+          <div class="work-command-copy">
+            <span class="work-command-label">PROJECT INDEX / V5</span>
+            <p>Operational systems, growth builds and technical experiments — organized by what they solve.</p>
+          </div>
+          <div class="work-filters" role="group" aria-label="Filter projects">
+            <button class="work-filter is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="work-filter" type="button" data-filter="operations" aria-pressed="false">Operations</button>
+            <button class="work-filter" type="button" data-filter="growth" aria-pressed="false">Growth</button>
+            <button class="work-filter" type="button" data-filter="technology" aria-pressed="false">Technology</button>
+          </div>
+          <div class="work-counter" aria-live="polite"><b id="work-visible-count">06</b><span>projects visible</span></div>
+        </div>
+
+        <div class="project-grid" id="project-grid">
+          <article class="project project-feature reveal cursor-view" data-project="clinic" data-category="operations technology" data-cursor-label="OPEN">
+            <div class="project-topline"><span><i class="live-dot"></i> LIVE SYSTEM</span><span>01 / CLINIC OPERATIONS</span></div>
+            <div class="feature-brief">
+              <div class="feature-brief-main">
+                <span class="feature-eyebrow">FLAGSHIP BUILD</span>
+                <h3>Clinic Management Platform</h3>
+                <p>A working operational layer connecting patients, scheduling, billing, stock, reporting and access control in one system.</p>
+              </div>
+              <div class="feature-signals" aria-label="Project characteristics">
+                <div><small>ROLE</small><strong>Architecture + Operations</strong></div>
+                <div><small>FOCUS</small><strong>Workflow integrity</strong></div>
+                <div><small>STATUS</small><strong>Production</strong></div>
+              </div>
+            </div>
             <div class="system-window" aria-hidden="true">
               <div class="window-bar"><i></i><i></i><i></i><span>EVOLVEDCMS / OPERATIONS</span></div>
               <div class="window-body">
@@ -245,14 +271,15 @@
                 </div>
               </div>
             </div>
-            <div class="project-copy">
-              <div><h3>Clinic Management Platform</h3><p>Custom operational system for patients, appointments, billing, inventory, reporting, expenses, access control and auditability.</p></div>
-              <div class="project-links"><a class="round-link magnetic" href="https://myevolvedcms.com/" target="_blank" rel="noreferrer" aria-label="Open Clinic Management Platform">↗</a></div>
+            <div class="feature-outcome">
+              <div><span>CONNECTED WORKFLOWS</span><strong>Patients → Billing → Inventory → Reports</strong></div>
+              <div><span>CONTROL LAYER</span><strong>RBAC + auditability + operational checks</strong></div>
+              <a class="feature-open magnetic" href="https://myevolvedcms.com/" target="_blank" rel="noreferrer" aria-label="Open Clinic Management Platform"><span>Open live system</span><b>↗</b></a>
             </div>
             <div class="project-tech"><span>Laravel / PHP</span><span>MySQL</span><span>RBAC</span><span>Audit Logs</span><span>Business Workflow</span></div>
           </article>
 
-          <article class="project reveal tilt-card cursor-view" data-cursor-label="VIEW">
+          <article class="project reveal tilt-card cursor-view" data-category="operations technology" data-cursor-label="VIEW">
             <div class="project-topline"><span>POS + INVENTORY</span><span>02</span></div>
             <div class="project-visual visual-ledger" aria-hidden="true">
               <div class="ledger-card"><span>DAILY SALES</span><strong>৳</strong><i></i><i></i><i></i></div>
@@ -263,7 +290,7 @@
             <div class="project-footer"><div class="project-tech"><span>Laravel</span><span>MySQL</span></div><a class="round-link magnetic" href="https://github.com/rishuvro/maitri_tally" target="_blank" rel="noreferrer" aria-label="Open Maitri Tally repository">↗</a></div>
           </article>
 
-          <article class="project reveal tilt-card cursor-view" data-cursor-label="VIEW">
+          <article class="project reveal tilt-card cursor-view" data-category="growth technology" data-cursor-label="VIEW">
             <div class="project-topline"><span>B2B + LEAD GENERATION</span><span>03</span></div>
             <div class="project-visual visual-web" aria-hidden="true">
               <div class="web-frame"><div class="web-nav"></div><div class="web-hero"><b>Digital credibility</b><span></span><i></i></div><div class="web-row"><span></span><span></span><span></span></div></div>
@@ -273,7 +300,7 @@
             <div class="project-footer"><div class="project-tech"><span>Laravel</span><span>SEO</span></div><a class="round-link magnetic" href="https://sdstechmed.com/" target="_blank" rel="noreferrer" aria-label="Open supplier business website">↗</a></div>
           </article>
 
-          <article class="project reveal tilt-card cursor-view" data-cursor-label="VIEW">
+          <article class="project reveal tilt-card cursor-view" data-category="growth technology" data-cursor-label="VIEW">
             <div class="project-topline"><span>ECOMMERCE</span><span>04</span></div>
             <div class="project-visual visual-commerce" aria-hidden="true">
               <div class="commerce-orbit"></div><div class="product-card pc-a"><i></i><span></span></div><div class="product-card pc-b"><i></i><span></span></div><div class="product-card pc-c"><i></i><span></span></div>
@@ -283,7 +310,7 @@
             <div class="project-footer"><div class="project-tech"><span>PHP</span><span>MySQL</span></div><a class="round-link magnetic" href="https://github.com/rishuvro/krishica.com" target="_blank" rel="noreferrer" aria-label="Open Krishica repository">↗</a></div>
           </article>
 
-          <article class="project reveal tilt-card cursor-view" data-cursor-label="VIEW">
+          <article class="project reveal tilt-card cursor-view" data-category="operations technology" data-cursor-label="VIEW">
             <div class="project-topline"><span>RETAIL OPERATIONS</span><span>05</span></div>
             <div class="project-visual visual-store" aria-hidden="true">
               <div class="store-stack"><span></span><span></span><span></span><span></span></div><div class="store-wave"><i></i><i></i><i></i><i></i><i></i><i></i></div>
@@ -293,7 +320,7 @@
             <div class="project-footer"><div class="project-tech"><span>PHP</span><span>CRUD</span></div><a class="round-link magnetic" href="https://github.com/rishuvro/store" target="_blank" rel="noreferrer" aria-label="Open Store Management System repository">↗</a></div>
           </article>
 
-          <article class="project reveal tilt-card cursor-view" data-cursor-label="VIEW">
+          <article class="project reveal tilt-card cursor-view" data-category="technology" data-cursor-label="VIEW">
             <div class="project-topline"><span>NETWORKING LABS</span><span>06</span></div>
             <div class="project-visual visual-network" aria-hidden="true">
               <svg viewBox="0 0 520 240" role="img" aria-label="Animated network diagram">
@@ -495,6 +522,6 @@
     <p class="copyright">© <span id="year"></span> Rakibul Islam.</p>
   </footer>
 
-  <script src="app.js?v=4.0.0" defer></script>
+  <script src="app.js?v=5.0.0" defer></script>
 </body>
 </html>
