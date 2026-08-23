@@ -1,12 +1,12 @@
 {
-  "name": "Rakibul Islam — Portfolio",
+  "name": "Rakibul Islam — Royal Luxe Portfolio",
   "short_name": "Rakibul Islam",
-  "description": "Business Operations × Digital Growth × Technology",
+  "description": "Business Operations × Digital Growth × Technology — Royal Luxe Edition",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#08090d",
-  "theme_color": "#08090d",
+  "background_color": "#080807",
+  "theme_color": "#080807",
   "icons": [
     {
       "src": "assets/favicon.svg",
