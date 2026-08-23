@@ -463,3 +463,64 @@
 
   tabs.forEach(tab => tab.addEventListener('click', () => activate(tab.dataset.career)));
 })();
+
+// V7: credential vault filtering + contact console utilities.
+(() => {
+  const filters = [...document.querySelectorAll('.credential-filter[data-credential-filter]')];
+  const items = [...document.querySelectorAll('[data-credential-category]')];
+  const count = document.getElementById('credential-visible-count');
+
+  const setCredentialFilter = filter => {
+    let visible = 0;
+    items.forEach(item => {
+      const categories = (item.dataset.credentialCategory || '').split(/\s+/).filter(Boolean);
+      const show = filter === 'all' || categories.includes(filter);
+      item.classList.toggle('is-credential-hidden', !show);
+      if (show) {
+        visible += 1;
+        item.classList.remove('is-credential-enter');
+        void item.offsetWidth;
+        item.classList.add('is-credential-enter');
+      }
+    });
+    if (count) count.textContent = String(visible).padStart(2, '0');
+  };
+
+  filters.forEach(button => button.addEventListener('click', () => {
+    const filter = button.dataset.credentialFilter || 'all';
+    filters.forEach(item => {
+      const active = item === button;
+      item.classList.toggle('is-active', active);
+      item.setAttribute('aria-pressed', String(active));
+    });
+    setCredentialFilter(filter);
+  }));
+
+  const copyButton = document.getElementById('copy-email');
+  const copyState = document.getElementById('copy-email-state');
+  copyButton?.addEventListener('click', async () => {
+    const value = copyButton.dataset.copy || '';
+    try {
+      await navigator.clipboard.writeText(value);
+      copyButton.classList.add('is-copied');
+      if (copyState) copyState.textContent = 'COPIED';
+      window.setTimeout(() => {
+        copyButton.classList.remove('is-copied');
+        if (copyState) copyState.textContent = 'COPY';
+      }, 1600);
+    } catch (_) {
+      window.location.href = `mailto:${value}`;
+    }
+  });
+
+  const clock = document.getElementById('dhaka-clock');
+  if (clock) {
+    const formatter = new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Asia/Dhaka',
+      hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+    });
+    const tick = () => { clock.textContent = `DHAKA ${formatter.format(new Date())} · UTC+06`; };
+    tick();
+    window.setInterval(tick, 1000);
+  }
+})();

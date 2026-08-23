@@ -1,13 +1,7 @@
-# Rakibul Islam Portfolio — V6
+# Rakibul Islam Portfolio — V7
 
 GitHub Pages-ready static portfolio.
 
-## V6 focus
-- Interactive career story console
-- Experience progression: Support → Build → Operate → Scale
-- Research signal console with publication, dataset and ICCSC 2026 service
-- Research profile links and timeline
-- Work-section spacing/readability polish
-- Preserves V5 project filters, V4 deep links, dark/light mode and responsive behavior
+V7 upgrades the final three chapters: Credential Vault, Education Trajectory, and Contact Console / finale. It preserves V6 career and research interactions, V5 project filtering, and V4 anchor navigation.
 
-Deploy the contents of this folder directly to the root of `rishuvro.github.io`.
+Deploy the files in this folder directly to the root of `rishuvro.github.io`.
