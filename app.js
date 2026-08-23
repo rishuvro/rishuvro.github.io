@@ -305,3 +305,103 @@
     body.classList.toggle('page-hidden', document.hidden);
   });
 })();
+
+
+// V4: deterministic anchor navigation + section dock.
+(() => {
+  const root = document.documentElement;
+  const header = document.querySelector('.site-header');
+  const dock = document.getElementById('chapter-dock');
+  const dockLinks = [...document.querySelectorAll('.chapter-dock a[href^="#"]')];
+  const dockNumber = document.getElementById('chapter-dock-number');
+  const dockLabel = document.getElementById('chapter-dock-label');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const headerOffset = () => Math.max(72, (header?.getBoundingClientRect().height || 70) + 28);
+  const targetFromHash = hash => {
+    if (!hash || hash === '#') return null;
+    try { return document.querySelector(hash); } catch (_) { return null; }
+  };
+
+  const flashTarget = target => {
+    if (!target || !target.matches('section')) return;
+    target.classList.remove('hash-target-flash');
+    void target.offsetWidth;
+    target.classList.add('hash-target-flash');
+    window.setTimeout(() => target.classList.remove('hash-target-flash'), 1400);
+  };
+
+  const scrollToTarget = (target, behavior = 'smooth', flash = false) => {
+    if (!target) return;
+    if (target.id === 'top') {
+      window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : behavior });
+      return;
+    }
+    const top = Math.max(0, window.scrollY + target.getBoundingClientRect().top - headerOffset());
+    window.scrollTo({ top, behavior: reducedMotion ? 'auto' : behavior });
+    if (flash) flashTarget(target);
+  };
+
+  // Own same-page anchors so header offset and the intro animation never break deep links.
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const hash = link.getAttribute('href');
+      const target = targetFromHash(hash);
+      if (!target) return;
+      e.preventDefault();
+      history.pushState(null, '', hash);
+      scrollToTarget(target, 'smooth', true);
+    });
+  });
+
+  const restoreHash = (flash = false) => {
+    const target = targetFromHash(location.hash);
+    if (!target) return;
+    // Two frames lets fonts/images and the boot overlay settle first.
+    requestAnimationFrame(() => requestAnimationFrame(() => scrollToTarget(target, 'auto', flash)));
+  };
+
+  window.addEventListener('hashchange', () => restoreHash(true));
+  window.addEventListener('load', () => {
+    if (location.hash) {
+      restoreHash(false);
+      setTimeout(() => restoreHash(false), 850);
+      setTimeout(() => restoreHash(false), 1450);
+    }
+  }, { once: true });
+
+  // The fixed dock follows all major chapters, including sections omitted from the top nav.
+  if (dock && dockLinks.length && 'IntersectionObserver' in window) {
+    const entriesMap = new Map();
+    const items = dockLinks.map(link => ({
+      link,
+      target: targetFromHash(link.getAttribute('href')),
+      number: link.dataset.chapter || '',
+      label: link.dataset.label || ''
+    })).filter(x => x.target);
+
+    const setActive = item => {
+      dockLinks.forEach(link => link.classList.toggle('is-active', link === item.link));
+      if (dockNumber) dockNumber.textContent = item.number;
+      if (dockLabel) dockLabel.textContent = item.label.toUpperCase();
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => entriesMap.set(entry.target.id, entry.intersectionRatio));
+      let best = null;
+      items.forEach(item => {
+        const r = item.target.getBoundingClientRect();
+        const visible = entriesMap.get(item.target.id) || 0;
+        const distance = Math.abs(r.top - headerOffset());
+        const score = visible * 1000 - distance * .05;
+        if (!best || score > best.score) best = { item, score };
+      });
+      if (best) setActive(best.item);
+    }, { threshold:[0,.05,.15,.3,.55,.8], rootMargin:'-10% 0px -62% 0px' });
+    items.forEach(item => observer.observe(item.target));
+  }
+
+  const updateSafeOffset = () => root.style.setProperty('--header-safe', `${Math.round(headerOffset())}px`);
+  updateSafeOffset();
+  window.addEventListener('resize', updateSafeOffset, { passive:true });
+})();
