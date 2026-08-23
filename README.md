@@ -1,13 +1,13 @@
-# Rakibul Islam Portfolio — V5
+# Rakibul Islam Portfolio — V6
 
-Production-ready static portfolio for GitHub Pages.
+GitHub Pages-ready static portfolio.
 
-## V5 changes
-- Reworked Selected Work into a clearer project-index / case-study experience.
-- Added project filters for Operations, Growth and Technology.
-- Upgraded the EvolvedCMS flagship project with role, focus, production status and workflow outcomes.
-- Improved light-theme depth and dashboard contrast.
-- Preserved V4 hash-safe navigation, chapter dock and responsive hero fixes.
-- Cache-busted CSS, JS, favicon and social card to v5.0.0.
+## V6 focus
+- Interactive career story console
+- Experience progression: Support → Build → Operate → Scale
+- Research signal console with publication, dataset and ICCSC 2026 service
+- Research profile links and timeline
+- Work-section spacing/readability polish
+- Preserves V5 project filters, V4 deep links, dark/light mode and responsive behavior
 
-Deploy the contents of this folder directly to the repository root.
+Deploy the contents of this folder directly to the root of `rishuvro.github.io`.

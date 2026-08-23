@@ -441,3 +441,25 @@
     });
   });
 })();
+
+// V6: interactive career story console.
+(() => {
+  const tabs = [...document.querySelectorAll('.career-tab[data-career]')];
+  const panels = [...document.querySelectorAll('.career-panel[data-career-panel]')];
+  if (!tabs.length || !panels.length) return;
+
+  const activate = key => {
+    tabs.forEach(tab => {
+      const active = tab.dataset.career === key;
+      tab.classList.toggle('is-active', active);
+      tab.setAttribute('aria-selected', String(active));
+    });
+    panels.forEach(panel => {
+      const active = panel.dataset.careerPanel === key;
+      panel.hidden = !active;
+      panel.classList.toggle('is-active', active);
+    });
+  };
+
+  tabs.forEach(tab => tab.addEventListener('click', () => activate(tab.dataset.career)));
+})();
