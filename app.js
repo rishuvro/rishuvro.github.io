@@ -3,6 +3,9 @@
   const body = document.body;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  const lowPower = Boolean(connection?.saveData || (navigator.deviceMemory && navigator.deviceMemory <= 4) || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4));
+  root.classList.toggle('performance-lite', lowPower);
 
   // Theme
   let savedTheme = null;
@@ -10,9 +13,18 @@
   try { savedTheme = localStorage.getItem('ri-theme'); } catch (_) {}
   root.dataset.theme = savedTheme || (systemLight ? 'light' : 'dark');
   const themeToggle = document.getElementById('theme-toggle');
+  const themeMeta = document.getElementById('theme-color-meta');
+  const syncThemeUI = () => {
+    const dark = root.dataset.theme === 'dark';
+    themeMeta?.setAttribute('content', dark ? '#08090d' : '#f2f0ea');
+    themeToggle?.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+    themeToggle?.setAttribute('title', dark ? 'Switch to light theme' : 'Switch to dark theme');
+  };
+  syncThemeUI();
   themeToggle?.addEventListener('click', () => {
     root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
     try { localStorage.setItem('ri-theme', root.dataset.theme); } catch (_) {}
+    syncThemeUI();
   });
 
   // Header + mobile navigation
@@ -23,15 +35,29 @@
   updateHeader();
   window.addEventListener('scroll', updateHeader, { passive: true });
 
+  const setMobileMenu = open => {
+    if (!menuButton || !mobileMenu) return;
+    menuButton.setAttribute('aria-expanded', String(open));
+    menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    mobileMenu.hidden = !open;
+  };
   menuButton?.addEventListener('click', () => {
     const open = menuButton.getAttribute('aria-expanded') === 'true';
-    menuButton.setAttribute('aria-expanded', String(!open));
-    mobileMenu.hidden = open;
+    setMobileMenu(!open);
   });
   mobileMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-    menuButton?.setAttribute('aria-expanded', 'false');
-    mobileMenu.hidden = true;
+    setMobileMenu(false);
   }));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && menuButton?.getAttribute('aria-expanded') === 'true') {
+      setMobileMenu(false);
+      menuButton.focus({ preventScroll: true });
+    }
+  });
+  document.addEventListener('pointerdown', event => {
+    if (menuButton?.getAttribute('aria-expanded') !== 'true') return;
+    if (!header?.contains(event.target)) setMobileMenu(false);
+  }, { passive: true });
 
   // Reveal on scroll
   const reveals = document.querySelectorAll('.reveal');
@@ -81,7 +107,7 @@
   }
 
   // Magnetic buttons
-  if (finePointer && !reducedMotion) {
+  if (finePointer && !reducedMotion && !lowPower) {
     document.querySelectorAll('.magnetic').forEach(el => {
       el.addEventListener('mousemove', e => {
         const r = el.getBoundingClientRect();
@@ -110,7 +136,7 @@
   // Portrait parallax
   const stage = document.getElementById('identity-stage');
   const portrait = stage?.querySelector('.portrait-frame');
-  if (stage && portrait && finePointer && !reducedMotion) {
+  if (stage && portrait && finePointer && !reducedMotion && !lowPower) {
     stage.addEventListener('mousemove', e => {
       const r = stage.getBoundingClientRect();
       const dx = (e.clientX - r.left) / r.width - .5;
@@ -124,7 +150,7 @@
   const canvas = document.getElementById('signal-canvas');
   if (canvas && !reducedMotion) {
     const ctx = canvas.getContext('2d');
-    let width = 0, height = 0, dpr = Math.min(devicePixelRatio || 1, 1.7), nodes = [];
+    let width = 0, height = 0, dpr = Math.min(devicePixelRatio || 1, lowPower ? 1.2 : 1.7), nodes = [];
     const css = () => getComputedStyle(root);
 
     const resize = () => {
@@ -132,7 +158,9 @@
       canvas.width = Math.floor(width * dpr); canvas.height = Math.floor(height * dpr);
       canvas.style.width = `${width}px`; canvas.style.height = `${height}px`;
       ctx.setTransform(dpr,0,0,dpr,0,0);
-      const count = Math.max(20, Math.min(54, Math.round(width * height / 30000)));
+      const maxNodes = lowPower ? 28 : 54;
+      const minNodes = lowPower ? 14 : 20;
+      const count = Math.max(minNodes, Math.min(maxNodes, Math.round(width * height / (lowPower ? 52000 : 30000))));
       nodes = Array.from({ length: count }, () => ({
         x: Math.random() * width, y: Math.random() * height,
         vx: (Math.random() - .5) * .16, vy: (Math.random() - .5) * .16,
@@ -155,8 +183,9 @@
       for (let i=0;i<nodes.length;i++) {
         for (let j=i+1;j<nodes.length;j++) {
           const a=nodes[i], b=nodes[j], dx=a.x-b.x, dy=a.y-b.y, dist=Math.hypot(dx,dy);
-          if (dist < 150) {
-            ctx.globalAlpha = (1 - dist/150) * .28;
+          const maxDistance = lowPower ? 120 : 150;
+          if (dist < maxDistance) {
+            ctx.globalAlpha = (1 - dist/maxDistance) * (lowPower ? .18 : .28);
             ctx.strokeStyle = line; ctx.lineWidth = .65; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
           }
         }
@@ -244,7 +273,11 @@
         if (!best || score > best.score) best = { ...item, score };
       });
       if (best && best.score > 0) {
-        navLinks.forEach(link => link.classList.toggle('is-active', link === best.link));
+        navLinks.forEach(link => {
+          const active = link === best.link;
+          link.classList.toggle('is-active', active);
+          active ? link.setAttribute('aria-current', 'location') : link.removeAttribute('aria-current');
+        });
       }
     }, { threshold: [0, .12, .3, .55, .8], rootMargin: '-24% 0px -58% 0px' });
     navTargets.forEach(item => navObserver.observe(item.target));
@@ -448,11 +481,13 @@
   const panels = [...document.querySelectorAll('.career-panel[data-career-panel]')];
   if (!tabs.length || !panels.length) return;
 
-  const activate = key => {
+  const activate = (key, focus = false) => {
     tabs.forEach(tab => {
       const active = tab.dataset.career === key;
       tab.classList.toggle('is-active', active);
       tab.setAttribute('aria-selected', String(active));
+      tab.tabIndex = active ? 0 : -1;
+      if (active && focus) tab.focus({ preventScroll: true });
     });
     panels.forEach(panel => {
       const active = panel.dataset.careerPanel === key;
@@ -461,7 +496,19 @@
     });
   };
 
-  tabs.forEach(tab => tab.addEventListener('click', () => activate(tab.dataset.career)));
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => activate(tab.dataset.career));
+    tab.addEventListener('keydown', event => {
+      let next = null;
+      if (event.key === 'ArrowDown' || event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+      if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+      if (event.key === 'Home') next = 0;
+      if (event.key === 'End') next = tabs.length - 1;
+      if (next === null) return;
+      event.preventDefault();
+      activate(tabs[next].dataset.career, true);
+    });
+  });
 })();
 
 // V7: credential vault filtering + contact console utilities.
@@ -525,7 +572,7 @@
   }
 })();
 
-// V8: global command layer — keyboard navigation, fast actions and mobile access.
+// V9: global command layer — keyboard navigation, fast actions and mobile access.
 (() => {
   const palette = document.getElementById('command-palette');
   const trigger = document.getElementById('command-trigger');
@@ -562,9 +609,14 @@
     const items = visibleItems();
     if (!items.length) return;
     selected = ((index % items.length) + items.length) % items.length;
-    allItems().forEach(item => item.classList.remove('is-command-active'));
+    allItems().forEach(item => {
+      item.classList.remove('is-command-active');
+      item.setAttribute('aria-selected', 'false');
+    });
     const item = items[selected];
     item.classList.add('is-command-active');
+    item.setAttribute('aria-selected', 'true');
+    if (item.id) input.setAttribute('aria-activedescendant', item.id);
     if (scroll) item.scrollIntoView({ block: 'nearest' });
   };
 
@@ -592,6 +644,7 @@
     returnFocus = source instanceof HTMLElement ? source : document.activeElement;
     palette.hidden = false;
     palette.setAttribute('aria-hidden', 'false');
+    input.setAttribute('aria-expanded', 'true');
     document.body.classList.add('command-open');
     input.value = '';
     filterItems();
@@ -602,6 +655,8 @@
     if (palette.hidden) return;
     palette.hidden = true;
     palette.setAttribute('aria-hidden', 'true');
+    input.setAttribute('aria-expanded', 'false');
+    input.removeAttribute('aria-activedescendant');
     document.body.classList.remove('command-open');
     allItems().forEach(item => item.classList.remove('is-command-active'));
     if (returnFocus && typeof returnFocus.focus === 'function') returnFocus.focus({ preventScroll: true });

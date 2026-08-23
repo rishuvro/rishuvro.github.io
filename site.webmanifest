@@ -1,0 +1,18 @@
+{
+  "name": "Rakibul Islam — Portfolio",
+  "short_name": "Rakibul Islam",
+  "description": "Business Operations × Digital Growth × Technology",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#08090d",
+  "theme_color": "#08090d",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
